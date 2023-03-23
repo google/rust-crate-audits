@@ -1,0 +1,37 @@
+name: CI
+on:
+  schedule:
+    # Every five minutes (maximum frequency allowed by GitHub)
+    - cron:  '*/5 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  aggregate:
+    name: Aggregate Dependencies
+    runs-on: ubuntu-latest
+    env:
+      CARGO_VET_VERSION: 0.4.0
+    steps:
+    - uses: actions/checkout@master
+    - name: Install Rust
+      run: rustup update stable && rustup default stable
+    - uses: actions/cache@v2
+      with:
+        path: ${{ runner.tool_cache }}/cargo-vet
+        key: cargo-vet-bin-${{ env.CARGO_VET_VERSION }}
+    - name: Add the tool cache directory to the search path
+      run: echo "${{ runner.tool_cache }}/cargo-vet/bin" >> $GITHUB_PATH
+    - name: Ensure that the tool cache is populated with the cargo-vet binary
+      run: cargo install --root ${{ runner.tool_cache }}/cargo-vet --version ${{ env.CARGO_VET_VERSION }} cargo-vet
+    - name: Invoke cargo-vet aggregate
+      run: cargo vet aggregate --output-file audits.toml sources.list
+    - name: Commit changes (if any)
+      run: |
+        git config --global user.name "cargo-vet[bot]"
+        git config --global user.email "cargo-vet-aggregate@invalid"
+        git add audits.toml
+        git commit -m "Aggregate new audits" || true
+    - name: Push changes (if any)
+      run: git push origin main
