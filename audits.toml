@@ -1,0 +1,2046 @@
+
+[criteria.crypto-safe]
+description = """
+All crypto algorithms in this crate have been reviewed by a relevant expert.
+
+**Note**: If a crate does not implement crypto, use `does-not-implement-crypto`,
+which implies `crypto-safe`, but does not require expert review in order to
+audit for."""
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[criteria.does-not-implement-crypto]
+description = """
+Inspection reveals that the crate in question does not attempt to implement any
+cryptographic algorithms on its own.
+
+Note that certification of this does not require an expert on all forms of
+cryptography: it's expected for crates we import to be \"good enough\" citizens,
+so they'll at least be forthcoming if they try to implement something
+cryptographic. When in doubt, please ask an expert."""
+implies = "crypto-safe"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[criteria.rule-of-two-safe-to-deploy]
+description = """
+This is a stronger requirement than the built-in safe-to-deploy criteria,
+motivated by Chromium's rule-of-two related requirements:
+https://chromium.googlesource.com/chromium/src/+/master/docs/security/rule-of-2.md#unsafe-code-in-safe-languages
+
+This crate will not introduce a serious security vulnerability to production
+software exposed to untrusted input.
+
+Auditors are not required to perform a full logic review of the entire crate.
+Rather, they must review enough to fully reason about the behavior of all unsafe
+blocks and usage of powerful imports. For any reasonable usage of the crate in
+real-world software, an attacker must not be able to manipulate the runtime
+behavior of these sections in an exploitable or surprising way.
+
+Ideally, ambient capabilities (e.g. filesystem access) are hardened against
+manipulation and consistent with the advertised behavior of the crate. However,
+some discretion is permitted. In such cases, the nature of the discretion should
+be recorded in the `notes` field of the audit record.
+
+Any unsafe code in this crate must, in general, be kept well-contained, and
+documentation must exist to describe how Rust's invariants are being upheld
+despite the unsafe block(s). Nontrivial uses of unsafe must be reviewed by an
+expert in Rust's unsafety guarantees/non-guarantees.
+
+For crates which generate deployed code (e.g. build dependencies or procedural
+macros), reasonable usage of the crate should output code which meets the above
+criteria."""
+implies = "safe-to-deploy"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[criteria.ub-risk-0]
+description = """
+This crate cannot cause undefined behavior because it contains no unsafe code.
+"""
+implies = "ub-risk-1"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[criteria.ub-risk-1]
+description = """
+A designated unsafe code reviewer has audited the unsafe code in this crate. No
+risk of causing undefined behavior was found.
+
+UB-RISK-1 crates are suitable for applications with the strictest memory safety
+requirements:
+- Safety documentation is comprehensive and precise. Unsafe APIs can be used
+  soundly.
+- Unsafe blocks rely on clear invariants and preconditions, and are
+  well-justified by them.
+- No way to cause undefined behavior was found during review.
+
+UB-RISK-1 crates are exceptionally well-documented and justified, leaving little
+to no room for error.
+"""
+implies = "ub-risk-2"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[criteria.ub-risk-2]
+description = """
+A designated unsafe code reviewer has audited the unsafe code in this crate. It
+has been found to pose a trivial risk of causing undefined behavior.
+
+UB-RISK-2 crates are suitable for most applications:
+- Safety documentation is relatively comprehensive, though it may not be
+  adequately precise. Unsafe APIs can be used soundly with very minor caution.
+- Unsafe blocks may rely on informal invariants and preconditions. The reasoning
+  required to justify them may be especially difficult or under-documented.
+- Undefined behavior may be possible under extraordinary circumstances.
+
+UB-RISK-2 crates are effectively \"the average good crate\". While they may have
+very slight (but real) soundness issues, they are safe to use in general without
+much worry. These crates may exhibit undefined behavior under \"extraordinary
+circumstances\", which is ultimately up to reviewer discretion. Users may expect
+that reasonable use of the crate will not cause undefined behavior.
+"""
+implies = "ub-risk-3"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[criteria.ub-risk-3]
+description = """
+A designated unsafe code reviewer has audited the unsafe code in this crate. It
+has been found to pose a significant risk of causing undefined behavior.
+
+UB-RISK-3 crates are suitable for select applications:
+- Safety documentation may not be adequately comprehensive or precise. Unsafe
+  APIs can be used soundly with a decent amount of caution.
+- Unsafe blocks may rely on under-documented or inferred invariants and
+  preconditions. The reasoning required to justify them may rely on specific
+  interpretations of undefined behavior that are under-specified. Those
+  interpretations must not actively cause UB, and should be unlikely to begin
+  causing UB in the future.
+- Undefined behavior may be possible under uncommon circumstances.
+
+UB-RISK-3 crates may not uphold the typical standards required for unsafe code,
+but are still used because they have been widely adopted and will inevitably be
+leveraged by indirect dependencies. These crates may exhibit undefined behavior
+under \"uncommon circumstances\", which is ultimately up to reviewer discretion.
+A decent amount of experience with unsafe code will be required to avoid
+undefined behavior.
+"""
+implies = "ub-risk-4"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[criteria.ub-risk-4]
+description = """
+A designated unsafe code reviewer has audited the unsafe code in this crate. It
+has been found to pose a high risk of causing undefined behavior.
+
+UB-RISK-4 crates are unsuitable except in specific situations:
+- Safety documentation may be nonexistent. Unsafe APIs may be difficult to use
+  safely even with experience writing unsafe code and specific domain expertise.
+- Unsafe blocks may rely on undocumented invarianats or platform-specific
+  behavior. It may be difficult or impossible to reason about all possible
+  situations that may cause undefined behavior. Even a best-effort review is
+  expected to miss at least some possible unsoundness.
+- Undefined behavior may be possible under common circumstances.
+
+UB-RISK-4 crates may have APIs that are difficult to use without causing
+undefined behavior. They may require a large amount of domain expertise to use
+correctly, have large unsafe APIs with insufficient documentation, or perform
+many operations from safe code that could cause undefined behavior.
+"""
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.addr2line]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.19.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.aho-corasick]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.7.18"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.aho-corasick]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.20"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.ansi_term]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.12.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.anyhow]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.68"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.arbitrary]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.arbitrary]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.2.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.arbitrary]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.2.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.argh]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.10"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.argh_derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.10"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.argh_shared]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.10"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.ascii]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.ash]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["ub-risk-4", "safe-to-deploy"]
+version = "0.37.0+1.3.209"
+notes = "Reviewed on https://fxrev.dev/694269"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.assert_matches]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.5.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.async-stream]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.async-stream]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.async-stream]]
+who = "Tyler Mandry <tmandry@google.com>"
+criteria = ["ub-risk-2", "safe-to-deploy"]
+version = "0.3.4"
+notes = "Reviewed on https://fxrev.dev/761470"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.async-stream-impl]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.async-stream-impl]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.async-stream-impl]]
+who = "Tyler Mandry <tmandry@google.com>"
+criteria = ["ub-risk-2", "safe-to-deploy"]
+version = "0.3.4"
+notes = "Reviewed on https://fxrev.dev/761470"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.async-trait]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.48"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.async-trait]]
+who = "Android Legacy"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.61"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.async-trait]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.64"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.async-trait]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.66"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.atomic-polyfill]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.11"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.atty]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.autocfg]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.8"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.axum]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.5.16"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.axum]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.17"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.axum-core]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.8"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.axum-core]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.9"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.backtrace]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.67"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.base64]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.13.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.base64]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.13.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bindgen]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.57.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bindgen]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.60.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bindgen]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.63.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bindgen]]
+who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.63.0 -> 0.64.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bit_field]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "0.10.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bitflags]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.2.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bitreader]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bitvec]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.19.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.built]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bytemuck]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.13.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bytemuck]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.13.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bytes]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bytes]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bytes]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.capnp]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.14.11"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cargo-lock]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "8.0.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cc]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.79"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cexpr]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cexpr]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.5.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cfg-if]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.chrono]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.23"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.chrono]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.4.23 -> 0.4.24"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.chunked_transfer]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "1.4.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clang-sys]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clang-sys]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.6.0"
+notes = "No attempt was made to audit the DSO(s) this links to; only the Rust code was looked at."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.33.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.34.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.22"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.23"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "4.0.32"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap_derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.18"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap_derive]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.2.18 -> 4.0.18"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap_derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "4.0.18 -> 4.0.21"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap_lex]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cmake]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.45"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cmake]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.48"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cmake]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "0.1.49"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.com_logger]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.configparser]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "3.0.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.configparser]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "3.0.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.console]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.15.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cortex-m]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cortex-m-rtic]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cortex-m-rtic-macros]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.critical-section]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.crossbeam-channel]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cstr_core]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cty]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cxx]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.42"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cxxbridge-flags]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.42"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cxxbridge-macro]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.42"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.dbus]]
+who = "ChromeOS Legacy"
+criteria = "safe-to-run"
+version = "0.9.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.dbus-crossroads]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.dbus-tokio]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.7.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.dbus-tokio]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.7.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.dbus-tokio]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.document-features]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.endian-type]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.env_logger]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.8.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.errno]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.8"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.error-chain]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.11.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.euclid]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.22.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.fastrand]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "1.9.0"
+notes = """
+`does-not-implement-crypto` is certified because this crate explicitly says
+that the RNG here is not cryptographically secure.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.fd-lock]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "2.0.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.fixedbitset]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.form_urlencoded]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.funty]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.futures]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.futures-channel]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.futures-core]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.futures-executor]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.futures-io]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.futures-macro]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.futures-sink]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.futures-task]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.futures-util]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.getrandom]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.getrandom]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.gimli]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.27.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.glob]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.grpcio]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.8.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.grpcio]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.9.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.grpcio-compiler]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.6.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.grpcio-sys]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.8.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.grpcio-sys]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.9.1+1.38.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.h2]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.heck]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.hex]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.http]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.8"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.http-body]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.4.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.http-body]]
+who = "Erick Tryzelaar <etryzelaar@google.com>"
+criteria = ["ub-risk-2", "safe-to-run"]
+version = "0.4.4"
+notes = "Reviewed on https://fxrev.dev/611683"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.http-range-header]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.httpdate]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.0.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.hyper]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.14.20"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.hyper-timeout]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.4.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.iana-time-zone]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.53"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.idna]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.include_dir]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.inotify]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.9.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.inotify-sys]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.instant]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.9"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.io-lifetimes]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.is-terminal]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.itertools]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.9.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.itertools]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.10.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.itoa]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.itoa]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.lazy_static]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.lazycell]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.3.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libc]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.86"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libdbus-sys]]
+who = "ChromeOS Legacy"
+criteria = "safe-to-run"
+version = "0.2.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libfuzzer-sys]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libloading]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.7.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libslirp-sys]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "4.2.1"
+notes = "No audit of the slirp DSO this is intended to link to was done."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libtest-mimic]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.0"
+notes = "Used in tests only"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libz-sys]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libz-sys]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libz-sys]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.1.8"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.link-cplusplus]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.0.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.litrs]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.lock_api]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.lock_api]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.9"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.log]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.log]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.17"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.matchit]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.5.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.memchr]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.memchr]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.4.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.merge]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.merge_derive]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.mime]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.16"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.miniz_oxide]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.mio]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.7.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.mio]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.7.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.multi_log]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.named-lock]]
+who = "crosvm"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.nibble_vec]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.nix]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.19.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.nix]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.20.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.nix]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.24.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.nix]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["ub-risk-3", "safe-to-run"]
+version = "0.26.2"
+notes = """
+Reviewed on https://fxrev.dev/780283
+Issues:
+- https://github.com/nix-rust/nix/issues/1975
+- https://github.com/nix-rust/nix/issues/1977
+- https://github.com/nix-rust/nix/pull/1978
+- https://github.com/nix-rust/nix/pull/1979
+- https://github.com/nix-rust/nix/issues/1980
+- https://github.com/nix-rust/nix/issues/1981
+- https://github.com/nix-rust/nix/pull/1983
+- https://github.com/nix-rust/nix/issues/1990
+- https://github.com/nix-rust/nix/pull/1992
+- https://github.com/nix-rust/nix/pull/1993
+"""
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.nom]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "5.1.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.nom]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "6.1.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.num-derive]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.num-traits]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.num_cpus]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.13.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.object]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.30.3"
+notes = "I'm not counting the code related to the GNU Hash section as crypto for the sake of this review."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.once_cell]]
+who = "crosvm"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.17.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.os_str_bytes]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "6.3.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.os_str_bytes]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "6.4.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.owning_ref]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.panic-halt]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "0.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.parking_lot]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.11.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.parking_lot_core]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.8.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.paste]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.peeking_take_while]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "does-not-implement-crypto"
+version = "0.1.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.peeking_take_while]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.percent-encoding]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.petgraph]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.pin-project]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.0.12"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.pin-project-internal]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.0.12"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.pin-project-lite]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.pin-project-lite]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.9"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.pin-utils]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.ppv-lite86]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.10"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.prettyplease]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.20"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.printf-compat]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.proc-macro-hack]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.5.19"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.proc-macro-nested]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.proc-macro2]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.26"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.proc-macro2]]
+who = "Chrome OS Toolchain"
+criteria = "safe-to-run"
+version = "1.0.29"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.proc-macro2]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.49"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.prost]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.11.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.prost-build]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.prost-derive]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.11.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.prost-types]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.protobuf]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.22.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.protobuf]]
+who = "ChromeOS Audio"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.protobuf-codegen]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.22.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.protobuf-codegen]]
+who = "ChromeOS Audio"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.protobuf-parse]]
+who = "ChromeOS Audio"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.protobuf-support]]
+who = "ChromeOS Audio"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.ptr_meta]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.ptr_meta_derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.quote]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.9"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.quote]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.23"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.radium]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.5.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.radix_trie]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rand]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.8.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rand_chacha]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rand_chacha]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rand_core]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.6.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rand_core]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.6.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rand_pcg]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.regex]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.5.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.regex-syntax]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.6.25"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rtic-syntax]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rustc-demangle]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.18"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rustc-demangle-capi]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rustc-hash]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rustix]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.36.7"
+notes = """
+Precompiled files in `src/backend/linux_raw/arch/outline` were not audited. I'm
+also at all familiar with PowerPC asm, but the instructions seemed inoffensive.
+
+This crate provides random functions, but they simply proxy libc's, so no
+crypto is truly implemented here.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rustyline]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "10.0.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rustyline-derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.ryu]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.same-file]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.scopeguard]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.scudo]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.2"
+notes = "Scudo itself was not audited as a part of this review"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.semver]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.16"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.serde]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.126"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.serde]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.152"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.serde_derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.152"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.serde_json]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.64"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.serde_urlencoded]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.7.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.shlex]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.shlex]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.shlex]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.slab]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.slab]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.smallvec]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.6.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.static_assertions]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.syn]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.69"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.syn]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.0.80"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.syn]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.107"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.sync_wrapper]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tempfile]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.termcolor]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.termcolor]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.textwrap]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.11.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.textwrap]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.15.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.textwrap]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.15.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.textwrap]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.16.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.thiserror]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.23"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.thiserror-impl]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.23"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.threadpool]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.8.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tokio]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tokio-io-timeout]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tokio-macros]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tokio-stream]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tokio-stream]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["ub-risk-1", "safe-to-deploy"]
+version = "0.1.11"
+notes = "Reviewed on https://fxrev.dev/804724"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.tokio-util]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.7.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.toml]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.10"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tonic]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.8.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tonic-build]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tower]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.4.13"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tower-http]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tower-layer]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tower-service]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tracing]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.35"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tracing-attributes]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.22"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tracing-core]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.29"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tracing-futures]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.try-lock]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.ucs2]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.uefi]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.19.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.uefi-macros]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.10.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.uefi-services]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.16.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.uguid]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.2.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.unicode-ident]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.unicode-normalization]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.22"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.unicode-segmentation]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.7.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.unicode-segmentation]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.8.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.unicode-width]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.8"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.unicode-width]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.9"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.unicode-xid]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.url]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.3.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.userfaultfd]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.userfaultfd-sys]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.vcell]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.version_check]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "0.9.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.walkdir]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.3.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.walkdir]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.3.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.want]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.which]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "3.1.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.which]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "4.0.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.wyz]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.zerocopy]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.0-alpha.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.zerocopy]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.0-alpha.1 -> 0.6.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.zerocopy-derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
