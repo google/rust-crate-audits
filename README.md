@@ -11,7 +11,7 @@ lines to your config.toml:
 
 ```toml
 [imports.google]
-url = "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml"
+url = "https://raw.githubusercontent.com/google/rust-crate-audits/main/audits.toml"
 ```
 
 ## Aggregated projects
