@@ -1919,6 +1919,18 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.20"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.prettyplease]]
+who = "Harshad Phule <phuleh@google.com>"
+criteria = "does-not-implement-crypto"
+version = "0.1.25"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.prettyplease]]
+who = "Harshad Phule <phuleh@google.com>"
+criteria = "safe-to-run"
+version = "0.1.25"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.printf-compat]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2315,6 +2327,18 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.64"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.serde_json]]
+who = "Harshad Phule <phuleh@google.com>"
+criteria = "does-not-implement-crypto"
+version = "1.0.96"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.serde_json]]
+who = "Harshad Phule <phuleh@google.com>"
+criteria = "safe-to-run"
+version = "1.0.96"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.serde_urlencoded]]
