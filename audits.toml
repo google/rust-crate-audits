@@ -1082,6 +1082,24 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.22.9"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.ext-trait]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.ext-trait-proc_macros]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.extension-traits]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.fastrand]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
@@ -2886,6 +2904,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 version = "0.1.10"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.uninit]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.url]]
