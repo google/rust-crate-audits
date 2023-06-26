@@ -962,6 +962,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.94 -> 1.0.97"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.dashmap]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "5.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.dasp_frame]]
 who = "Li-Yu Yu <aaronyu@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2633,6 +2639,18 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.7.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.serial_test]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.0.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.serial_test_derive]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.0.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.shlex]]
