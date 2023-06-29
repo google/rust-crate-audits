@@ -2153,6 +2153,13 @@ criteria = "safe-to-run"
 version = "0.2.9"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.pin-project-lite]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["ub-risk-1", "safe-to-deploy"]
+version = "0.2.9"
+notes = "Reviewed on https://fxrev.dev/824504"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.pin-utils]]
 who = "Android Legacy"
 criteria = "safe-to-run"
