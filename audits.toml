@@ -2762,6 +2762,13 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.take_mut]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+version = "0.2.2"
+notes = "Reviewed on https://fxrev.dev/883543"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.tempfile]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
