@@ -788,6 +788,12 @@ criteria = "safe-to-run"
 version = "0.0.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.cros-codecs]]
+who = "Alexandre Courbot <acourbot@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.0.2 -> 0.0.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.cros-libva]]
 who = "Alexandre Courbot <acourbot@chromium.org>"
 criteria = "does-not-implement-crypto"
@@ -798,6 +804,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Alexandre Courbot <acourbot@chromium.org>"
 criteria = "safe-to-run"
 version = "0.0.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cros-libva]]
+who = "Alexandre Courbot <acourbot@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.0.3 -> 0.0.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.crossbeam-channel]]
