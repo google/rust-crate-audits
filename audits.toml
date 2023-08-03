@@ -3221,6 +3221,16 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.vsock]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.0"
+notes = """
+The crate provides a simple wrapper to mimick the TcpListener/TcpStream APIs
+with vsock sockets.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.walkdir]]
 who = "Android Legacy"
 criteria = "safe-to-run"
