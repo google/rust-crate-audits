@@ -1,0 +1,233 @@
+[[audits.bitflags]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "2.3.3"
+notes = "Reviewed in CL 545304270"
+
+[[audits.ctor]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.2.4"
+notes = """Reviewed in CL 552861146
+Issues found:
+ - https://github.com/mmastrac/rust-ctor/pull/294
+ - https://github.com/mmastrac/rust-ctor/pull/293
+"""
+
+[[audits.error-chain]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.12.4"
+notes = "Reviewed in CL 545732008"
+
+[[audits.fleetspeak]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.4.0"
+notes = "Reviewed in CL 551181045"
+
+[[audits.jj-cli]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.8.0"
+notes = "Reviewed in CL 554583176"
+
+[[audits.kvm-ioctls]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3"]
+version = "0.14.0"
+notes = "Reviewed in CL 549307303"
+
+[[audits.lexical]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
+version = "6.1.1"
+notes = """Reviewed in CL 545304248
+Many issues found across the `lexical` family of crates:
+ - https://github.com/Alexhuszagh/rust-lexical/pull/103
+ - https://github.com/Alexhuszagh/rust-lexical/issues/104
+ - https://github.com/Alexhuszagh/rust-lexical/issues/101
+ - https://github.com/Alexhuszagh/rust-lexical/issues/95
+ - Beyond the above issues, review was not completed on the unchecked indexing
+"""
+
+[[audits.lexical_parse_integer]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
+version = "0.8.6"
+notes = """Reviewed in CL 545304272
+See notes on lexical crate.
+"""
+
+[[audits.lexical_parse_integer]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
+version = "0.8.6"
+notes = """Reviewed in CL 545304281
+See notes on lexical crate.
+"""
+
+[[audits.lexical_util]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
+version = "0.8.5"
+notes = """Reviewed in CL 545304267
+See notes on lexical crate.
+"""
+
+[[audits.lexical_write_float]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
+version = "0.8.5"
+notes = """Reviewed in CL 545304258
+See notes on lexical crate.
+"""
+
+[[audits.lexical-core]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.8.5"
+notes = """Reviewed in CL 545304290
+See notes on lexical crate.
+"""
+
+[[audits.lexical-write-integer]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
+version = "0.8.5"
+notes = """Reviewed in CL 545304293
+See notes on lexical crate.
+"""
+
+[[audits.linux-loader]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.9.0"
+notes = "Reviewed in CL 548095317"
+
+[[audits.memoffset]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.9.0"
+notes = "Reviewed in CL 555491937"
+
+[[audits.pulldown-cmark]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2"]
+version = "0.9.3"
+notes = "Reviewed in CL 555491415"
+
+[[audits.seccompiler]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "0.3.0"
+notes = "Reviewed in CL 547754248"
+
+[[audits.smallvec]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "1.11.0"
+notes = "Reviewed in CL 552492992"
+
+[[audits.swc_atoms]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.5.7"
+notes = "Reviewed in CL 547104864"
+
+[[audits.swc_common]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.31.17"
+notes = """Reviewed in CL 547720673
+Issues found:
+ - https://github.com/swc-project/swc/issues/7709
+"""
+
+[[audits.swc_ecma_ast]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2"]
+version = "0.107.0"
+notes = "Reviewed in CL 545304253"
+
+[[audits.swc_ecma_parser]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-4"]
+version = "0.137.1"
+notes = """Reviewed in CL 545304254
+Issues found:
+ - https://github.com/swc-project/swc/issues/7797
+ - https://github.com/swc-project/swc/issues/7752
+"""
+
+[[audits.swc_visit]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.5.7"
+notes = "Reviewed in CL 546872016"
+
+[[audits.transpose]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.2.2"
+notes = "Reviewed in CL 551680548"
+
+[[audits.triomphe]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.1.8"
+notes = """Reviewed in CL 545304280
+Issues found:
+- https://github.com/Manishearth/triomphe/pull/62
+"""
+
+[[audits.triomphe]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.1.9"
+notes = "Reviewed in CL 545304280"
+
+[[audits.typed-arena]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "2.0.2"
+notes = "Reviewed in CL 545304268"
+
+[[audits.uds]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.2.6"
+notes = """Reviewed in CL 552861165
+Issues found:
+- https://github.com/tormol/uds/issues/11
+- https://github.com/tormol/uds/pull/9, https://github.com/tormol/uds/pull/10
+- https://github.com/tormol/uds/issues/12
+"""
+
+[[audits.vfio-bindings]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.3.1"
+notes = "Reviewed in CL 545971960"
+
+[[audits.vfio-ioctls]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.1.0"
+notes = "Reviewed in CL 545971961"
+
+
+[[audits.vhost]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2"]
+version = "0.7.0"
+notes = "Reviewed in CL 546255068"
+
+[[audits.virtiofsd]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "1.6.1"
+notes = """Reviewed in CL 548811972
+Issues found:
+ - https://gitlab.com/virtio-fs/virtiofsd/-/issues/113 (only an issue for library users)
+"""
