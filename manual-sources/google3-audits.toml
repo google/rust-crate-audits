@@ -14,6 +14,15 @@ Issues found:
  - https://github.com/mmastrac/rust-ctor/pull/293
 """
 
+[[audits.curve25519-dalek-derive]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.1.0"
+notes = """Reviewed in CL 557129495
+Issues found:
+ - https://github.com/dalek-cryptography/curve25519-dalek/issues/563
+"""
+
 [[audits.error-chain]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
@@ -25,6 +34,12 @@ who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.4.0"
 notes = "Reviewed in CL 551181045"
+
+[[audits.insta]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-1"]
+version = "1.29.0"
+notes = "Reviewed in CL 554440331"
 
 [[audits.jj-cli]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -117,6 +132,16 @@ criteria = ["ub-risk-2"]
 version = "0.9.3"
 notes = "Reviewed in CL 555491415"
 
+[[audits.ruzstd]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2"]
+version = "0.4.0"
+notes = """Reviewed in CL 557876502
+Issues found:
+ - https://github.com/KillingSpark/zstd-rs/issues/44
+ - extend_from_within_unchecked_branchless is hard to review but it's currently dead code
+"""
+
 [[audits.seccompiler]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
@@ -165,6 +190,12 @@ who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.5.7"
 notes = "Reviewed in CL 546872016"
+
+[[audits.tracing-core]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.1.30"
+notes = "Reviewed in CL 555490997"
 
 [[audits.transpose]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -216,7 +247,6 @@ criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.1.0"
 notes = "Reviewed in CL 545971961"
 
-
 [[audits.vhost]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-2"]
@@ -230,4 +260,13 @@ version = "1.6.1"
 notes = """Reviewed in CL 548811972
 Issues found:
  - https://gitlab.com/virtio-fs/virtiofsd/-/issues/113 (only an issue for library users)
+"""
+
+[[audits.vm-memory]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3"]
+version = "0.12.1"
+notes = """Reviewed in CL 556862067
+Issues found:
+ - https://github.com/rust-vmm/vm-memory/issues/250
 """
