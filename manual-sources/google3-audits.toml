@@ -1,8 +1,72 @@
+[[audits.android_logger]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.13.3"
+notes = "Reviewed in CL 559548165"
+
+[[audits.anstream]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3"]
+version = "1.64.0"
+notes = "Reviewed in CL 559376670"
+
+[[audits.anstyle-parse]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3"]
+version = "0.2.1"
+notes = "Reviewed in CL 559131783"
+
+[[audits.anymap]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "1.0.0-beta2"
+notes = "Reviewed in CL 558118223"
+
 [[audits.bitflags]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "2.3.3"
 notes = "Reviewed in CL 545304270"
+
+[[audits.bytemuck]]
+who = [
+    "Manish Goregaokar <manishearth@gmail.com>",
+    "Łukasz Anforowicz <lukasza@google.com>"
+]
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "1.13.1"
+notes = "Reviewed in CL 561111794"
+
+[[audits.byteorder]]
+who = "Alyssa Haroldsen <kupiakos@google.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "1.4.3"
+notes = """Reviewed in CL 559206679
+Issues found:
+ - https://github.com/BurntSushi/byteorder/issues/194
+"""
+
+[[audits.command_group]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
+version = "2.0.1"
+notes = """Reviewed in CL 561009596
+Issues found:
+ - https://github.com/watchexec/command-group/issues/20
+ - https://github.com/watchexec/command-group/issues/19
+"""
+
+[[audits.countme]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3"]
+version = "3.0.1"
+notes = "Reviewed in CL 558181122"
+
+[[audits.crc32fast]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2"]
+version = "1.3.2"
+notes = "Reviewed in CL 558895300"
 
 [[audits.ctor]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -13,6 +77,12 @@ Issues found:
  - https://github.com/mmastrac/rust-ctor/pull/294
  - https://github.com/mmastrac/rust-ctor/pull/293
 """
+
+[[audits.curve25519-dalek]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1"]
+version = "4.0.0"
+notes = "Reviewed in CL 557134163"
 
 [[audits.curve25519-dalek-derive]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -29,17 +99,53 @@ criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.12.4"
 notes = "Reviewed in CL 545732008"
 
+[[audits.filetime]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.2.19"
+notes = "Reviewed in CL 559795004"
+
+[[audits.fixedbitset]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3"]
+version = "0.2.0"
+notes = "Reviewed in CL 559071858"
+
 [[audits.fleetspeak]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.4.0"
 notes = "Reviewed in CL 551181045"
 
+[[audits.home]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2"]
+version = "0.5.4"
+notes = "Reviewed in CL 559796554"
+
+[[audits.image]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.24.6"
+notes = "Reviewed in CL 559198279"
+
+[[audits.inotify]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2"]
+version = "0.9.6"
+notes = "Reviewed in CL 562731461"
+
 [[audits.insta]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-1"]
 version = "1.29.0"
 notes = "Reviewed in CL 554440331"
+
+[[audits.jj_cli]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-1"]
+version = "0.8.0"
+notes = "Reviewed in CL 558944141"
 
 [[audits.jj-cli]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -114,6 +220,22 @@ notes = """Reviewed in CL 545304293
 See notes on lexical crate.
 """
 
+[[audits.libfuzz-sys]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-3"]
+delta = "0.4.4 -> 0.4.5"
+notes = """Reviewed in CL 562889777
+Issues found:
+- https://github.com/rust-fuzz/libfuzzer/issues/112
+- https://github.com/rust-fuzz/libfuzzer/issues/113
+"""
+
+[[audits.line-index]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.1.0"
+notes = "Reviewed in CL 562882288"
+
 [[audits.linux-loader]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
@@ -125,6 +247,52 @@ who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.9.0"
 notes = "Reviewed in CL 555491937"
+
+[[audits.nanorand]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "0.7.0"
+notes = "Reviewed in CL 562503105"
+
+[[audits.nix]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.26.2"
+notes = "Reviewed in CL 552861153"
+
+[[audits.notify]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "6.1.1"
+notes = "Reviewed in CL 562731464"
+
+[[audits.num_traits]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2"]
+version = "0.2.15"
+notes = "Reviewed in CL 558869499"
+
+[[audits.num_traits]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+delta = "0.2.15 -> 0.2.16"
+notes = "Reviewed in CL 562140156"
+
+[[audits.object]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-1"]
+version = "0.32.0"
+notes = "Reviewed in CL 558738698"
+
+[[audits.petgraph]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.5.1"
+notes = """Reviewed in CL 558142733
+Issues found:
+- https://github.com/petgraph/petgraph/pull/404
+- https://github.com/petgraph/petgraph/issues/582
+"""
 
 [[audits.pulldown-cmark]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
@@ -147,6 +315,12 @@ who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "0.3.0"
 notes = "Reviewed in CL 547754248"
+
+[[audits.serde_json]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-0"]
+delta = "1.0.96 -> 1.0.105"
+notes = "Reviewed in CL 562140152"
 
 [[audits.smallvec]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
@@ -190,6 +364,15 @@ who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.5.7"
 notes = "Reviewed in CL 546872016"
+
+[[audits.tfhe]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.3.1"
+notes = """Reviewed in CL 557823618
+Issues found:
+ - https://github.com/zama-ai/tfhe-rs/issues/526
+"""
 
 [[audits.tracing-core]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -235,6 +418,12 @@ Issues found:
 - https://github.com/tormol/uds/issues/12
 """
 
+[[audits.utf8parse]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.2.1"
+notes = "Reviewed in CL 559131770"
+
 [[audits.vfio-bindings]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
@@ -253,6 +442,33 @@ criteria = ["ub-risk-2"]
 version = "0.7.0"
 notes = "Reviewed in CL 546255068"
 
+[[audits.vhost]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-4"]
+version = "0.8.0"
+notes = """Reviewed in CL 559359624
+Issues found:
+ - https://github.com/rust-vmm/vhost/pull/184
+"""
+
+[[audits.vhost]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-3"]
+version = "0.8.1"
+notes = "Reviewed in CL 559359624"
+
+[[audits.vhost-user-backend]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2"]
+version = "0.10.1"
+notes = "Reviewed in CL 559122379"
+
+[[audits.virtio]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-1"]
+version = "0.2.1"
+notes = "Reviewed in CL 557159752"
+
 [[audits.virtiofsd]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
@@ -269,4 +485,21 @@ version = "0.12.1"
 notes = """Reviewed in CL 556862067
 Issues found:
  - https://github.com/rust-vmm/vm-memory/issues/250
+"""
+
+[[audits.vm-memory]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2"]
+version = "0.12.1"
+notes = """Reviewed in CL 556862067
+Issues from previous review fixed
+"""
+
+[[audits.xxhash-rust]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.8.6"
+notes = """Reviewed in CL 552861145
+Many internal functions that are `unsafe` to call are not marked `unsafe`.
+See https://github.com/DoumanAsh/xxhash-rust/issues/29
 """
