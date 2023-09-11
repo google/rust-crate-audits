@@ -701,6 +701,13 @@ criteria = "safe-to-run"
 version = "1.0.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.chalk_ir]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = "ub-risk-2"
+version = "0.92.0"
+notes = "Reviewed in CL 558137822"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.chrono]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
