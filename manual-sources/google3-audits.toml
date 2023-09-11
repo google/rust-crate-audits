@@ -46,6 +46,12 @@ Issues found:
  - https://github.com/BurntSushi/byteorder/issues/194
 """
 
+[[audits.chalk_ir]]
+who = "Manish Goregaokar <manishearth@gmail.com>"
+criteria = ["ub-risk-2"]
+version = "0.92.0"
+notes = "Reviewed in CL 558137822"
+
 [[audits.command_group]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-4", "does-not-implement-crypto"]
