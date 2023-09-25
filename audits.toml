@@ -3980,6 +3980,13 @@ version = "0.1.11"
 notes = "Reviewed on https://fxrev.dev/804724"
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
+[[audits.tokio-stream]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-0"]
+delta = "0.1.11 -> 0.1.14"
+notes = "Reviewed on https://fxrev.dev/907732."
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.tokio-util]]
 who = "ChromeOS"
 criteria = "safe-to-run"
