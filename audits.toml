@@ -4094,6 +4094,13 @@ criteria = "safe-to-run"
 version = "0.2.5"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.tracing-subscriber]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.3.1 -> 0.3.15"
+notes = "Reviewed on https://fxrev.dev/907708"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.transpose]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
