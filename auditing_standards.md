@@ -161,7 +161,7 @@ Crates with this criteria contain unsafe Rust code which is very high quality an
     *   Safety documentation is comprehensive and precise. Unsafe APIs can be used soundly.
 *   The unsafe code in this crate must be sound even when held to the highest possible standard.
 *   It may not be good enough for a crate to have sound unsafe code if that unsafe code is too difficult to confidently review.
-*   Unsafe blocks should have safety comments. We prefer standard safety justifications of the form `// SAFETY: &lt;justification>` but any comments which fulfill the same purpose are acceptable.
+*   Unsafe blocks should have safety comments. We prefer standard safety justifications of the form `// SAFETY: <justification>` but any comments which fulfill the same purpose are acceptable.
 *   Every unsafe trait and function must have safety documentation clearly describing the preconditions and postconditions (if any) which are required to maintain memory safety.
 
 ### `ub-risk-1-thorough`
