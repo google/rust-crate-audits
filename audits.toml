@@ -162,6 +162,31 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.20.0 -> 0.21.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.aes]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.7.5 -> 0.8.2"
+notes = """
+Note for reviewers of future updates to this crate: There exist
+internal APIs such as [1] which are safe but have undocumented safety
+invariants.
+
+[1] https://fuchsia-review.git.corp.google.com/c/fuchsia/+/711365/comment/7a8cdc16_9e9f45ca/
+"""
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.aes-gcm]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.9.4 -> 0.8.2"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.aes-gcm-siv]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.10.3 -> 0.11.1"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.aho-corasick]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -726,6 +751,12 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.chacha20]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.8.1 -> 0.9.0"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
 [[audits.chalk_ir]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
