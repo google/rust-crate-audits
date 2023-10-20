@@ -4261,6 +4261,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.23.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.uefi]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.25.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.uefi-macros]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4285,6 +4291,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.uefi-raw]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.uefi-services]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4303,6 +4315,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.20.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.uefi-services]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.22.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.ufmt-write]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4319,6 +4337,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Nicholas Bishop <nicholasbishop@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "2.0.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.uguid]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.1.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.uhid-virt]]
