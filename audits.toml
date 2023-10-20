@@ -1396,6 +1396,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.11.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.ecdsa]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.13.4 -> 0.14.8"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.ed25519-compact]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = "safe-to-run"
@@ -1413,6 +1419,12 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.8.1 -> 1.9.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.elliptic-curve]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.11.12 -> 0.12.3"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
 [[audits.endian-type]]
 who = "ChromeOS"
@@ -1962,6 +1974,18 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.3"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.hkdf]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.11.0 -> 0.12.3"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.hmac]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.11.0 -> 0.12.1"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
 [[audits.home]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
@@ -3012,6 +3036,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.p256]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.10.1 -> 0.11.1"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.p9]]
 who = "Dennis Kempin <denniskempin@google.com>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto"]
@@ -3054,11 +3084,23 @@ criteria = "safe-to-run"
 version = "0.8.3"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.password-hash]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.3.2 -> 0.4.2"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.paste]]
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.pbkdf2]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.9.0 -> 0.11.0"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
 [[audits.peeking_take_while]]
 who = "George Burgess IV <gbiv@google.com>"
