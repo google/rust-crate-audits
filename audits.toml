@@ -187,6 +187,16 @@ criteria = ["safe-to-deploy", "ub-risk-2"]
 delta = "0.10.3 -> 0.11.1"
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
+[[audits.ahash]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.3"
+notes = """
+Note on does-not-implement-crypto: the aHash documentation explicitly
+states it is not a cryptographically secure hash.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.aho-corasick]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -1949,6 +1959,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.3.20 -> 0.3.21"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.hashbrown]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.13.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.heck]]
