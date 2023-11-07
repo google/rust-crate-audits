@@ -2669,6 +2669,12 @@ delta = "0.5.6 -> 0.7.0"
 notes = "Reviewed on https://fxrev.dev/907709."
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
+[[audits.lzma-sys]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.20"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.match_cfg]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
@@ -4820,6 +4826,12 @@ Many internal functions that are `unsafe` to call are not marked `unsafe`.
 See https://github.com/DoumanAsh/xxhash-rust/issues/29
 """
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.xz2]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.zerocopy]]
 who = "ChromeOS"
