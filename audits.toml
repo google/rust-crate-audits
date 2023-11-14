@@ -4200,6 +4200,13 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.29.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.tokio]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "1.19.2 -> 1.20.5"
+notes = "Reviewed on http://fxrev.dev/904806"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.tokio-io-timeout]]
 who = "ChromeOS"
 criteria = "safe-to-run"
