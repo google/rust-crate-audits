@@ -2408,6 +2408,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.26"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.kernlog]]
+who = "Matthias Kaehlcke <mka@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.kvm-ioctls]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = "ub-risk-3"
