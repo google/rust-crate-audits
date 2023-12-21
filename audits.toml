@@ -4614,6 +4614,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "2.1.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.uguid]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "2.1.0 -> 2.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.uhid-virt]]
 who = "Zhengping Jiang <jiangzp@google.com>"
 criteria = "does-not-implement-crypto"
