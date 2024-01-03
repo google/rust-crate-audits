@@ -2123,9 +2123,12 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.gix-index]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-2", "does-not-implement-crypto"]
+criteria = ["ub-risk-2-thorough", "does-not-implement-crypto"]
 version = "0.26.0"
-notes = "Reviewed in CL 581562538"
+notes = """
+Reviewed in CL 581562538
+Relies on mmap'd file being untouched externally.
+"""
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.gix-pack]]
@@ -2143,7 +2146,7 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.gix-ref]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
-criteria = "ub-risk-2"
+criteria = "ub-risk-2-thorough"
 version = "0.38.0"
 notes = "Reviewed in CL 581562488"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
@@ -4425,7 +4428,7 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.shpool_pty]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-2", "does-not-implement-crypto"]
+criteria = ["ub-risk-2-thorough", "does-not-implement-crypto"]
 version = "0.3.0"
 notes = "Reviewed in CL 578198476"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
