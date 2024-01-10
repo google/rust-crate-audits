@@ -4186,6 +4186,16 @@ version = "0.3.8"
 notes = "Reviewed in CL 563876644"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.ring]]
+who = "Laura Peskin <pesk@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.16.12 -> 0.16.20"
+notes = """
+Reviewed on: https://fxrev.dev/923001 (0.16.13 -> 0.16.20)
+Reviewed on: https://fxrev.dev/716624 (0.16.12 -> 0.16.13)
+"""
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.riscv-rt-macros]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
