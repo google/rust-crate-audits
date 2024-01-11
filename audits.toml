@@ -3051,6 +3051,13 @@ delta = "0.5.6 -> 0.7.0"
 notes = "Reviewed on https://fxrev.dev/907709."
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
+[[audits.lz4_flex]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.1"
+notes = "Frequently makes use of unsafe for performance reasons. Most behind feature flags, but not all. Not entirely sure how memory safe those optimizations are."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.lzma-sys]]
 who = "Bastian Kersting <bkersting@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4972,6 +4979,13 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.twox-hash]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.6.3"
+notes = "Non-cyptographic hashing function"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.typed-arena]]
