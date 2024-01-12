@@ -248,6 +248,12 @@ notes = "Reviewed in CL 559376670"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.anstyle]]
+who = "Yu-An Wang <wyuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.anstyle]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "1.0.0"
@@ -2635,6 +2641,12 @@ version = "0.10.5"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.itertools]]
+who = "Yu-An Wang <wyuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.10.5 -> 0.11.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.itertools]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "0.11.0"
@@ -3231,10 +3243,22 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.11.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.mockall]]
+who = "Yu-An Wang <wyuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.11.4 -> 0.12.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.mockall_derive]]
 who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.11.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.mockall_derive]]
+who = "Yu-An Wang <wyuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.11.4 -> 0.12.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.mocktopus]]
@@ -3784,6 +3808,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "2.1.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.predicates]]
+who = "Yu-An Wang <wyuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "2.1.5 -> 3.0.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.predicates-core]]
