@@ -142,6 +142,7 @@ Crates with this criteria do not contain unsafe Rust code.
     *   When not a whole-word textual match: e.g. `struct Unsafe`, `UnsafeCell`, `let not_unsafe`, etc
     *   Comments: e.g. `// This is not unsafe`
     *   Literals: e.g. `"hello unsafe"`
+    *   Tests: i.e. code gated behind `#[cfg(test)]`. Note that unsafe blocks that are included in downstream binaries (e.g. `#[cfg(debug_assertions)]`) may not be ignored.
     *   In the future, unsafe code that is disabled via `cfg` may be ignored if the disabled features are recorded with the audit and `cargo vet` handles these exclusions programmatically. See [this issue](https://github.com/mozilla/cargo-vet/issues/380) for tracking.
 
 ### `ub-risk-1`
