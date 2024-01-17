@@ -5303,6 +5303,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.5.0 -> 0.7.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.userfaultfd]]
+who = "Shintaro Kawamura <kawasin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.0 -> 0.8.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.userfaultfd-sys]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
