@@ -3261,6 +3261,13 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.8.8"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.mio]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-2"]
+delta = "0.8.5 -> 0.8.9"
+notes = "Audited at https://fxrev.dev/946305"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.mockall]]
 who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
