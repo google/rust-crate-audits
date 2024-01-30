@@ -520,6 +520,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.11"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.atomic-polyfill]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.1.11 -> 1.0.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.atty]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -2344,6 +2350,16 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.13.2 -> 0.14.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.heapless]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.17"
+notes = """
+does-not-implement-crypto: Hashing containers (e.g., IndexMap) defer to other
+machinery like the hash32 crate for hashing.
+"""
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.heck]]
