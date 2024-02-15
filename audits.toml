@@ -1518,6 +1518,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.7.6"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.deqp-runner]]
+who = "Matt Turner <msturner@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.13.1 -> 0.18.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.deranged]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-1"
@@ -5685,3 +5691,22 @@ criteria = "ub-risk-2"
 version = "0.1.2"
 notes = "Reviewed in https://github.com/unicode-org/icu4x/pull/2722/"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.zstd]]
+who = "Matt Turner <msturner@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.13.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.zstd-safe]]
+who = "Matt Turner <msturner@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "7.0.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.zstd-sys]]
+who = "Matt Turner <msturner@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.0.9+zstd.1.5.5"
+notes = "Includes an implementation of xxhash (a non-cyptographic hashing function) as part of the zstd C sources"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
