@@ -2550,6 +2550,12 @@ version = "0.3.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.image]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.23.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.image]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-2"
 version = "0.24.6"
@@ -4934,6 +4940,12 @@ criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.2.15"
 notes = "Reviewed in CL 580962188"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.timeout-readwrite]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.tinyvec_macros]]
 who = "George Burgess IV <gbiv@google.com>"
