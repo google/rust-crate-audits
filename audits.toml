@@ -914,6 +914,18 @@ criteria = "safe-to-run"
 version = "1.0.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.cfg-if]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+version = "1.0.0"
+notes = '''
+I grepped for \"unsafe\", \"crypt\", \"cipher\", \"fs\", \"net\" - there were
+no hits.  This is a really small crate (only `lib.rs` which is less than 200
+lines + one end-to-end test) so I also skimmed through the macro's definition
+and everything looks okay to me.
+'''
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.chacha20]]
 who = "Joshua Liebow-Feeser <joshlf@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
