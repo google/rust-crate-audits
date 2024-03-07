@@ -157,6 +157,13 @@ invariants.
 """
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
+[[audits.aes]]
+who = "David Koloski <dkoloski@google.com>"
+criteria = ["safe-to-deploy", "ub-risk-1"]
+delta = "0.8.2 -> 0.8.4"
+notes = "Audited at https://fxrev.dev/987054"
+aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
 [[audits.aes-gcm]]
 who = "Joshua Liebow-Feeser <joshlf@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
