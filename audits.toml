@@ -811,6 +811,20 @@ version = "1.13.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.bytemuck]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = "safe-to-deploy"
+version = "1.14.3"
+notes = "Additional review notes may be found in https://crrev.com/c/5362675."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.bytemuck]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["does-not-implement-crypto", "ub-risk-2"]
+delta = "1.13.1 -> 1.14.3"
+notes = "Additional review notes may be found in https://crrev.com/c/5362675."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.bytemuck]]
 who = [
     "Manish Goregaokar <manishearth@gmail.com>",
     "Łukasz Anforowicz <lukasza@google.com>",
