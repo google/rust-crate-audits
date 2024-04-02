@@ -1001,6 +1001,12 @@ and everything looks okay to me.
 '''
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.cfg_aliases]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.chacha20]]
 who = "Joshua Liebow-Feeser <joshlf@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
@@ -3525,6 +3531,12 @@ delta = "0.2.146 -> 0.2.147"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.libc]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.2.147 -> 0.2.153"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libc]]
 who = "Lukasz Anforowicz <lukasza@chromium.org>"
 criteria = "ub-risk-4"
 version = "0.2.152"
@@ -4092,6 +4104,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.26.2 -> 0.27.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.nix]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.27.1 -> 0.28.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.nix]]
