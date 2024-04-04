@@ -2912,6 +2912,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.3.21 -> 0.3.24"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.h2]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.24 -> 0.3.26"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.hashbrown]]
 who = "Nicholas Bishop <nicholasbishop@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
