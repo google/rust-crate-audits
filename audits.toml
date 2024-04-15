@@ -4835,6 +4835,12 @@ criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
 delta = "1.0.78 -> 1.0.79"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.proc-macro2]]
+who = "Adrian Taylor <adetaylor@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.0.79 -> 1.0.80"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.procfs]]
 who = "Youssef Esmat <youssefesmat@chromium.org>"
 criteria = "does-not-implement-crypto"
