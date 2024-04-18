@@ -5049,6 +5049,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.13.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.quick-xml]]
+who = "Matthew DeVore <matvore@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.30.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.quote]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
