@@ -211,6 +211,12 @@ version = "0.7.20"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.aho-corasick]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.aho-corasick]]
 who = "danakj@chromium.org"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.1.2"
@@ -238,6 +244,12 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.12.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.anstream]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.13"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.anstream]]
@@ -278,11 +290,23 @@ notes = "Reviewed in CL 559404826"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.anstyle-parse]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.anstyle-parse]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = "ub-risk-3"
 version = "0.2.1"
 notes = "Reviewed in CL 559131783"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.anstyle-query]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.anstyle_query]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -1106,6 +1130,12 @@ version = "4.0.32"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.clap]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "4.5.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "4.0.32 -> 4.1.14"
@@ -1178,6 +1208,12 @@ This was a diff audit between clap 4.0.32 sources, and sources in clap_builder
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.clap_builder]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "4.5.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap_builder]]
 who = "danakj@chromium.org"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "4.4.8"
@@ -1227,6 +1263,12 @@ version = "3.2.18"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.clap_derive]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "4.5.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap_derive]]
 who = "Dennis Kempin <denniskempin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.2.18 -> 4.0.18"
@@ -1254,6 +1296,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.clap_lex]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.clap_lex]]
@@ -1331,6 +1379,12 @@ aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_p
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.colorchoice]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.colored]]
@@ -1748,6 +1802,18 @@ who = "Adrian Taylor <adetaylor@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
 delta = "1.0.120 -> 1.0.121"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.cxx-build]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.97"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cxx-build]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.121"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.cxxbridge]]
 who = "danakj@chromium.org"
@@ -2223,6 +2289,12 @@ version = "0.2.8"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.errno]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.8"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.errno]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.2.8 -> 0.3.1"
@@ -2315,6 +2387,12 @@ notes = """
 `does-not-implement-crypto` is certified because this crate explicitly says
 that the RNG here is not cryptographically secure.
 """
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.fastrand]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.0.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.fd-lock]]
@@ -2986,6 +3064,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.heck]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.heck]]
@@ -3788,6 +3872,12 @@ notes = "Reviewed in CL 548095317"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.linux-raw-sys]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.13"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.linux-raw-sys]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.4.10"
@@ -3924,6 +4014,12 @@ version = "2.6.3"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.memchr]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.7.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.memchr]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "2.6.3"
@@ -3932,6 +4028,12 @@ Reviewed in CL 563868651
 Second review would be appreciated.
 """
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.memmap2]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.memoffset]]
 who = "Dennis Kempin <denniskempin@google.com>"
@@ -4368,6 +4470,12 @@ version = "1.17.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.once_cell]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.19.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.once_cell]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.17.0 -> 1.18.0"
@@ -4485,6 +4593,12 @@ aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/th
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.paste]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.14"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.paste-impl]]
@@ -4792,6 +4906,12 @@ version = "1.0.49"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.proc-macro2]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.79"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.proc-macro2]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.49 -> 1.0.56"
@@ -5074,6 +5194,12 @@ version = "1.0.23"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.quote]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.36"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.quote]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.23 -> 1.0.26"
@@ -5254,6 +5380,12 @@ version = "1.5.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.regex]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.10.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.regex]]
 who = "danakj@chromium.org"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.10.2"
@@ -5276,6 +5408,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.10.3 -> 1.10.4"
 notes = "Docs changes only."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.regex-automata]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.regex-automata]]
 who = "danakj@chromium.org"
@@ -5305,6 +5443,12 @@ aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_p
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.6.25"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.regex-syntax]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.3"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.regex-syntax]]
@@ -5477,6 +5621,12 @@ crypto is truly implemented here.
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.rustix]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.38.32"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rustix]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.36.7 -> 0.38.3"
@@ -5575,6 +5725,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.scratch]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.7"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.scudo]]
@@ -5992,6 +6148,12 @@ version = "0.10.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.strsim]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.strsim]]
 who = "danakj@chromium.org"
 criteria = ["does-not-implement-crypto", "safe-to-deploy", "ub-risk-0"]
 version = "0.10.0"
@@ -6106,6 +6268,12 @@ version = "1.0.107"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.syn]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.0.58"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.syn]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.107 -> 2.0.14"
@@ -6203,6 +6371,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "3.4.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.tempfile]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.10.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.termcolor]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -6292,6 +6466,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.50"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.thiserror]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.58"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.thiserror-impl]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -6302,6 +6482,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.50"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.thiserror-impl]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.58"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.thread_local]]
@@ -6328,6 +6514,12 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tinytemplate]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.2.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.tinyvec]]
@@ -6962,6 +7154,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.utf8parse]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.utf8parse]]
