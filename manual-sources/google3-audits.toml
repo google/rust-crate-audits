@@ -80,6 +80,7 @@ https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-r
 """
 
 
+
 [[audits.android_logger]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
@@ -96,7 +97,11 @@ notes = "Reviewed in CL 559376670"
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-4"]
 version = "0.6.5"
-notes = "Reviewed in CL 596713982"
+notes = """Reviewed in CL 596713982
+Issues found:
+ - https://github.com/rust-cli/anstyle/issues/156
+ - Exhaustive review of utf8 soundness not performed
+"""
 
 [[audits.anstyle]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -124,7 +129,7 @@ notes = "Reviewed in CL 558118223"
 
 [[audits.base64ct]]
 who = "Taylor Cramer <cramertj@google.com>"
-criteria = ["ub-risk-2-thorough"]
+criteria = ["ub-risk-2"]
 version = "1.6.0"
 notes = "Reviewed in CL 592910669"
 
@@ -135,7 +140,9 @@ who = [
 ]
 criteria = ["ub-risk-2"]
 version = "0.5.3"
-notes = "Reviewed in CL 615008047"
+notes = """Reviewed in CL 615008047
+Uses unsafe operations from bit-vec that are not actually unsafe.
+"""
 
 [[audits.bitflags]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -159,7 +166,9 @@ notes = "Reviewed in CL 574186321"
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-3"]
 version = "0.6.7"
-notes = "Reviewed in CL 596699465"
+notes = """Reviewed in CL 596699465
+Is sound, but needs safety docs
+"""
 
 [[audits.bytemuck]]
 who = [
@@ -183,7 +192,11 @@ Issues found:
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-4"]
 version = "0.1.0"
-notes = "Reviewed in CL 609792409"
+notes = """Reviewed in CL 609792409
+Rating is ub-risk-4 because this crate makes assumptions about single-threadedness.
+However, on the platform it is intended for, this is fine and can be treated as having ub-risk-3.
+Issues found: https://github.com/chipsalliance/caliptra-cfi/pull/10
+"""
 
 [[audits.chalk_ir]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
@@ -211,7 +224,11 @@ Issues:
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-3"]
 delta = "0.5.1 -> 0.6.0"
-notes = "Reviewed in CL 596708333"
+notes = """Reviewed in CL 596708333
+Issues:
+ - Unsound transmutes from OsStr to [u8] (https://github.com/clap-rs/clap/issues/5280)
+ - (optional) Incorrect safety comment (https://github.com/clap-rs/clap/pull/5281)
+"""
 
 [[audits.clru]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -231,7 +248,7 @@ Issues found:
 
 [[audits.constant_time_eq]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-1-thorough"]
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "0.3.0"
 notes = "Reviewed in CL 587904821"
 
@@ -245,7 +262,9 @@ notes = "Reviewed in CL 558181122"
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-3"]
 version = "0.6.5"
-notes = "Reviewed in CL 608991681"
+notes = """Reviewed in CL 608991681
+Does not have much unsafe (some use of hardware intrinsics, one bit of pointer manipulation). However, the unsafe isn't documented enough. Can be upgraded to a rating 2 or 1 with some unsafe documentation.
+"""
 
 [[audits.crc32fast]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
@@ -312,11 +331,14 @@ notes = "Reviewed in CL 579385986"
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-3"]
 version = "0.8.33"
-notes = "Reviewed in CL 605370461"
+notes = """Reviewed in CL 605370461
+Needs extensive safety comments:
+ - https://github.com/hsivonen/encoding_rs/pull/101
+"""
 
 [[audits.enumflags2]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-1-thorough"]
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "0.7.8"
 notes = "Reviewed in CL 603523557"
 
@@ -336,7 +358,12 @@ notes = "Reviewed in CL 545732008"
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-4"]
 version = "1.5.0"
-notes = "Reviewed in CL 624267108"
+notes = """Reviewed in CL 624267108
+Issues found:
+ - error.rs: Unsoundly transmutes into std error types, making assumptions about stability and layout
+ - fmt.rs: GenericRadix trait should be unsafe
+ - fmt.rs: fmt_u256 has safety comments that are incorrect
+"""
 
 [[audits.fast-float]]
 who = [
@@ -345,7 +372,10 @@ who = [
 ]
 criteria = ["ub-risk-4"]
 version = "0.2.0"
-notes = "Reviewed in "
+notes = """Reviewed in 
+Issues found:
+ - https://github.com/aldanor/fast-float-rust/issues/37 (multiple issues)
+"""
 
 [[audits.faster-hex]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -414,7 +444,7 @@ Opens files from file descriptors obtained from potentially untrusted sources. T
 
 [[audits.font-types]]
 who = "Augie Fackler <augie@google.com>"
-criteria = ["ub-risk-1-thorough"]
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "0.5.0"
 notes = "Reviewed in CL 617547813"
 
@@ -422,7 +452,11 @@ notes = "Reviewed in CL 617547813"
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-4"]
 version = "0.55.2"
-notes = "Reviewed in CL 581562516"
+notes = """Reviewed in CL 581562516
+Issues found:
+ - Unsafe transmute of lifetime (https://github.com/Byron/gitoxide/pull/1154)
+ - Interrupt handler function should be unsafe
+"""
 
 [[audits.gix-commitgraph]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
@@ -474,7 +508,12 @@ Issues:
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-4"]
 delta = "0.44.0 -> 0.45.0"
-notes = "Reviewed in CL 594331347"
+notes = """Reviewed in CL 594331347
+Issues found:
+ - https://github.com/Byron/gitoxide/pull/1230
+ - https://github.com/Byron/gitoxide/issues/1231
+(previously found issues have been fixed)
+"""
 
 [[audits.gix-ref]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
@@ -508,9 +547,14 @@ notes = "Reviewed in CL 581562529"
 
 [[audits.half]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-3"]
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.8.2"
-notes = "Reviewed in CL 590192561"
+notes = """Reviewed in CL 590192561
+Issues found:
+ - The `set_len`s in slice.rs and vec.rs are premature and create uninitialized vectors
+ - (internal safety) f16x4_to_f32x4 and f16x4_to_f32x4_x86_f16c do not enforce i.len() > 4. Should be marked unsafe
+(no issues filed, all of the issues appear to be fixed on GitHub main)
+"""
 
 [[audits.half]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -538,13 +582,16 @@ notes = "Reviewed in CL 566644164"
 
 [[audits.hoot]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-3"]
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.1.3"
-notes = "Reviewed in CL 607320079"
+notes = """Reviewed in CL 607320079
+Issues found:
+ - https://github.com/algesten/hoot/issues/2 (fixed in https://github.com/algesten/hoot/pull/3)
+"""
 
 [[audits.hoot]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-1-thorough"]
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "0.1.4"
 notes = "Reviewed in CL 607320079"
 
@@ -559,9 +606,13 @@ Issues found:
 
 [[audits.html-escape]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-4"]
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.2.13"
-notes = "Reviewed in CL 612354454"
+notes = """Reviewed in CL 612354454
+Issues found:
+ - decode_impl macro should have "unsafe" in its name and document the safety at callsites
+ - write_hex_to_vec: The Vec::set_len is UB and should only be called after filling the buffer.
+"""
 
 [[audits.http]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -576,7 +627,14 @@ who = [
 ]
 criteria = ["ub-risk-4"]
 version = "1.0.1"
-notes = "Reviewed in CL 588384310"
+notes = """Reviewed in CL 588384310
+Issues found:
+ - https://github.com/hyperium/hyper/pull/3498
+ - https://github.com/hyperium/hyper/issues/3556
+ - https://github.com/hyperium/hyper/issues/3500 
+(probably not a real issue)
+ - https://github.com/hyperium/hyper/issues/3554 (documentation)
+"""
 
 [[audits.hyper-util]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -616,7 +674,7 @@ notes = "Reviewed in CL 566337310"
 
 [[audits.jiter]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-2-thorough"]
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.0.6"
 notes = "Reviewed in CL 615051835"
 
@@ -777,7 +835,7 @@ notes = "Reviewed in CL 548095317"
 
 [[audits.linux-loader]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
-criteria = ["ub-risk-2-thorough"]
+criteria = ["ub-risk-2"]
 delta = "0.9.0 -> 0.10.0"
 notes = "Reviewed in CL 600836074"
 
@@ -838,7 +896,9 @@ notes = "Reviewed in CL 562503105"
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-3"]
 delta = "0.26.1 -> 0.28.0"
-notes = "Reviewed in CL 622222105"
+notes = """Reviewed in CL 622222105
+(The rating differs from the previous once since I feel that the crate needs much more safety comments)
+"""
 
 [[audits.nix]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -874,7 +934,10 @@ notes = "Reviewed in CL 562140156"
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-3"]
 version = "0.8.4"
-notes = "Reviewed in CL 598457101"
+notes = """Reviewed in CL 598457101
+Issues found:
+ - to_str_radix_reversed is required to return a valid string by unsafe code, but this is not documented, nor is it easy to verify. It should probably return a String (at least internally), and have better safety documentation, or a double check when converting from UTF8
+"""
 
 [[audits.object]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
@@ -922,7 +985,9 @@ notes = "Reviewed in CL 578897702"
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-3"]
 version = "0.10.1"
-notes = "Reviewed in CL 615011355"
+notes = """Reviewed in CL 615011355
+Not safe with hardware_rng feature on platforms without RDRAND support. Should bubble up the invariant or have a feature test assertion
+"""
 
 [[audits.pulldown-cmark]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
@@ -938,7 +1003,7 @@ notes = "Reviewed in CL 616043931"
 
 [[audits.rand_xorshift]]
 who = "Augie Fackler <augie@google.com>"
-criteria = ["ub-risk-2-thorough"]
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.2.0"
 notes = "Reviewed in CL 615005895"
 
@@ -996,9 +1061,13 @@ notes = "Reviewed in CL 615772489"
 
 [[audits.ryu-js]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-3"]
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.2.2"
-notes = "Reviewed in CL 589126213"
+notes = """Reviewed in CL 589126213
+Issues found:
+ - Internal unsoundness around the invariants of q and i in f2s_intrinsics.rs
+ - Unclear bounds checking around get_unchecked in s2d.rs
+"""
 
 [[audits.seccompiler]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -1008,7 +1077,7 @@ notes = "Reviewed in CL 547754248"
 
 [[audits.serde_jcs]]
 who = "Augie Fackler <augie@google.com>"
-criteria = ["ub-risk-3"]
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.1.0"
 notes = "Reviewed in CL 590122717"
 
@@ -1025,7 +1094,9 @@ who = [
 ]
 criteria = ["ub-risk-3"]
 version = "1.3.0"
-notes = "Reviewed in CL 600742555"
+notes = """Reviewed in CL 600742555
+This crate appears safe, but it's not clear that the unchecked utf8 stuff is necessary given the use case, and it relies on undocumented invariants from the bytes iterator code. Would be nice to have these properties documented and fuzz tested.
+"""
 
 [[audits.shpool_pty]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -1050,7 +1121,7 @@ notes = "Reviewed in CL 578198476"
 
 [[audits.skrifa]]
 who = "Augie Fackler <augie@google.com>"
-criteria = ["ub-risk-2-thorough"]
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.16.0"
 notes = "Reviewed in CL 614825012"
 
@@ -1070,7 +1141,9 @@ notes = "Reviewed in CL 558187227"
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-2"]
 version = "0.13.0"
-notes = "Reviewed in CL 614967252"
+notes = """Reviewed in CL 614967252
+Would be rather straightforward to add safety comments
+"""
 
 [[audits.swc_atoms]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
@@ -1146,7 +1219,11 @@ notes = "Reviewed in CL 580962188"
 who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-4"]
 version = "0.22.12"
-notes = "Reviewed in CL 628398549"
+notes = """Reviewed in CL 628398549
+Issues found:
+ - Better documented safety: https://github.com/toml-rs/toml/pull/720
+ - Unclear on mll_quotes and mlb_quotes being safe
+"""
 
 [[audits.tracing]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -1168,6 +1245,12 @@ who = "Manish Goregaokar <manishearth@gmail.com>"
 criteria = ["ub-risk-2"]
 delta = "0.1.30 -> 0.1.32"
 notes = "Reviewed in CL 573852436"
+
+[[audits.tracing-log]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.2.0"
+notes = "Reviewed in CL 585090968"
 
 [[audits.transpose]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -1231,9 +1314,12 @@ notes = "Reviewed in CL 587894431"
 
 [[audits.ufmt-write]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-4"]
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.1.0"
-notes = "Reviewed in CL 587772035"
+notes = """Reviewed in CL 587772035
+Issues found:
+- https://github.com/japaric/ufmt/pull/60
+"""
 
 [[audits.unicode-bom]]
 who = "Manish Goregaokar <manishearth@gmail.com>"
@@ -1326,13 +1412,16 @@ Issues from previous review fixed
 
 [[audits.vm-memory]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-4"]
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.13.1"
-notes = "Reviewed in CL 595684339"
+notes = """Reviewed in CL 595684339
+Issues found:
+- https://github.com/rust-vmm/vm-memory/issues/281
+"""
 
 [[audits.vmm_sys_util]]
 who = "Ben Saunders <bsaunders@google.com>"
-criteria = ["ub-risk-2-thorough"]
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.12.1"
 notes = "Reviewed in CL 599627630"
 
