@@ -234,7 +234,7 @@ delta = "1.1.2 -> 1.1.3"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.android_logger]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.13.3"
 notes = "Reviewed in CL 559548165"
@@ -253,7 +253,7 @@ version = "0.6.13"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.anstream]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.3.2"
 notes = "Reviewed in CL 559376670"
@@ -308,7 +308,7 @@ version = "0.2.3"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.anstyle-parse]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.2.1"
 notes = "Reviewed in CL 559131783"
@@ -397,7 +397,7 @@ delta = "1.0.81 -> 1.0.82"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.anymap]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.0.0-beta2"
 notes = "Reviewed in CL 558118223"
@@ -774,7 +774,7 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.bit-set]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Augie Fackler <augie@google.com>",
 ]
 criteria = "ub-risk-2"
@@ -902,7 +902,7 @@ version = "0.6.3"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.bytecount]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.6.7"
 notes = """
@@ -945,7 +945,7 @@ aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_p
 
 [[audits.bytemuck]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Łukasz Anforowicz <lukasza@google.com>",
 ]
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
@@ -1109,14 +1109,14 @@ delta = "0.8.1 -> 0.9.0"
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
 [[audits.chalk_ir]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.92.0"
 notes = "Reviewed in CL 558137822"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.chalk_ir]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-0"
 version = "0.95.0"
 notes = "Reviewed in CL 599467162"
@@ -1406,7 +1406,7 @@ Issues:
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.clap_lex]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 delta = "0.5.1 -> 0.6.0"
 notes = """
@@ -1551,7 +1551,7 @@ version = "1.1.6"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.countme]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "3.0.1"
 notes = "Reviewed in CL 558181122"
@@ -1589,7 +1589,7 @@ delta = "1.1.1 -> 2.2.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.crc32c]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.6.5"
 notes = """
@@ -1599,7 +1599,7 @@ Does not have much unsafe (some use of hardware intrinsics, one bit of pointer m
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.crc32fast]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "1.3.2"
 notes = "Reviewed in CL 558895300"
@@ -2307,7 +2307,7 @@ delta = "0.11.12 -> 0.12.3"
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
 [[audits.encoding_rs]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.8.33"
 notes = """
@@ -2570,7 +2570,7 @@ delta = "3.0.9 -> 3.0.13"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.fdt]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.1.5"
 notes = """
@@ -2592,7 +2592,7 @@ version = "0.2.22"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.filetime]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.2.19"
 notes = "Reviewed in CL 559795004"
@@ -2605,7 +2605,7 @@ version = "0.4.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.fixedbitset]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.2.0"
 notes = "Reviewed in CL 559071858"
@@ -2628,7 +2628,7 @@ Further, it's only used in tests internal to this crate.
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.flate2]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "1.0.24"
 notes = """
@@ -2642,7 +2642,7 @@ Minor code quality suggestions:
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.flate2]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 delta = "1.0.24 -> 1.0.27"
 notes = """
@@ -2652,7 +2652,7 @@ Same review as previous
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.flate2]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 delta = "1.0.27 -> 1.0.28"
 notes = """
@@ -2662,7 +2662,7 @@ Issues from previous review (#379, #220) fixed (PRs #380, #373).
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.fleetspeak]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.4.0"
 notes = """
@@ -3001,7 +3001,7 @@ delta = "0.27.3 -> 0.28.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.gix]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "0.55.2"
 notes = """
@@ -3013,14 +3013,14 @@ Issues found:
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.gix-commitgraph]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.22.0"
 notes = "Reviewed in CL 581562496"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.gix-config-value]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.14.0"
 notes = "Reviewed in CL 581042137"
@@ -3068,7 +3068,7 @@ Issues:
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.gix-pack]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 delta = "0.44.0 -> 0.45.0"
 notes = """
@@ -3081,7 +3081,7 @@ Issues found:
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.gix-ref]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2-thorough"
 version = "0.38.0"
 notes = "Reviewed in CL 581562488"
@@ -3095,7 +3095,7 @@ notes = "Reviewed in CL 581562502"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.gix-revision]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 delta = "0.23.0 -> 0.24.0"
 notes = "Reviewed in CL 594331337"
@@ -3109,7 +3109,7 @@ notes = "Reviewed in CL 581046394"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.gix-tempfile]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "11.0.0"
 notes = "Reviewed in CL 581562529"
@@ -3363,7 +3363,7 @@ delta = "0.11.0 -> 0.12.1"
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
 [[audits.home]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.5.4"
 notes = "Reviewed in CL 559796554"
@@ -3401,7 +3401,7 @@ version = "0.3.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.hound]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "3.5.0"
 notes = """
@@ -3499,7 +3499,7 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.hyper]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Augie Fackler <augie@google.com>",
 ]
 criteria = "ub-risk-4"
@@ -3637,7 +3637,7 @@ version = "0.9.6"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.inotify]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.9.6"
 notes = "Reviewed in CL 562731461"
@@ -3865,14 +3865,14 @@ version = "0.3.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.kvm-ioctls]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.14.0"
 notes = "Reviewed in CL 549307303"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.kvm-ioctls]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.14.0"
 notes = "Reviewed in CL 565655079"
@@ -3920,7 +3920,7 @@ Many issues found across the `lexical` family of crates:
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.lexical-core]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """
@@ -3930,7 +3930,7 @@ See notes on lexical crate.
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.lexical-write-integer]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """
@@ -3960,7 +3960,7 @@ See notes on lexical crate.
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.lexical_util]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """
@@ -3970,7 +3970,7 @@ See notes on lexical crate.
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.lexical_write_float]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """
@@ -4104,14 +4104,14 @@ notes = "Reviewed in CL 562765830"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.libshpool]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.3.3"
 notes = "Reviewed in CL 580903771"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.libshpool]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.5.0"
 notes = "Reviewed in CL 609436265"
@@ -4212,7 +4212,7 @@ notes = "Reviewed in CL 548095317"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.linux-loader]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 delta = "0.9.0 -> 0.10.0"
 notes = "Reviewed in CL 600836074"
@@ -4374,7 +4374,7 @@ version = "2.7.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.memchr]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "2.6.3"
 notes = """
@@ -4439,7 +4439,7 @@ version = "0.3.16"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.minifier]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "0.2.3"
 notes = """
@@ -4657,7 +4657,7 @@ Issues:
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
 [[audits.nix]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 delta = "0.26.1 -> 0.28.0"
 notes = """
@@ -4722,7 +4722,7 @@ notes = "This crate just reexports subcrates, so it's trivially safe in isolatio
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.num-bigint-dig]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.8.4"
 notes = """
@@ -4787,7 +4787,7 @@ version = "0.1.6"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.num_traits]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.2.15"
 notes = "Reviewed in CL 558869499"
@@ -4832,7 +4832,7 @@ delta = "0.31.1 -> 0.32.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.object]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-1"
 version = "0.32.0"
 notes = "Reviewed in CL 558738698"
@@ -5145,7 +5145,7 @@ version = "0.3.26"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.pollster]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.3.0"
 notes = """
@@ -5374,7 +5374,7 @@ version = "0.15.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.proptest]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.10.1"
 notes = """
@@ -5528,7 +5528,7 @@ version = "0.2.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.pulldown-cmark]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.9.3"
 notes = "Reviewed in CL 555491415"
@@ -5794,7 +5794,7 @@ notes = "Reviewed in CL 585449372"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.ref-cast-impl]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "1.0.20"
 notes = "Reviewed in CL 585449373"
@@ -6113,7 +6113,7 @@ delta = "0.6.0 -> 0.4.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.ruzstd]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.4.0"
 notes = """
@@ -6125,7 +6125,7 @@ Issues found:
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.ruzstd]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.6.0"
 notes = "Reviewed in CL 615772489"
@@ -6443,7 +6443,7 @@ notes = "Reviewed on https://fxrev.dev/712371."
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
 [[audits.sha1_smol]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "1.0.0"
 notes = "Reviewed in CL 581562531"
@@ -6481,7 +6481,7 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.shlex]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Augie Fackler <augie@google.com>",
 ]
 criteria = "ub-risk-3"
@@ -6580,14 +6580,14 @@ version = "1.6.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.smallvec]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.11.0"
 notes = "Reviewed in CL 552492992"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.smol_str]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.2.0"
 notes = "Reviewed in CL 558187227"
@@ -6607,7 +6607,7 @@ notes = "Reviewed at https://fxrev.dev/946307"
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
 [[audits.speedate]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.13.0"
 notes = """
@@ -6722,14 +6722,14 @@ Previously reviewed during security review and the audit is grandparented in.
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.swc_atoms]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.5.7"
 notes = "Reviewed in CL 547104864"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.swc_common]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.31.17"
 notes = """
@@ -6740,14 +6740,14 @@ Issues found:
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.swc_ecma_ast]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.107.0"
 notes = "Reviewed in CL 545304253"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.swc_ecma_parser]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "0.137.1"
 notes = """
@@ -7162,7 +7162,7 @@ version = "0.5.10"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.toml_edit]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "0.22.12"
 notes = """
@@ -7253,7 +7253,7 @@ notes = "Reviewed in CL 555490997"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.tracing-core]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 delta = "0.1.30 -> 0.1.32"
 notes = "Reviewed in CL 573852436"
@@ -7355,7 +7355,7 @@ version = "0.3.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.uds]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.2.6"
 notes = """
@@ -7369,7 +7369,7 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.uds]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Augie Fackler <augie@google.com>",
     "<mmaurer@google.com>",
 ]
@@ -7560,7 +7560,7 @@ version = "1.0.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.unicode-bom]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "2.0.2"
 notes = "Reviewed in CL 581562581"
@@ -7796,14 +7796,14 @@ notes = "Reviewed in CL 545971961"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.vhost]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.7.0"
 notes = "Reviewed in CL 546255068"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.vhost]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "0.8.0"
 notes = """
@@ -7814,14 +7814,14 @@ Issues found:
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.vhost]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.8.1"
 notes = "Reviewed in CL 559359624"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.vhost-user-backend]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.10.1"
 notes = "Reviewed in CL 559122379"
@@ -7835,7 +7835,7 @@ notes = "Reviewed in CL 557159752"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.virtiofsd]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.6.1"
 notes = """
@@ -7846,7 +7846,7 @@ Issues found:
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.vm-memory]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.12.1"
 notes = """
@@ -7857,7 +7857,7 @@ Issues found:
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.vm-memory]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.12.1"
 notes = """
@@ -7913,7 +7913,7 @@ with vsock sockets.
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.vte]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
 version = "0.12.0"
 notes = """
@@ -8059,7 +8059,7 @@ delta = "0.7.8 -> 0.7.32"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.zerocopy]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.6.1"
 notes = "Reviewed in CL 592374439"
@@ -8090,7 +8090,7 @@ delta = "0.7.8 -> 0.7.32"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.zerotrie]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.1.2"
 notes = "Reviewed in https://github.com/unicode-org/icu4x/pull/2722/"
