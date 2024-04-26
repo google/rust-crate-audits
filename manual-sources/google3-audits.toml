@@ -82,13 +82,13 @@ https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-r
 
 
 [[audits.android_logger]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.13.3"
 notes = "Reviewed in CL 559548165"
 
 [[audits.anstream]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.3.2"
 notes = "Reviewed in CL 559376670"
@@ -116,13 +116,13 @@ version = "1.0.0"
 notes = "Reviewed in CL 559375925"
 
 [[audits.anstyle-parse]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.2.1"
 notes = "Reviewed in CL 559131783"
 
 [[audits.anymap]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.0.0-beta2"
 notes = "Reviewed in CL 558118223"
@@ -135,7 +135,7 @@ notes = "Reviewed in CL 592910669"
 
 [[audits.bit-set]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Augie Fackler <augie@google.com>"
 ]
 criteria = ["ub-risk-2"]
@@ -163,7 +163,7 @@ version = "3.14.0"
 notes = "Reviewed in CL 574186321"
 
 [[audits.bytecount]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.6.7"
 notes = """Reviewed in CL 596699465
@@ -172,7 +172,7 @@ Is sound, but needs safety docs
 
 [[audits.bytemuck]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Łukasz Anforowicz <lukasza@google.com>"
 ]
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
@@ -199,13 +199,13 @@ Issues found: https://github.com/chipsalliance/caliptra-cfi/pull/10
 """
 
 [[audits.chalk_ir]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.92.0"
 notes = "Reviewed in CL 558137822"
 
 [[audits.chalk_ir]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-0"]
 version = "0.95.0"
 notes = "Reviewed in CL 599467162"
@@ -221,7 +221,7 @@ Issues:
 """
 
 [[audits.clap_lex]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 delta = "0.5.1 -> 0.6.0"
 notes = """Reviewed in CL 596708333
@@ -253,13 +253,13 @@ version = "0.3.0"
 notes = "Reviewed in CL 587904821"
 
 [[audits.countme]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "3.0.1"
 notes = "Reviewed in CL 558181122"
 
 [[audits.crc32c]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.6.5"
 notes = """Reviewed in CL 608991681
@@ -267,7 +267,7 @@ Does not have much unsafe (some use of hardware intrinsics, one bit of pointer m
 """
 
 [[audits.crc32fast]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "1.3.2"
 notes = "Reviewed in CL 558895300"
@@ -328,7 +328,7 @@ version = "0.3.9"
 notes = "Reviewed in CL 579385986"
 
 [[audits.encoding_rs]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.8.33"
 notes = """Reviewed in CL 605370461
@@ -387,7 +387,7 @@ Issues found:
 """
 
 [[audits.fdt]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.1.5"
 notes = """Reviewed in CL 565675584
@@ -395,19 +395,19 @@ No usage of unsafe; one public unsafe function with documented invariants.
 """
 
 [[audits.filetime]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.2.19"
 notes = "Reviewed in CL 559795004"
 
 [[audits.fixedbitset]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.2.0"
 notes = "Reviewed in CL 559071858"
 
 [[audits.flate2]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
 version = "1.0.24"
 notes = """Reviewed in CL 558916134
@@ -419,7 +419,7 @@ Minor code quality suggestions:
 """
 
 [[audits.flate2]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
 delta = "1.0.24 -> 1.0.27"
 notes = """Reviewed in CL 572611911
@@ -427,7 +427,7 @@ Same review as previous
 """
 
 [[audits.flate2]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 delta = "1.0.27 -> 1.0.28"
 notes = """Reviewed in CL 573223148
@@ -435,7 +435,7 @@ Issues from previous review (#379, #220) fixed (PRs #380, #373).
 """
 
 [[audits.fleetspeak]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.4.0"
 notes = """Reviewed in CL 551181045
@@ -449,7 +449,7 @@ version = "0.5.0"
 notes = "Reviewed in CL 617547813"
 
 [[audits.gix]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
 version = "0.55.2"
 notes = """Reviewed in CL 581562516
@@ -459,13 +459,13 @@ Issues found:
 """
 
 [[audits.gix-commitgraph]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.22.0"
 notes = "Reviewed in CL 581562496"
 
 [[audits.gix-config-value]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.14.0"
 notes = "Reviewed in CL 581042137"
@@ -505,7 +505,7 @@ Issues:
 """
 
 [[audits.gix-pack]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
 delta = "0.44.0 -> 0.45.0"
 notes = """Reviewed in CL 594331347
@@ -516,7 +516,7 @@ Issues found:
 """
 
 [[audits.gix-ref]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2-thorough"]
 version = "0.38.0"
 notes = "Reviewed in CL 581562488"
@@ -528,7 +528,7 @@ version = "0.23.0"
 notes = "Reviewed in CL 581562502"
 
 [[audits.gix-revision]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 delta = "0.23.0 -> 0.24.0"
 notes = "Reviewed in CL 594331337"
@@ -540,7 +540,7 @@ version = "0.10.0"
 notes = "Reviewed in CL 581046394"
 
 [[audits.gix-tempfile]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "11.0.0"
 notes = "Reviewed in CL 581562529"
@@ -569,7 +569,7 @@ version = "2.4.0"
 notes = "Reviewed in CL 610738461"
 
 [[audits.home]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.5.4"
 notes = "Reviewed in CL 559796554"
@@ -596,7 +596,7 @@ version = "0.1.4"
 notes = "Reviewed in CL 607320079"
 
 [[audits.hound]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
 version = "3.5.0"
 notes = """Reviewed in CL 564508706
@@ -622,7 +622,7 @@ notes = "Reviewed in CL 588379811"
 
 [[audits.hyper]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Augie Fackler <augie@google.com>"
 ]
 criteria = ["ub-risk-4"]
@@ -655,7 +655,7 @@ version = "0.1.5"
 notes = "Reviewed in CL 581562578"
 
 [[audits.inotify]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.9.6"
 notes = "Reviewed in CL 562731461"
@@ -703,13 +703,13 @@ version = "0.8.0"
 notes = "Reviewed in CL 554583176"
 
 [[audits.kvm-ioctls]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.14.0"
 notes = "Reviewed in CL 549307303"
 
 [[audits.kvm-ioctls]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.14.0"
 notes = "Reviewed in CL 565655079"
@@ -744,7 +744,7 @@ See notes on lexical crate.
 """
 
 [[audits.lexical_util]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """Reviewed in CL 545304267
@@ -752,7 +752,7 @@ See notes on lexical crate.
 """
 
 [[audits.lexical_write_float]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """Reviewed in CL 545304258
@@ -760,7 +760,7 @@ See notes on lexical crate.
 """
 
 [[audits.lexical-core]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """Reviewed in CL 545304290
@@ -768,7 +768,7 @@ See notes on lexical crate.
 """
 
 [[audits.lexical-write-integer]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4", "does-not-implement-crypto"]
 version = "0.8.5"
 notes = """Reviewed in CL 545304293
@@ -804,13 +804,13 @@ version = "0.8.0"
 notes = "Reviewed in CL 562765830"
 
 [[audits.libshpool]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.3.3"
 notes = "Reviewed in CL 580903771"
 
 [[audits.libshpool]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.5.0"
 notes = "Reviewed in CL 609436265"
@@ -834,7 +834,7 @@ version = "0.9.0"
 notes = "Reviewed in CL 548095317"
 
 [[audits.linux-loader]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 delta = "0.9.0 -> 0.10.0"
 notes = "Reviewed in CL 600836074"
@@ -864,7 +864,7 @@ version = "1.3.1"
 notes = "Reviewed in CL 604812730"
 
 [[audits.memchr]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "2.6.3"
 notes = """Reviewed in CL 563868651
@@ -878,7 +878,7 @@ version = "0.9.0"
 notes = "Reviewed in CL 555491937"
 
 [[audits.minifier]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
 version = "0.2.3"
 notes = """Reviewed in CL 577203072
@@ -893,7 +893,7 @@ version = "0.7.0"
 notes = "Reviewed in CL 562503105"
 
 [[audits.nix]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 delta = "0.26.1 -> 0.28.0"
 notes = """Reviewed in CL 622222105
@@ -919,7 +919,7 @@ version = "0.49.0"
 notes = "Reviewed in CL 585090965"
 
 [[audits.num_traits]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.2.15"
 notes = "Reviewed in CL 558869499"
@@ -931,7 +931,7 @@ delta = "0.2.15 -> 0.2.16"
 notes = "Reviewed in CL 562140156"
 
 [[audits.num-bigint-dig]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.8.4"
 notes = """Reviewed in CL 598457101
@@ -940,7 +940,7 @@ Issues found:
 """
 
 [[audits.object]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-1"]
 version = "0.32.0"
 notes = "Reviewed in CL 558738698"
@@ -968,7 +968,7 @@ Issues found:
 """
 
 [[audits.pollster]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.3.0"
 notes = """Reviewed in CL 581562576
@@ -982,7 +982,7 @@ version = "0.2.0"
 notes = "Reviewed in CL 578897702"
 
 [[audits.proptest]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.10.1"
 notes = """Reviewed in CL 615011355
@@ -990,7 +990,7 @@ Not safe with hardware_rng feature on platforms without RDRAND support. Should b
 """
 
 [[audits.pulldown-cmark]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.9.3"
 notes = "Reviewed in CL 555491415"
@@ -1026,7 +1026,7 @@ version = "1.0.20"
 notes = "Reviewed in CL 585449372"
 
 [[audits.ref-cast-impl]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "1.0.20"
 notes = "Reviewed in CL 585449373"
@@ -1044,7 +1044,7 @@ version = "0.14.1"
 notes = "Reviewed in CL 570228314"
 
 [[audits.ruzstd]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.4.0"
 notes = """Reviewed in CL 557876502
@@ -1054,7 +1054,7 @@ Issues found:
 """
 
 [[audits.ruzstd]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.6.0"
 notes = "Reviewed in CL 615772489"
@@ -1082,14 +1082,14 @@ version = "0.1.0"
 notes = "Reviewed in CL 590122717"
 
 [[audits.sha1_smol]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "1.0.0"
 notes = "Reviewed in CL 581562531"
 
 [[audits.shlex]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Augie Fackler <augie@google.com>"
 ]
 criteria = ["ub-risk-3"]
@@ -1126,19 +1126,19 @@ version = "0.16.0"
 notes = "Reviewed in CL 614825012"
 
 [[audits.smallvec]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.11.0"
 notes = "Reviewed in CL 552492992"
 
 [[audits.smol_str]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.2.0"
 notes = "Reviewed in CL 558187227"
 
 [[audits.speedate]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.13.0"
 notes = """Reviewed in CL 614967252
@@ -1146,13 +1146,13 @@ Would be rather straightforward to add safety comments
 """
 
 [[audits.swc_atoms]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.5.7"
 notes = "Reviewed in CL 547104864"
 
 [[audits.swc_common]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.31.17"
 notes = """Reviewed in CL 547720673
@@ -1161,13 +1161,13 @@ Issues found:
 """
 
 [[audits.swc_ecma_ast]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.107.0"
 notes = "Reviewed in CL 545304253"
 
 [[audits.swc_ecma_parser]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
 version = "0.137.1"
 notes = """Reviewed in CL 545304254
@@ -1216,7 +1216,7 @@ version = "0.2.15"
 notes = "Reviewed in CL 580962188"
 
 [[audits.toml_edit]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
 version = "0.22.12"
 notes = """Reviewed in CL 628398549
@@ -1241,7 +1241,7 @@ version = "0.1.30"
 notes = "Reviewed in CL 555490997"
 
 [[audits.tracing-core]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 delta = "0.1.30 -> 0.1.32"
 notes = "Reviewed in CL 573852436"
@@ -1280,7 +1280,7 @@ version = "2.0.2"
 notes = "Reviewed in CL 545304268"
 
 [[audits.uds]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.2.6"
 notes = """Reviewed in CL 552861165
@@ -1292,7 +1292,7 @@ Issues found:
 
 [[audits.uds]]
 who = [
-    "Manish Goregaokar <manishearth@gmail.com>",
+    "Manish Goregaokar <manishearth@google.com>",
     "Augie Fackler <augie@google.com>",
     "<mmaurer@google.com>"
 ]
@@ -1322,7 +1322,7 @@ Issues found:
 """
 
 [[audits.unicode-bom]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "2.0.2"
 notes = "Reviewed in CL 581562581"
@@ -1352,13 +1352,13 @@ version = "0.1.0"
 notes = "Reviewed in CL 545971961"
 
 [[audits.vhost]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.7.0"
 notes = "Reviewed in CL 546255068"
 
 [[audits.vhost]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
 version = "0.8.0"
 notes = """Reviewed in CL 559359624
@@ -1367,13 +1367,13 @@ Issues found:
 """
 
 [[audits.vhost]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.8.1"
 notes = "Reviewed in CL 559359624"
 
 [[audits.vhost-user-backend]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.10.1"
 notes = "Reviewed in CL 559122379"
@@ -1385,7 +1385,7 @@ version = "0.2.1"
 notes = "Reviewed in CL 557159752"
 
 [[audits.virtiofsd]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.6.1"
 notes = """Reviewed in CL 548811972
@@ -1394,7 +1394,7 @@ Issues found:
 """
 
 [[audits.vm-memory]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.12.1"
 notes = """Reviewed in CL 556862067
@@ -1403,7 +1403,7 @@ Issues found:
 """
 
 [[audits.vm-memory]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.12.1"
 notes = """Reviewed in CL 556862067
@@ -1426,7 +1426,7 @@ version = "0.12.1"
 notes = "Reviewed in CL 599627630"
 
 [[audits.vte]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
 version = "0.12.0"
 notes = """Reviewed in CL 579243289
@@ -1450,13 +1450,13 @@ See https://github.com/DoumanAsh/xxhash-rust/issues/29
 """
 
 [[audits.zerocopy]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.6.1"
 notes = "Reviewed in CL 592374439"
 
 [[audits.zerotrie]]
-who = "Manish Goregaokar <manishearth@gmail.com>"
+who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.1.2"
 notes = "Reviewed in https://github.com/unicode-org/icu4x/pull/2722/"
