@@ -7163,13 +7163,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.toml_edit]]
 who = "Manish Goregaokar <manishearth@google.com>"
-criteria = "ub-risk-4"
+criteria = "ub-risk-3"
 version = "0.22.12"
 notes = """
 Reviewed in CL 628398549
 Issues found:
  - Better documented safety: https://github.com/toml-rs/toml/pull/720
- - Unclear on mll_quotes and mlb_quotes being safe
 """
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
