@@ -6,4 +6,4 @@ The primary source of truth for these is stored in audits.toml files in this fol
 
 If you are performing an audit for such a source, you may submit your audits to these files directly. You do not need to update the toplevel audits.toml as that will be done by CI, though you can if you'd like (it's finicky).
 
-These audit files are currently not useful on their own as they do not define the criteria (and implicitly use the ones from the toplevel audits.toml). Others should not depend on them.
+You may directly depend on these audit files if you wish, however their locations may move around in the long term. It is recommended to depend on the toplevel audit file in this repo.
