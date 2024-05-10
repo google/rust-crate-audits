@@ -237,3 +237,86 @@ Crates with this criteria contain very dangerous unsafe rust code.
     *   Undefined behavior may be possible under common circumstances.
 *   Most crates that try to be sound but don't quite make the cut go in `ub-risk-3`, not here. These crates are wildly unsafe, and the only time we should use them is when they are a necessary evil.
 *   Everything worse than `ub-risk-3` goes in here and we should do our best to avoid using them.
+
+## Criteria-agnostic guidelines
+
+### Delta audits should describe the final version
+
+In general, delta audits should always take the previous, baseline audit into
+account.  In particular, note that
+[Cargo Vet's documentation](https://mozilla.github.io/cargo-vet/audit-entries.html#delta)
+asks the auditor to acquire sufficient context when working on delta
+audits:
+
+> The [auditing] standard here is that the properties are actually
+> preserved, not merely that that the diff doesn't obviously violate
+> them. It is the responsibility of the auditor to acquire sufficient
+> context to certify the former.
+
+Since the delta audits only determine which criteria from the baseline version
+are preserved, you should perform and record a non-delta audit to lower the
+`UB-risk-N` level, or to downgrade from `crypto-safe` to
+`does-not-contain-crypto`. In other words, a delta audit should never result in
+lowering the `UB-risk-N` value from the previous audit, or downgrading
+`crypto-safe` to `does-not-contain-crypto`.
+
+For example, even though
+[the 1.0.79 to 1.0.80 delta of the `proc-macro2` crate](https://chromium-review.googlesource.com/c/chromium/src/+/5453972/2..6)
+doesn't add or change any `unsafe` code, it shouldn't be recorded as
+`ub-risk-0`, because there is still `unsafe` outside of the delta
+(e.g. `unsafe { imp::Literal::from_str_unchecked(repr) }` in
+[`lib.rs` on line 1282](https://chromium-review.googlesource.com/c/chromium/src/+/5453972/2..6/third_party/rust/chromium_crates_io/vendor/proc-macro2-1.0.80/src/lib.rs#1282)).
+
+Another example is the improvements in `flate2` between version 1.0.27
+(`ub-risk-4` because of https://github.com/rust-lang/flate2-rs/issues/220) and
+1.0.28 (`ub-risk-3` because of https://github.com/rust-lang/flate2-rs/pull/373).
+Recording this improvement as a delta audit would be insufficient to pass `cargo
+vet check` presumits (as tested by
+[this ad-hoc Chromium CL](https://crrev.com/c/5532326)).
+
+### Audits should be as precise as possible
+
+*e.g. Audits should not account for `config.toml` policy*
+
+Audits should record the most precise criteria for each crate, without
+accounting for a project's `config.toml` policy. In some cases, a project's
+policy may only require a crate to meet a minimum level of certification.
+Although it may be less work to audit a crate at that minimum level, we
+should always audit crates with the most precise criteria available. This
+ensures that our audits are as shareable as possible between project
+participants.
+
+For example, Chromium requires `ub-risk-2` for crates used in the browser
+process. The following `config.toml` is auto-generated for the quote crate:
+entry for the `quote` crate:
+
+```
+# supply-chain/config.toml:
+[policy."quote:1.0.36"]
+criteria = ["does-not-implement-crypto", "safe-to-deploy", "ub-risk-2"]
+```
+
+This means that certifying this crate as `ub-risk-2` is sufficient for `cargo
+vet` checks/presubmits to pass and `cargo vet check` will actually only ask
+to certify at the `ub-risk-2` level:
+
+```
+$ tools/crates/run_cargo_vet.py check
+Vetting Failed!
+
+1 unvetted dependencies:
+  quote:1.0.36 missing ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+
+recommended audits for safe-to-deploy, does-not-implement-crypto, ub-risk-2:
+    Command                             Publisher  Used By                                    Audit Size
+    cargo vet diff quote 1.0.35 1.0.36  dtolnay    syn, chromium, prost-derive, and 6 others  6 files changed, 568 insertions(+), 548 deletions(-)
+
+estimated audit backlog: 1116 lines
+
+Use |cargo vet certify| to record the audits.
+```
+
+Although it is recommended to audit at `ub-risk-2`, the audit should always
+certify `quote` 1.0.36 at the most precise ub-risk level possible. In this case,
+the crate should be audited as `ub-risk-0` because it doesn't contain any
+unsafe code.

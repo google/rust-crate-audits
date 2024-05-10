@@ -429,7 +429,7 @@ Same review as previous
 [[audits.flate2]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
-delta = "1.0.27 -> 1.0.28"
+version = "1.0.28"
 notes = """Reviewed in CL 573223148
 Issues from previous review (#379, #220) fixed (PRs #380, #373).
 """
