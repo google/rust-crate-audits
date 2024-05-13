@@ -1,8 +1,9 @@
 name: CI
 on:
-  schedule:
-    # Every five minutes (maximum frequency allowed by GitHub)
-    - cron:  '*/5 * * * *'
+  workflow_dispatch:
+  # schedule:
+  #   # Every five minutes (maximum frequency allowed by GitHub)
+  #   - cron:  '0 * * * *'
 
 permissions:
   contents: write
