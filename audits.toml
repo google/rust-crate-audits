@@ -59,7 +59,7 @@ Full description of the audit criteria can be found at
 https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-0
 """
 implies = "ub-risk-1"
-aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [criteria.ub-risk-1]
 description = """
@@ -69,7 +69,7 @@ Full description of the audit criteria can be found at
 https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-1
 """
 implies = "ub-risk-2"
-aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [criteria.ub-risk-1-thorough]
 description = """
@@ -79,7 +79,7 @@ Full description of the audit criteria can be found at
 https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-1-thorough
 """
 implies = "ub-risk-1"
-aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [criteria.ub-risk-2]
 description = """
@@ -89,7 +89,7 @@ Full description of the audit criteria can be found at
 https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-2
 """
 implies = "ub-risk-3"
-aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [criteria.ub-risk-2-thorough]
 description = """
@@ -99,7 +99,7 @@ Full description of the audit criteria can be found at
 https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-2-thorough
 """
 implies = "ub-risk-2"
-aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [criteria.ub-risk-3]
 description = """
@@ -109,7 +109,7 @@ Full description of the audit criteria can be found at
 https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-3
 """
 implies = "ub-risk-4"
-aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [criteria.ub-risk-4]
 description = """
@@ -118,7 +118,7 @@ Extreme unsoundness.
 Full description of the audit criteria can be found at
 https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-4
 """
-aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits."0.7.11"]]
 who = "David Koloski <dkoloski@google.com>"
