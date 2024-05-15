@@ -31,3 +31,14 @@ All submissions, including submissions by project members, require review. We
 use GitHub pull requests for this purpose. Consult
 [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
 information on using pull requests.
+
+## Contributing Rust Audits
+
+This respository is primarily an aggregation of audits done by people employed
+by Google, certifying code to be used in Google software. For this reason, we
+unfortunately cannot accept audits directly from non-Google sources.
+
+If you're trying to add a Google project to the set of aggregated audits, thank
+you! You should reach out to @djkoloski. Please note that participating
+requires copying all audit criteria into your `audits.toml` verbatim;
+deviations/customizations will break our automatic aggregation jobs.
