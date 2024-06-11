@@ -1357,6 +1357,12 @@ delta = "4.5.3 -> 4.5.4"
 notes = "Minimal diff - only module naming/nesting-related changes."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.clap]]
+who = "Adrian Taylor <adetaylor@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "4.5.4 -> 4.5.7"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.clap_builder]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1414,6 +1420,12 @@ who = "danakj <danakj@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "4.5.1 -> 4.5.2"
 notes = "Reviewed in https://crrev.com/c/5362201"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.clap_builder]]
+who = "Adrian Taylor <adetaylor@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "4.5.2 -> 4.5.7"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.clap_conf]]
