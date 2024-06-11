@@ -8353,6 +8353,12 @@ version = "1.3.0"
 notes = "Randomness and hashing involved in UUID generation is sourced from other crates."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.uuid]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.3.0 -> 1.8.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.vcell]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
