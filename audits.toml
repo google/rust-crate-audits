@@ -829,8 +829,19 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.bit_field]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.10.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bit_field]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.10.2"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.bitflags]]
@@ -901,8 +912,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.bitreader]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bitreader]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.7"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.bitvec]]
@@ -1172,7 +1194,11 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.cfg-if]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -1180,6 +1206,13 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cfg-if]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.cfg-if]]
@@ -1246,8 +1279,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.chunked_transfer]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.4.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.chunked_transfer]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.4.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.clang-sys]]
@@ -1566,7 +1610,11 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.cmake]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.49"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -1589,8 +1637,19 @@ aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_p
 
 [[audits.color_quant]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.color_quant]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.colorchoice]]
@@ -1644,8 +1703,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.configparser]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "3.0.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.configparser]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "3.0.2"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.console]]
@@ -2170,13 +2240,21 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.cxxbridge-flags]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.92"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.cxxbridge-flags]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "1.0.92 -> 1.0.94"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -2194,7 +2272,11 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.cxxbridge-flags]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "1.0.106 -> 1.0.107"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -2405,8 +2487,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.dirs-next]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "2.0.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.dirs-next]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "2.0.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.dirs-sys-next]]
@@ -2423,8 +2516,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.document-features]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.2.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.document-features]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.2.7"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.downcast]]
@@ -2550,25 +2654,48 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.8"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = "ub-risk-0"
+version = "0.1.11"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.enumn]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "0.1.8 -> 0.1.10"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "0.1.10 -> 0.1.11"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "0.1.11 -> 0.1.12"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -2592,8 +2719,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.equivalent]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.equivalent]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.errno]]
@@ -2719,7 +2857,11 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.fastrand]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.9.0"
 notes = """
 `does-not-implement-crypto` is certified because this crate explicitly says
@@ -3006,11 +3148,26 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.futures]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.28"
 notes = """
 `futures` has no logic other than tests - it simply `pub use`s things from
 other crates.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.futures]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.28"
+notes = """
+`rg -i unsafe` in this crate had one hit: a comment in a test
+mentioning UnsafeFutureObj. UnsafeFutureObj is implemented in
+futures-task-0.3.28, not here.
 """
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -3119,8 +3276,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.gag]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.gag]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.gdbstub]]
@@ -3358,8 +3526,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.glob]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.glob]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.gpt_disk_io]]
@@ -3716,8 +3895,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.http-range-header]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.http-range-header]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.httparse]]
@@ -3734,8 +3924,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.httpdate]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.httpdate]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.3"
+notes = "`rg -i unsafe` had exactly one hit: `#![forbid(unsafe_code)]`"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.hyper]]
@@ -3845,8 +4046,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.include_dir_impl]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.6.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.include_dir_impl]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.6.2"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.indexmap]]
@@ -3863,7 +4075,11 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.indoc]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.6"
 notes = """
 This crate simply reexports indoc_impl. There's therefore no code
@@ -3871,10 +4087,28 @@ specific to this crate to audit.
 """
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.indoc]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.6"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.indoc-impl]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.indoc-impl]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.6"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.inflections]]
@@ -3947,8 +4181,24 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.inventory-impl]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.11"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.inventory-impl]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.11"
+notes = """
+This crate has an instance of `unsafe {` in a comment. The comment
+is referencing a future potential implementation of this code, once
+a desired rustc feature is stabilized. There's otherwise no mention
+of `unsafe` flagged by `rg -i unsafe`.
+"""
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.io-lifetimes]]
@@ -4173,6 +4423,13 @@ in https://crrev.com/c/5347418.
 
 This crate has been added to Chromium in https://crrev.com/c/3321895.
 '''
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.lazy_static]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.4.0 -> 1.5.0"
+notes = "Unsafe review notes: https://crrev.com/c/5650836"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.lazycell]]
@@ -4463,12 +4720,23 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.link-cplusplus]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.9"
 notes = """
 This crate exists simply to link with libcxx or libstdcxx. No assertions
 are made about the safety of either of those libraries. :)
 """
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.link-cplusplus]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.9"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.linux-embedded-hal]]
@@ -4605,8 +4873,19 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.match_cfg]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.match_cfg]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.matchit]]
@@ -4719,7 +4998,11 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.merge_derive]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -4727,6 +5010,13 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.merge_derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.mime]]
@@ -4875,19 +5165,45 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.nb]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = "ub-risk-0"
+version = "0.1.3"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.nb]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.nb]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = "ub-risk-0"
+version = "1.0.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.nb]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "1.0.0 -> 0.1.3"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.nb]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "1.0.0 -> 1.1.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -5025,9 +5341,20 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.num]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.2.1"
 notes = "This crate just reexports subcrates, so it's trivially safe in isolation."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.num]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.2.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.num-bigint-dig]]
@@ -5067,8 +5394,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.num-iter]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.43"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.num-iter]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.43"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.num-traits]]
@@ -5129,8 +5467,19 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.number_prefix]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.number_prefix]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.4.0"
+notes = "`rg -i unsafe` had exactly one hit: `#![deny(unsafe_code)]`"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.object]]
@@ -5197,13 +5546,28 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.openssl-macros]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.openssl-macros]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = "ub-risk-0"
+version = "0.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.openssl-macros]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "0.1.0 -> 0.1.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -5251,8 +5615,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.panic-halt]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.panic-halt]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.2.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.parking_lot]]
@@ -5579,8 +5954,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.proc-macro-error-attr]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.proc-macro-error-attr]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.4"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.proc-macro-hack]]
@@ -5597,7 +5983,11 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.proc-macro-nested]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.7"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -5873,7 +6263,11 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.protoc]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "2.27.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -5897,7 +6291,11 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.protoc-rust]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "2.27.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -6796,8 +7194,19 @@ aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_p
 
 [[audits.serde-tuple-vec-map]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.serde-tuple-vec-map]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.serde_bytes]]
@@ -7013,8 +7422,19 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.shell-words]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.shell-words]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.1.0"
+notes = "`rg -i unsafe` had exactly one hit: `#![forbid(unsafe_code)]`"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.shlex]]
@@ -7703,8 +8123,19 @@ aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_p
 
 [[audits.tinyvec_macros]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tinyvec_macros]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.tokio]]
@@ -8321,8 +8752,26 @@ aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_p
 
 [[audits.unicode-xid]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = "ub-risk-0"
+version = "0.0.4"
+notes = "`rg -i unsafe` had exactly one hit: `#![deny(missing_docs, unsafe_code)]`"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.unicode-xid]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.unicode-xid]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.0"
+notes = "`rg -i unsafe` had exactly one hit: `#![deny(missing_docs, unsafe_code)]`"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.unicode-xid]]
@@ -8333,20 +8782,46 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.unicode-xid]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.2.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.unicode-xid]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = "ub-risk-0"
+version = "0.2.4"
+notes = "`rg -i unsafe` had exactly one hit: `#![forbid(unsafe_code)]`"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.unicode-xid]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "0.1.0 -> 0.0.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.unindent]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.10"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.unindent]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.10"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.uninit]]
@@ -8458,8 +8933,19 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.version_check]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.9.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.version_check]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.9.4"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.vfio-bindings]]
@@ -8567,8 +9053,24 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 
 [[audits.void]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.void]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.2"
+notes = """
+`rg -i unsafe` in this crate had one hit: a comment on a function
+mentioning that the aforementioned function should be impossible
+to call _unless_ `unsafe` was used to incorrectly construct an
+object.
+"""
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.volatile]]
