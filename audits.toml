@@ -1620,6 +1620,13 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.cmake]]
 who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.49"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cmake]]
+who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.1.49 -> 0.1.50"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
@@ -2250,6 +2257,27 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.cxxbridge-flags]]
 who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.92"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cxxbridge-flags]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.94"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cxxbridge-flags]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.107"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cxxbridge-flags]]
+who = "George Burgess IV <gbiv@google.com>"
 criteria = [
     "does-not-implement-crypto",
     "safe-to-deploy",
@@ -2665,7 +2693,28 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = "ub-risk-0"
+version = "0.1.8"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.enumn]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.10"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.enumn]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
 version = "0.1.11"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.enumn]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.12"
 notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -2866,6 +2915,17 @@ version = "1.9.0"
 notes = """
 `does-not-implement-crypto` is certified because this crate explicitly says
 that the RNG here is not cryptographically secure.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.fastrand]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.9.0"
+notes = """
+`rg -i unsafe` resulted in two hits for this package:
+1. `#![forbid(unsafe_code)]`
+2. A CHANGELOG entry noting that unsafe code was forbidden.
 """
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -5189,6 +5249,13 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.nb]]
 who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.nb]]
+who = "George Burgess IV <gbiv@google.com>"
 criteria = [
     "does-not-implement-crypto",
     "safe-to-deploy",
@@ -5558,6 +5625,13 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = "ub-risk-0"
 version = "0.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.openssl-macros]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.1"
 notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
@@ -5997,6 +6071,13 @@ criteria = "safe-to-run"
 version = "0.1.7"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.proc-macro-nested]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.7"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.proc-macro2]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -6284,6 +6365,13 @@ version = "2.27.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.protoc]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "2.27.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.protoc]]
 who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "2.27.1 -> 2.28.0"
@@ -6309,6 +6397,13 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "2.27.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.protoc-rust]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "2.27.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.protoc-rust]]
