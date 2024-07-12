@@ -940,6 +940,18 @@ criteria = "safe-to-run"
 version = "0.19.5"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.blazesym]]
+who = "Hidenori Kobayashi <hidenorik@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.0-rc.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.blazesym-c]]
+who = "Hidenori Kobayashi <hidenorik@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.0-rc.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.block-buffer]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1793,6 +1805,12 @@ criteria = "ub-risk-3"
 version = "3.0.1"
 notes = "Reviewed in CL 558181122"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.cpp_demangle]]
+who = "Hidenori Kobayashi <hidenorik@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.cpufeatures]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -2907,6 +2925,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.fallible-iterator]]
+who = "Hidenori Kobayashi <hidenorik@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.fast-float]]
 who = ["Augie Fackler <augie@google.com>", "< manishearth@google.com>"]
 criteria = "ub-risk-4"
@@ -3486,6 +3510,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.27.3 -> 0.28.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.gimli]]
+who = "Hidenori Kobayashi <hidenorik@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.28.0 -> 0.30.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.gix]]
