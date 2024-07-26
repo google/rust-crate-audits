@@ -814,6 +814,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.64.0 -> 0.68.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.bindgen]]
+who = "Bob Haarman <inglorion@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.68.1 -> 0.69.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.bit-set]]
 who = [
     "Manish Goregaokar <manishearth@google.com>",
@@ -5936,6 +5942,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Harshad Phule <phuleh@google.com>"
 criteria = "safe-to-run"
 version = "0.1.25"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.prettyplease]]
+who = "Bob Haarman <inglorion@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.2.6 -> 0.2.17"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.primal-check]]
