@@ -2876,6 +2876,12 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.ext4-view]]
+who = "Andre Braga <andrebraga@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.extension-traits]]
 who = "Howard Yang <hcyang@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
