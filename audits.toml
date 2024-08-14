@@ -4863,6 +4863,32 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.6.0 -> 0.6.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.libusb1-sys]]
+who = "Benjamin Gordon <bmgordon@chromium.org>"
+criteria = "does-not-implement-crypto"
+version = "0.7.0"
+notes = """
+* The libusb subdirectory contains a partial copy of libusb-1.0.27.  I downloaded a copy from upstream
+  and confirmed that there are no diffs.
+* build.rs calls pkg_config to probe for libusb-1.0 and sets up some build variables.
+* The files under src contain constants, extern declarations for libusb functions, and small helper
+  functions that fill in some structs.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libusb1-sys]]
+who = "Benjamin Gordon <bmgordon@chromium.org>"
+criteria = "safe-to-run"
+version = "0.7.0"
+notes = """
+* The libusb subdirectory contains a partial copy of libusb-1.0.27.  I downloaded a copy from upstream
+  and confirmed that there are no diffs.
+* build.rs calls pkg_config to probe for libusb-1.0 and sets up some build variables.
+* The files under src contain constants, extern declarations for libusb functions, and small helper
+  functions that fill in some structs.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.libz-sys]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -7084,6 +7110,24 @@ criteria = "ub-risk-3"
 version = "0.14.1"
 notes = "Reviewed in CL 570228314"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.rusb]]
+who = "Benjamin Gordon <bmgordon@chromium.org>"
+criteria = "does-not-implement-crypto"
+version = "0.9.4"
+notes = "Files are straightforward wrappers around libusb functions."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.rusb]]
+who = "Benjamin Gordon <bmgordon@chromium.org>"
+criteria = "safe-to-run"
+version = "0.9.4"
+notes = """
+* build.rs reads version info from libusb.h
+* Files in src are straightforward wrappers around libusb functions and don't do anything extra beyond
+  tracking lifetimes.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.rustc-demangle]]
 who = "Android Legacy"
