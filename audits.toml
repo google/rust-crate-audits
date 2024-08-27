@@ -1112,6 +1112,23 @@ and has no impact on the audit criteria.
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.bytemuck]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = "ub-risk-3"
+delta = "1.16.3 -> 1.17.0"
+notes = """
+1.17.0 may rely on `union` layout that is not guaranteed by the compiler.
+See https://github.com/Lokathor/bytemuck/pull/268
+"""
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.bytemuck]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.16.3 -> 1.17.1"
+notes = "Unsafe review comments can be found in https://crrev.com/c/5813463"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.bytemuck]]
 who = [
     "Manish Goregaokar <manishearth@google.com>",
     "Łukasz Anforowicz <lukasza@google.com>",
@@ -1157,6 +1174,17 @@ notes = """
 Added support for Zeroable enums, which requires them to be represented as an integer and to have 0 as one of their values.
 
 Other trivial/formatting changes.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.bytemuck_derive]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.7.0 -> 1.7.1"
+notes = """
+No impact on safety AFAICT - the delta only specifies a new attribute for
+`proc_macro_derive` to work around re-export issues described at
+https://github.com/Lokathor/bytemuck/issues/159
 """
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
@@ -1532,6 +1560,16 @@ aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_p
 who = "Dustin J. Mitchell <djmitche@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "4.5.8 -> 4.5.9"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.clap]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "4.5.15 -> 4.5.16"
+notes = """
+The only change in the delta is explicitly listing re-exports
+instead of using a `*` wildcard in `pub use clap_derive::{self, *}`.
+"""
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.clap_builder]]
