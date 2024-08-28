@@ -81,6 +81,25 @@ https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-r
 
 
 
+
+
+[[audits.alloc-no-stdlib]]
+who = [
+    "Luca Versari <veluca@google.com>",
+    "Manish Goregaokar <manishearth@google.com>"
+]
+criteria = ["ub-risk-4"]
+version = "2.0.4"
+notes = """Reviewed in CL 636730294
+#REF!
+"""
+
+[[audits.alloc-stdlib]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.2.2"
+notes = "Reviewed in CL 636730499"
+
 [[audits.android_logger]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
@@ -127,6 +146,30 @@ criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.0.0-beta2"
 notes = "Reviewed in CL 558118223"
 
+[[audits.arrow-buffer]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2"]
+version = "51.0.0"
+notes = "Reviewed in CL 637904132"
+
+[[audits.arrow-cast]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2"]
+version = "51.0.0"
+notes = "Reviewed in CL 638739847"
+
+[[audits.arrow-data]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-3"]
+version = "51.0.0"
+notes = "Reviewed in CL 638739833"
+
+[[audits.arrow-select]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-3"]
+version = "51.0.0"
+notes = "Reviewed in CL 638739853"
+
 [[audits.base64ct]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2"]
@@ -149,6 +192,12 @@ who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "2.3.3"
 notes = "Reviewed in CL 545304270"
+
+[[audits.brotli]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2"]
+version = "3.5.0"
+notes = "Reviewed in CL 641306142"
 
 [[audits.btoi]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -197,6 +246,12 @@ Rating is ub-risk-4 because this crate makes assumptions about single-threadedne
 However, on the platform it is intended for, this is fine and can be treated as having ub-risk-3.
 Issues found: https://github.com/chipsalliance/caliptra-cfi/pull/10
 """
+
+[[audits.chacha20]]
+who = "<mmaurer@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.9.1"
+notes = "Reviewed in CL 640124703"
 
 [[audits.chalk_ir]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -406,6 +461,12 @@ criteria = ["ub-risk-3"]
 version = "0.2.0"
 notes = "Reviewed in CL 559071858"
 
+[[audits.flatbuffers]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-1"]
+version = "23.5.26"
+notes = "Reviewed in CL 638739860"
+
 [[audits.flate2]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
@@ -429,7 +490,7 @@ Same review as previous
 [[audits.flate2]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
-version = "1.0.28"
+delta = "1.0.27 -> 1.0.28"
 notes = """Reviewed in CL 573223148
 Issues from previous review (#379, #220) fixed (PRs #380, #373).
 """
@@ -447,6 +508,12 @@ who = "Augie Fackler <augie@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "0.5.0"
 notes = "Reviewed in CL 617547813"
+
+[[audits.gif]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1"]
+version = "0.12.1"
+notes = "Reviewed in CL 637680029"
 
 [[audits.gix]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -492,6 +559,12 @@ version = "0.26.0"
 notes = """Reviewed in CL 581562538
 Relies on mmap'd file being untouched externally.
 """
+
+[[audits.gix-index]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-2"]
+delta = "0.27.1 -> 0.33.0"
+notes = "Reviewed in CL 636423069"
 
 [[audits.gix-pack]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -544,6 +617,18 @@ who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "11.0.0"
 notes = "Reviewed in CL 581562529"
+
+[[audits.gix-tempfile]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-3"]
+delta = "11.0.1 -> 14.0.0"
+notes = "Reviewed in CL 636941982"
+
+[[audits.goblin]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1"]
+version = "0.8.0"
+notes = "Reviewed in CL 642006818"
 
 [[audits.half]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -654,6 +739,12 @@ criteria = ["ub-risk-4"]
 version = "0.1.5"
 notes = "Reviewed in CL 581562578"
 
+[[audits.indexmap]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "2.2.6"
+notes = "Reviewed in CL 629033781"
+
 [[audits.inotify]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
@@ -665,6 +756,12 @@ who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-1"]
 version = "1.29.0"
 notes = "Reviewed in CL 554440331"
+
+[[audits.intrusive-collections]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.9.6"
+notes = "Reviewed in CL 638226392"
 
 [[audits.itertools]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -702,6 +799,12 @@ criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.8.0"
 notes = "Reviewed in CL 554583176"
 
+[[audits.keccak]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.1.5"
+notes = "Reviewed in CL 636605237"
+
 [[audits.kvm-ioctls]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
@@ -713,6 +816,12 @@ who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.14.0"
 notes = "Reviewed in CL 565655079"
+
+[[audits.kvm-ioctls]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-3"]
+delta = "0.15.0 -> 0.17.0"
+notes = "Reviewed in CL 634689649"
 
 [[audits.lexical]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -945,6 +1054,12 @@ criteria = ["ub-risk-1"]
 version = "0.32.0"
 notes = "Reviewed in CL 558738698"
 
+[[audits.parquet]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-4"]
+version = "51.0.0"
+notes = "Reviewed in CL 642798209"
+
 [[audits.perf_event]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2"]
@@ -967,6 +1082,34 @@ Issues found:
 - https://github.com/petgraph/petgraph/issues/582
 """
 
+[[audits.polars]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-0"]
+version = "0.38.3"
+notes = """Reviewed in CL 645917709
+No unsafe code outside of tests.
+"""
+
+[[audits.polars-io]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.38.3"
+notes = """Reviewed in CL 645900171
+No actual unsoundness was found, however this crate was rather hard to review, with a lot of usages of unsafe in the CSV parser that seemed gratuitous, and uncommented. Rating can be lowered when someone can find the time to review this.
+"""
+
+[[audits.polars-row]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.38.3"
+notes = "Reviewed in CL 644011025"
+
+[[audits.polars-utils]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.38.3"
+notes = "Reviewed in CL 636679479"
+
 [[audits.pollster]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
@@ -980,6 +1123,12 @@ who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-1"]
 version = "0.2.0"
 notes = "Reviewed in CL 578897702"
+
+[[audits.process-wrap]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-3"]
+version = "8.0.2"
+notes = "Reviewed in CL 640811587"
 
 [[audits.proptest]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -1068,6 +1217,12 @@ Issues found:
  - Internal unsoundness around the invariants of q and i in f2s_intrinsics.rs
  - Unclear bounds checking around get_unchecked in s2d.rs
 """
+
+[[audits.scroll]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.12.0"
+notes = "Reviewed in CL 642006817"
 
 [[audits.seccompiler]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -1222,6 +1377,7 @@ version = "0.22.12"
 notes = """Reviewed in CL 628398549
 Issues found:
  - Better documented safety: https://github.com/toml-rs/toml/pull/720
+ - Unclear on mll_quotes and mlb_quotes being safe
 """
 
 [[audits.tracing]]
@@ -1383,6 +1539,12 @@ criteria = ["ub-risk-1"]
 version = "0.2.1"
 notes = "Reviewed in CL 557159752"
 
+[[audits.virtio-queue]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2"]
+delta = "0.9.0 -> 0.12.0"
+notes = "Reviewed in CL 634659048"
+
 [[audits.virtiofsd]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
@@ -1433,11 +1595,25 @@ Issues found:
  - https://github.com/alacritty/vte/pull/102
 """
 
+[[audits.wasm-bindgen]]
+who = "<mmaurer@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.2.92"
+notes = "Reviewed in CL 643989424"
+
 [[audits.winnow]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.5.19"
 notes = "Reviewed in CL 581220347"
+
+[[audits.xlsynth]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.0.11"
+notes = """Reviewed in CL 644646753
+- Uses dlsym for FFI, could use more safety docs separating dlsym unsafety from C API unsafety
+"""
 
 [[audits.xxhash-rust]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -1446,6 +1622,14 @@ version = "0.8.6"
 notes = """Reviewed in CL 552861145
 Many internal functions that are `unsafe` to call are not marked `unsafe`.
 See https://github.com/DoumanAsh/xxhash-rust/issues/29
+"""
+
+[[audits.yoke]]
+who = "Luca Versari <veluca@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.7.4"
+notes = """Reviewed in https://github.com/unicode-org/icu4x/pull/5046
+Review performed as PR: https://github.com/unicode-org/icu4x/pull/5046. Minor docs improvements, plus known currently-unsolvable issue around potential future noalias UB (https://github.com/unicode-org/icu4x/issues/2095)
 """
 
 [[audits.zerocopy]]
