@@ -10023,7 +10023,7 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 
 [[audits.yoke]]
 who = "Luca Versari <veluca@google.com>"
-criteria = "ub-risk-2"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.7.4"
 notes = """
 Reviewed in https://github.com/unicode-org/icu4x/pull/5046
