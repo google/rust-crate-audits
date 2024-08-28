@@ -1626,7 +1626,7 @@ See https://github.com/DoumanAsh/xxhash-rust/issues/29
 
 [[audits.yoke]]
 who = "Luca Versari <veluca@google.com>"
-criteria = ["ub-risk-2"]
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.7.4"
 notes = """Reviewed in https://github.com/unicode-org/icu4x/pull/5046
 Review performed as PR: https://github.com/unicode-org/icu4x/pull/5046. Minor docs improvements, plus known currently-unsolvable issue around potential future noalias UB (https://github.com/unicode-org/icu4x/issues/2095)
