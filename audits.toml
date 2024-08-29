@@ -9875,6 +9875,12 @@ with vsock sockets.
 """
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.vsock]]
+who = "Eri Sawada <erisawada@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.vte]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
