@@ -589,6 +589,13 @@ version = "1.1.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.ash]]
+who = "Chia-I Wu <olv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.38.0+1.3.281"
+notes = "Vulkan binding mostly generated from vk.xml"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.ash]]
 who = "David Koloski <dkoloski@google.com>"
 criteria = ["ub-risk-4", "safe-to-deploy"]
 version = "0.37.0+1.3.209"
@@ -5092,6 +5099,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.7.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libloading]]
+who = "Chia-I Wu <olv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.5"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.libloading]]
