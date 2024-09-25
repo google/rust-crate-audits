@@ -4091,6 +4091,17 @@ version = "0.3.1"
 notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.glob]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+version = "0.3.1"
+notes = """
+No unsafe. The crate's purpose is to find files based on a glob, so it
+uses the fs module for that and returns lists of paths. There's no net
+usage or crypto.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.goblin]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = "ub-risk-1"
@@ -7479,6 +7490,18 @@ version = "0.3.8"
 notes = "Reviewed in CL 563876644"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.relative-path]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+version = "1.9.3"
+notes = """
+There is no net or fs usage, no crypto.
+There is unsafe to convert pointers from str to RelativePath, where the latter
+is a transparent wrapper around str so the pointer will be to a valid
+type/value always.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.ring]]
 who = "Laura Peskin <pesk@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
@@ -7518,6 +7541,13 @@ Previously reviewed during security review and the audit is grandparented in.
 """
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.rstest]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.17.0 -> 0.22.0"
+notes = "No new unsafe. fs and net usage, but only in its own tests."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.rstest_macros]]
 who = "danakj@chromium.org"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -7526,6 +7556,19 @@ notes = """
 Reviewed in https://crrev.com/c/5171063
 
 Previously reviewed during security review and the audit is grandparented in.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.rstest_macros]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto", "ub-risk-0"]
+version = "0.22.0"
+notes = """
+There is no fs or net usage directly, though there is fs
+usage through the glob crate to get lists of files if the user
+asks for it in their macro.
+
+There is no unsafe. Scanned through all the code.
 """
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
@@ -7538,6 +7581,13 @@ Reviewed in https://crrev.com/c/5171063
 
 Previously reviewed during security review and the audit is grandparented in.
 """
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.rstest_reuse]]
+who = "danakj <danakj@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.5.0 -> 0.7.0"
+notes = "No new unsafe, looked through the changes which were minimal."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.rtic-core]]
