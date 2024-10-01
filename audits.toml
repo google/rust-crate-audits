@@ -7377,6 +7377,12 @@ notes = "Changes for incremental font transfer, Ankr, Feat tables, and support f
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.read-fonts]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.22.0 -> 0.22.1"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.read-fonts]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-1"
 version = "0.15.6"
