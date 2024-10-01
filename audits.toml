@@ -8540,6 +8540,12 @@ notes = "Changes for adding autohinting support. Crates forbids unsafe code."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.skrifa]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.22.0 -> 0.22.1"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.skrifa]]
 who = "Augie Fackler <augie@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.16.0"
@@ -9544,6 +9550,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.29.0 -> 0.31.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.uefi]]
+who = "Andre Braga <andrebraga@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.31.0 -> 0.32.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.uefi-macros]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -9580,6 +9592,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.14.0 -> 0.15.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.uefi-macros]]
+who = "Andre Braga <andrebraga@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.15.0 -> 0.16.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.uefi-raw]]
 who = "Nicholas Bishop <nicholasbishop@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -9614,6 +9632,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Andre Braga <andrebraga@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.6.0 -> 0.7.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.uefi-raw]]
+who = "Andre Braga <andrebraga@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.0 -> 0.8.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.uefi-services]]
