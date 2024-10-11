@@ -3128,6 +3128,12 @@ criteria = ["does-not-implement-crypto", "safe-to-deploy"]
 delta = "0.1.11 -> 0.1.12"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.enumn]]
+who = "Alexandre Courbot <acourbot@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.1.12 -> 0.1.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.env_logger]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -10152,6 +10158,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.3.0 -> 1.8.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.v4l2r]]
+who = "Alexandre Courbot <acourbot@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.0.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.vcell]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -10229,6 +10241,18 @@ criteria = "ub-risk-1"
 version = "0.2.1"
 notes = "Reviewed in CL 557159752"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.virtio-media]]
+who = "Alexandre Courbot <acourbot@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.0.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.virtio-media]]
+who = "Alexandre Courbot <acourbot@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.0.4"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.virtio-queue]]
 who = "Augie Fackler <augie@google.com>"
