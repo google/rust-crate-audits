@@ -2220,6 +2220,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.1.1 -> 1.1.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.critical-section]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.1.2 -> 1.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.cros-codecs]]
 who = "Alexandre Courbot <acourbot@chromium.org>"
 criteria = "does-not-implement-crypto"
