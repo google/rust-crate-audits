@@ -7511,6 +7511,13 @@ notes = "Support for the hdmx table, inlining optimizations. Crate has no unsafe
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.read-fonts]]
+who = "Dominik Röttsches <drott@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.22.3 -> 0.23.0"
+notes = "More lenient parsing of CFF fonts with invalid BlueValues, incremental font transfer implementation of glyph keyed patching. No unsafe code in crate."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.read-fonts]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-1"
 version = "0.15.6"
@@ -8703,6 +8710,13 @@ who = "Dominik Röttsches <drott@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
 delta = "0.22.3 -> 0.23.0"
 notes = "Incremental Font Transfer patchset implementation removed, important fixes for path retrievel from CFF fonts with empty PrivateDict."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.skrifa]]
+who = "Dominik Röttsches <drott@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.23.0 -> 0.24.0"
+notes = "Skrifa updates for using wrapping arithmetic in CFF private dict parsing."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.skrifa]]
