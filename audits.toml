@@ -1382,6 +1382,13 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.7.1 -> 1.7.2"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.bytes]]
+who = "Liza Burakova <liza@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.7.2 -> 1.8.0"
+notes = "smol change, does not add unsafe code, majority of change is new tests"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.caliptra_cfi]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-4"
