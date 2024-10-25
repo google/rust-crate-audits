@@ -3273,6 +3273,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.22.9"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.exitcode]]
+who = "Gwendal Grignou <gwendal@chromium.org>"
+criteria = ["safe-to-run", "crypto-safe"]
+version = "1.1.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.ext-trait]]
 who = "Howard Yang <hcyang@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -7762,6 +7768,12 @@ type/value always.
 """
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.retain_mut]]
+who = "Gwendal Grignou <gwendal@chromium.org>"
+criteria = ["safe-to-run", "crypto-safe"]
+version = "0.1.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.ring]]
 who = "Laura Peskin <pesk@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
@@ -8110,6 +8122,12 @@ Issues found:
  - Unclear bounds checking around get_unchecked in s2d.rs
 """
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.safemem]]
+who = "Gwendal Grignou <gwendal@chromium.org>"
+criteria = ["safe-to-run", "crypto-safe"]
+version = "0.3.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.same-file]]
 who = "George Burgess IV <gbiv@google.com>"
