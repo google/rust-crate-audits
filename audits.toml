@@ -7000,6 +7000,16 @@ delta = "1.0.86 -> 1.0.87"
 notes = "No new unsafe interactions."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.proc-macro2]]
+who = "Liza Burakova <liza@chromium.org"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.0.87 -> 1.0.89"
+notes = """
+Biggest change is adding error handling in build.rs.
+Some config related changes in wrapper.rs.
+"""
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.process-wrap]]
 who = "Augie Fackler <augie@google.com>"
 criteria = "ub-risk-3"
@@ -7644,6 +7654,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.10.6 -> 1.11.0"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.regex]]
+who = "Liza Burakova <liza@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.11.0 -> 1.11.1"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.regex-automata]]
 who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -8032,6 +8048,12 @@ who = "Dustin J. Mitchell <djmitche@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
 delta = "1.0.16 -> 1.0.17"
 notes = "Just updates windows compat"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.rustversion]]
+who = "Liza Burakova <liza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.0.17 -> 1.0.18"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.rustyline]]
