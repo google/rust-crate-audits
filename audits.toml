@@ -2764,6 +2764,12 @@ criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
 delta = "1.0.126 -> 1.0.128"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.cxxbridge-flags]]
+who = "Liza Burakova <liza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "1.0.128 -> 1.0.129"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.cxxbridge-macro]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -8326,6 +8332,12 @@ delta = "1.0.209 -> 1.0.210"
 notes = "Almost no new code - just feature rearrangement"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.serde]]
+who = "Liza Burakova <liza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
+delta = "1.0.210 -> 1.0.213"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.serde-tuple-vec-map]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "safe-to-deploy"]
@@ -8428,6 +8440,13 @@ who = "Adrian Taylor <adetaylor@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
 delta = "1.0.209 -> 1.0.210"
 notes = "Almost no new code - just feature rearrangement"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.serde_derive]]
+who = "Liza Burakova <liza@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "1.0.210 -> 1.0.213"
+notes = "Grepped for 'unsafe', 'crypt', 'cipher', 'fs', 'net' - there were no hits"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.serde_jcs]]
