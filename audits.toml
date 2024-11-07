@@ -977,6 +977,12 @@ version = "1.2.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.bitflags]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.6.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bitflags]]
 who = "Dennis Kempin <denniskempin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.3.2 -> 2.2.1"
@@ -2298,6 +2304,12 @@ version = "0.0.3"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.cros-libva]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.0.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cros-libva]]
 who = "Alexandre Courbot <acourbot@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.0.3 -> 0.0.4"
@@ -3019,6 +3031,30 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.drm]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.12.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.drm-ffi]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.drm-fourcc]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.2.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.drm-sys]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.ecdsa]]
@@ -4020,6 +4056,18 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = "ub-risk-0"
 version = "1.0.0"
 notes = "`rg -i unsafe` resulted in zero hits for this package."
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.gbm]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.15.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.gbm-sys]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.gdbstub]]
@@ -5570,6 +5618,12 @@ version = "0.4.13"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.linux-raw-sys]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.linux-raw-sys]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.4.10"
@@ -5715,6 +5769,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 [[audits.matchit]]
 who = "ChromeOS"
 criteria = "safe-to-run"
+version = "0.5.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.matroska-demuxer]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.5.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
