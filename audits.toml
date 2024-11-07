@@ -7111,6 +7111,12 @@ delta = "0.12.4 -> 0.12.6"
 notes = "No concerning changes for safe-to-run."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.prost]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.12.6 -> 0.13.3"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.prost-build]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -7146,6 +7152,12 @@ who = "Dustin J. Mitchell <djmitche@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.12.5 -> 0.12.6"
 notes = "No changes here; presumably a bump of the `prost` crate."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.prost-derive]]
+who = "Lukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.12.6 -> 0.13.3"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.prost-types]]
