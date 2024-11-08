@@ -80,9 +80,6 @@ https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-r
 """
 
 
-
-
-
 [[audits.alloc-no-stdlib]]
 who = [
     "Luca Versari <veluca@google.com>",
@@ -91,7 +88,9 @@ who = [
 criteria = ["ub-risk-4"]
 version = "2.0.4"
 notes = """Reviewed in CL 636730294
-#REF!
+Issues found:
+ - unsafe functions have no documented safety invariants
+ - CallocBackingStore returns uninitialized memory
 """
 
 [[audits.alloc-stdlib]]
@@ -145,6 +144,47 @@ who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "1.0.0-beta2"
 notes = "Reviewed in CL 558118223"
+
+[[audits.archery]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "1.2.1"
+notes = "Reviewed in CL 689387930"
+
+[[audits.argminmax]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.6.2"
+notes = "Reviewed in CL 645900200"
+
+[[audits.arrayref]]
+who = [
+    "Luca Versari <veluca@google.com>",
+    "Manish Goregaokar <manishearth@google.com>"
+]
+criteria = ["ub-risk-3"]
+version = "0.3.7"
+notes = """Reviewed in CL 636647431
+Issues found:
+ - Macros do not overflow check before adding pre/post and can cause hard-to-trigger UB. https://github.com/droundy/arrayref/issues/26
+"""
+
+[[audits.arrayref]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-2"]
+delta = "0.3.7 -> 0.3.9"
+notes = """Reviewed in CL 693504716
+Diff fixes https://github.com/droundy/arrayref/issues/26
+"""
+
+[[audits.arrow_select]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-3"]
+version = "53.1.0"
+notes = """Reviewed in CL 683334337
+Issues found:
+ - filter_run_end_array needs a patch to check its preconditions https://github.com/apache/arrow-rs/issues/6569
+"""
 
 [[audits.arrow-buffer]]
 who = "Augie Fackler <augie@google.com>"
@@ -205,6 +245,14 @@ criteria = ["ub-risk-0", "does-not-implement-crypto"]
 version = "0.4.3"
 notes = "Reviewed in CL 581228675"
 
+[[audits.bulletproofs]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-0"]
+version = "5.0.0"
+notes = """Reviewed in CL 666491560
+Only unsafe is in tests
+"""
+
 [[audits.bumpalo]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2"]
@@ -247,6 +295,12 @@ However, on the platform it is intended for, this is fine and can be treated as 
 Issues found: https://github.com/chipsalliance/caliptra-cfi/pull/10
 """
 
+[[audits.castaway]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.2.3"
+notes = "Reviewed in CL 683065028"
+
 [[audits.chacha20]]
 who = "<mmaurer@google.com>"
 criteria = ["ub-risk-2"]
@@ -285,6 +339,16 @@ Issues:
  - (optional) Incorrect safety comment (https://github.com/clap-rs/clap/pull/5281)
 """
 
+[[audits.clear_on_drop]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.2.5"
+notes = """Reviewed in CL 666491561
+Issues:
+ - Could use some safety comments
+ - Clear::clear() would ideally discard the &mut self and only work with raw pointers to avoid tripping anything around reference validity. Impl is *probably* fine given the way T-opsem is leaning
+"""
+
 [[audits.clru]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
@@ -300,6 +364,18 @@ Issues found:
  - https://github.com/watchexec/command-group/issues/20
  - https://github.com/watchexec/command-group/issues/19
 """
+
+[[audits.compact_str]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.7.1"
+notes = "Reviewed in CL 639198555"
+
+[[audits.console]]
+who = "<devinj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.15.8"
+notes = "Reviewed in CL 683999046"
 
 [[audits.constant_time_eq]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -376,11 +452,33 @@ Issues found:
  - https://github.com/dalek-cryptography/curve25519-dalek/issues/563
 """
 
+[[audits.daemonize]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.5.0"
+notes = "Reviewed in CL 670551760"
+
 [[audits.deranged]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-1"]
 version = "0.3.9"
 notes = "Reviewed in CL 579385986"
+
+[[audits.derive_builder]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-0"]
+version = "0.20.0"
+notes = "Reviewed in CL 644303353"
+
+[[audits.dyn-clone]]
+who = [
+    "Ben Saunders <bsaunders@google.com>",
+    "Augie Fackler <augie@google.com>",
+    "Luca Versari <veluca@google.com>"
+]
+criteria = ["ub-risk-2"]
+version = "1.0.17"
+notes = "Reviewed in CL 637023476"
 
 [[audits.encoding_rs]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -509,11 +607,36 @@ criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "0.5.0"
 notes = "Reviewed in CL 617547813"
 
+[[audits.fragile]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-4"]
+version = "2.0.0"
+notes = """Reviewed in CL 655309625
+Issues found:
+ - https://github.com/mitsuhiko/fragile/issues/34
+"""
+
 [[audits.gif]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-1"]
 version = "0.12.1"
 notes = "Reviewed in CL 637680029"
+
+[[audits.gimli]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.26.2"
+notes = """Reviewed in CL 694412583
+Based off of existing review for 0.31, diff reviewed was *backwards*.
+"""
+
+[[audits.gimli]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.31.0"
+notes = """Reviewed in CL 675488712
+Could have better documented invariants.
+"""
 
 [[audits.gix]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -523,6 +646,21 @@ notes = """Reviewed in CL 581562516
 Issues found:
  - Unsafe transmute of lifetime (https://github.com/Byron/gitoxide/pull/1154)
  - Interrupt handler function should be unsafe
+"""
+
+[[audits.gix_packetline]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.17.5"
+notes = "Reviewed in CL 651814949"
+
+[[audits.gix-attributes]]
+who = "<devinj@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.22.2"
+notes = """Reviewed in CL 653264864
+Issues found:
+ - https://github.com/Byron/gitoxide/issues/1460
 """
 
 [[audits.gix-commitgraph]]
@@ -544,6 +682,20 @@ version = "0.36.0"
 notes = """Reviewed in CL 580908504
 Issues:
  - Illegal mutable aliasing (https://github.com/Byron/gitoxide/pull/1115)
+"""
+
+[[audits.gix-filter]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.11.2"
+notes = "Reviewed in CL 652491636"
+
+[[audits.gix-filter]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-2"]
+delta = "0.11.3 -> 0.13.0"
+notes = """Reviewed in CL 666834466
+No change to unsafe code
 """
 
 [[audits.gix-hash]]
@@ -594,6 +746,14 @@ criteria = ["ub-risk-2-thorough"]
 version = "0.38.0"
 notes = "Reviewed in CL 581562488"
 
+[[audits.gix-ref]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.47.0"
+notes = """Reviewed in CL 666834467
+Uses mmap, otherwise minimal use of unsafe, well commented
+"""
+
 [[audits.gix-revision]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2"]
@@ -605,6 +765,12 @@ who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 delta = "0.23.0 -> 0.24.0"
 notes = "Reviewed in CL 594331337"
+
+[[audits.gix-revision]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "0.29.0"
+notes = "Reviewed in CL 666885060"
 
 [[audits.gix-sec]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -652,6 +818,18 @@ who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-1"]
 version = "2.4.0"
 notes = "Reviewed in CL 610738461"
+
+[[audits.halfbrown]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.2.5"
+notes = "Reviewed in CL 659834502"
+
+[[audits.hashlink]]
+who = "<mmaurer@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.9.0"
+notes = "Reviewed in CL 649389159"
 
 [[audits.home]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -705,6 +883,16 @@ criteria = ["ub-risk-2"]
 version = "1.49.0"
 notes = "Reviewed in CL 588379811"
 
+[[audits.httparse]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-4"]
+delta = "1.8.0 -> 1.9.4"
+notes = """Reviewed in CL 648994349
+Issues found:
+ - https://github.com/seanmonstar/httparse/issues/177
+ -Parsing code would be improved with an API that combines peeking and advancing
+"""
+
 [[audits.hyper]]
 who = [
     "Manish Goregaokar <manishearth@google.com>",
@@ -727,11 +915,23 @@ criteria = ["ub-risk-2"]
 version = "0.1.3"
 notes = "Reviewed in CL 605631967"
 
+[[audits.igvm]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1"]
+version = "0.3.0"
+notes = "Reviewed in CL 660125968"
+
 [[audits.image]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.24.6"
 notes = "Reviewed in CL 559198279"
+
+[[audits.imara_diff]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.1.7"
+notes = "Reviewed in CL 657293942"
 
 [[audits.imara-diff]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -763,11 +963,29 @@ criteria = ["ub-risk-3"]
 version = "0.9.6"
 notes = "Reviewed in CL 638226392"
 
+[[audits.is-terminal]]
+who = "Luca Versari <veluca@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.4.13"
+notes = "Reviewed in CL 666758546"
+
 [[audits.itertools]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "0.11.0"
 notes = "Reviewed in CL 566337310"
+
+[[audits.itoap]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2"]
+version = "1.0.1"
+notes = "Reviewed in CL 649662185"
+
+[[audits.jiff]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.1.0"
+notes = "Reviewed in CL 666672133"
 
 [[audits.jiter]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -799,11 +1017,33 @@ criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.8.0"
 notes = "Reviewed in CL 554583176"
 
+[[audits.js-sys]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.3.69"
+notes = "Reviewed in CL 652404154"
+
 [[audits.keccak]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.1.5"
 notes = "Reviewed in CL 636605237"
+
+[[audits.kstring]]
+who = "<devinj@google.com>"
+criteria = ["ub-risk-3"]
+version = "2.0.0"
+notes = """Reviewed in CL 653263733
+Issues found:
+ - Should use repr(C) union to get correct layout: https://github.com/cobalt-org/kstring/pull/77.
+ - Ideally the HeapStr trait should be unsafe, but this is a local issue since the trait is sealed.
+"""
+
+[[audits.kstring]]
+who = "<devinj@google.com>"
+criteria = ["ub-risk-2"]
+delta = "2.0.0 -> 2.0.1"
+notes = "Reviewed in CL 655475274"
 
 [[audits.kvm-ioctls]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -912,6 +1152,16 @@ criteria = ["ub-risk-2"]
 version = "0.8.0"
 notes = "Reviewed in CL 562765830"
 
+[[audits.libproc]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.14.8"
+notes = """Reviewed in CL 650620517
+Issues found:
+ - `pidinfo` buffer is inferred as `c_void` and is therefore too small
+ - `PIDFDInfo` and `PIDRUsage` should be `unsafe trait`s
+"""
+
 [[audits.libshpool]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
@@ -923,6 +1173,12 @@ who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.5.0"
 notes = "Reviewed in CL 609436265"
+
+[[audits.libsqlite3-sys]]
+who = "<mmaurer@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.28.0"
+notes = "Reviewed in CL 649389160"
 
 [[audits.line-index]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -986,6 +1242,15 @@ criteria = ["ub-risk-3"]
 version = "0.9.0"
 notes = "Reviewed in CL 555491937"
 
+[[audits.merlin]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-4"]
+version = "3.0.0"
+notes = """Reviewed in CL 660103172
+Issues found:
+ - https://github.com/zkcrypto/merlin/pull/7
+"""
+
 [[audits.minifier]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-4"]
@@ -1027,6 +1292,12 @@ criteria = ["ub-risk-2"]
 version = "0.49.0"
 notes = "Reviewed in CL 585090965"
 
+[[audits.num_enum_derive]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.7.2"
+notes = "Reviewed in CL 647708155"
+
 [[audits.num_traits]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
@@ -1048,11 +1319,39 @@ Issues found:
  - to_str_radix_reversed is required to return a valid string by unsafe code, but this is not documented, nor is it easy to verify. It should probably return a String (at least internally), and have better safety documentation, or a double check when converting from UTF8
 """
 
+[[audits.numpy]]
+who = "<devinj@google.com>"
+criteria = ["ub-risk-4"]
+delta = "0.20.0 -> 0.21.0"
+notes = """Reviewed in CL 683848897
+Issues found:
+ - to_owned_array needs to be unsafe as it can introduce aliasing UB
+ - Review incomplete: pervasive undocumented unsafety
+"""
+
 [[audits.object]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-1"]
 version = "0.32.0"
 notes = "Reviewed in CL 558738698"
+
+[[audits.owo-colors]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-4"]
+version = "3.5.0"
+notes = """Reviewed in CL 683999019
+Issues found:
+ - Unsafe code relies on const promotion. This *may* actually be sound in a const context, however it's not a huge deal since it's easy to patch: https://github.com/jam1garner/owo-colors/pull/131
+"""
+
+[[audits.owo-colors]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-4"]
+version = "4.1.0"
+notes = """Reviewed in CL 683999019
+Issues found:
+ - Unsafe code relies on const promotion. This *may* actually be sound in a const context, however it's not a huge deal since it's easy to patch: https://github.com/jam1garner/owo-colors/pull/131
+"""
 
 [[audits.parquet]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -1098,11 +1397,45 @@ notes = """Reviewed in CL 645900171
 No actual unsoundness was found, however this crate was rather hard to review, with a lot of usages of unsafe in the CSV parser that seemed gratuitous, and uncommented. Rating can be lowered when someone can find the time to review this.
 """
 
+[[audits.polars-json]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.38.3"
+notes = """Reviewed in CL 671839126
+issues found:
+ - Unsafe code relies on entirely undocumented invariants pervasive in code around only ever producing UTF8 bytes. Code should be updated to use `&mut String`
+ - https://github.com/pola-rs/polars/pull/18725
+"""
+
+[[audits.polars-plan]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.38.3"
+notes = """Reviewed in CL 653608525
+Issues found:
+ - Unprotected public `static mut`s read in safe code
+ - Review incomplete: pervasive undocumented unsafety
+"""
+
 [[audits.polars-row]]
 who = "Augie Fackler <augie@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.38.3"
 notes = "Reviewed in CL 644011025"
+
+[[audits.polars-time]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.38.3"
+notes = """Reviewed in CL 645900204
+mem::transmute of ParseError is unsound and unnecessary.
+"""
+
+[[audits.polars-time]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.38.3"
+notes = "Reviewed in CL 645900204"
 
 [[audits.polars-utils]]
 who = "Augie Fackler <augie@google.com>"
@@ -1138,17 +1471,47 @@ notes = """Reviewed in CL 615011355
 Not safe with hardware_rng feature on platforms without RDRAND support. Should bubble up the invariant or have a feature test assertion
 """
 
+[[audits.pulldown_cmark]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.8.0"
+notes = "Reviewed in CL 669013210"
+
 [[audits.pulldown-cmark]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.9.3"
 notes = "Reviewed in CL 555491415"
 
+[[audits.pulldown-cmark-escape]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.11.0"
+notes = "Reviewed in CL 658107045"
+
 [[audits.pyo3_macros]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-0"]
 version = "0.20.3"
 notes = "Reviewed in CL 616043931"
+
+[[audits.ra_ap_rustc_abi]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.75.0"
+notes = "Reviewed in CL 693823235"
+
+[[audits.ra_ap_salsa]]
+who = "Luca Versari <veluca@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.0.241"
+notes = "Reviewed in CL 694114488"
+
+[[audits.ra_ap_stdx]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.0.241"
+notes = "Reviewed in CL 694057205"
 
 [[audits.rand_xorshift]]
 who = "Augie Fackler <augie@google.com>"
@@ -1191,6 +1554,24 @@ who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-3"]
 version = "0.14.1"
 notes = "Reviewed in CL 570228314"
+
+[[audits.rusqlite]]
+who = "<mmaurer@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.32.0"
+notes = """Reviewed in CL 649389163
+Issues found:
+ - https://github.com/rusqlite/rusqlite/issues/1546
+ - Technically, free_boxed_value should use catch_unwind (minor)
+"""
+
+[[audits.rustybuzz]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-0"]
+version = "0.12.0"
+notes = """Reviewed in CL 649338374
+Only unsafe is in examples
+"""
 
 [[audits.ruzstd]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -1274,11 +1655,26 @@ criteria = ["ub-risk-2-thorough", "does-not-implement-crypto"]
 version = "0.3.0"
 notes = "Reviewed in CL 578198476"
 
+[[audits.simd-json]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.13.10"
+notes = """Reviewed in CL 661175961
+Issues found:
+ - Review incomplete: Pervasive undocumented unsafety.
+"""
+
 [[audits.skrifa]]
 who = "Augie Fackler <augie@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.16.0"
 notes = "Reviewed in CL 614825012"
+
+[[audits.slotmap]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2"]
+version = "1.0.6"
+notes = "Reviewed in CL 647314509"
 
 [[audits.smallvec]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -1299,6 +1695,18 @@ version = "0.13.0"
 notes = """Reviewed in CL 614967252
 Would be rather straightforward to add safety comments
 """
+
+[[audits.sptr]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.3.2"
+notes = "Reviewed in CL 660053567"
+
+[[audits.strck]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-1"]
+version = "1.0.0"
+notes = "Reviewed in CL 685732460"
 
 [[audits.swc_atoms]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -1355,6 +1763,12 @@ criteria = ["ub-risk-2"]
 version = "0.4.0"
 notes = "Reviewed in CL 627536088"
 
+[[audits.tar]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-2"]
+delta = "0.4.40 -> 0.4.42"
+notes = "Reviewed in CL 688729490"
+
 [[audits.tfhe]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-3"]
@@ -1369,6 +1783,31 @@ who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.2.15"
 notes = "Reviewed in CL 580962188"
+
+[[audits.tokenizers]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.19.1"
+notes = """Reviewed in CL 684450749
+Issues found:
+ - UB with static mut https://github.com/huggingface/tokenizers/issues/1491
+ - underdocumented safety invariants in cases that need more documentation (PR in https://github.com/huggingface/tokenizers/pull/1651)
+"""
+
+[[audits.tokenizers]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.20.1"
+notes = """Reviewed in CL 684450749
+Issues found:
+ - underdocumented safety invariants in cases that need more documentation (PR in https://github.com/huggingface/tokenizers/pull/1651)
+"""
+
+[[audits.tokenizers-python]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.20.1"
+notes = "Reviewed in CL 687963248"
 
 [[audits.toml_edit]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -1601,6 +2040,18 @@ criteria = ["ub-risk-2"]
 version = "0.2.92"
 notes = "Reviewed in CL 643989424"
 
+[[audits.wasm-bindgen-backend]]
+who = "<mmaurer@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.2.92"
+notes = "Reviewed in CL 643989422"
+
+[[audits.wasm-bindgen-macro]]
+who = "<mmaurer@google.com>"
+criteria = ["ub-risk-1"]
+version = "0.2.92"
+notes = "Reviewed in CL 643989420"
+
 [[audits.winnow]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2"]
@@ -1614,6 +2065,12 @@ version = "0.0.11"
 notes = """Reviewed in CL 644646753
 - Uses dlsym for FFI, could use more safety docs separating dlsym unsafety from C API unsafety
 """
+
+[[audits.xlsynth]]
+who = "Luca Versari <veluca@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.29.0"
+notes = "Reviewed in CL 684413090"
 
 [[audits.xxhash-rust]]
 who = "Taylor Cramer <cramertj@google.com>"
