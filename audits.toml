@@ -11129,6 +11129,18 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.0.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.virtio-media]]
+who = "Alexandre Courbot <acourbot@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.0.5"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.virtio-media]]
+who = "Alexandre Courbot <acourbot@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.0.5 -> 0.0.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.virtio-queue]]
 who = "Augie Fackler <augie@google.com>"
 criteria = "ub-risk-2"
