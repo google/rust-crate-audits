@@ -2251,6 +2251,12 @@ version = "3.0.2"
 notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.configparser]]
+who = "Li-Yu Yu <aaronyu@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.0.2 -> 3.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.console]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -5200,6 +5206,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.9.3 -> 2.1.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.indexmap]]
+who = "Li-Yu Yu <aaronyu@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "2.1.0 -> 2.2.6"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.indexmap]]
