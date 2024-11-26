@@ -989,6 +989,12 @@ version = "0.63.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.bindgen]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.70.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.bindgen]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.60.1 -> 0.59.2"
@@ -2449,6 +2455,18 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Justin Green <greenjustin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.0.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cros-libva]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.0.11"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cros-libva]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.0.12"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.cros-libva]]
@@ -7213,6 +7231,12 @@ criteria = "safe-to-run"
 version = "0.3.26"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.pkg-config]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.31"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.png]]
 who = "Lukasz Anforowicz <lukasza@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
@@ -8277,6 +8301,12 @@ version = "1.10.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.regex]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.11.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.regex]]
 who = "danakj@chromium.org"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.10.2"
@@ -8332,6 +8362,12 @@ version = "0.4.6"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.regex-automata]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.9"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.regex-automata]]
 who = "danakj@chromium.org"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.3"
@@ -8384,6 +8420,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.8.3"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.regex-syntax]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.5"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.regex-syntax]]
