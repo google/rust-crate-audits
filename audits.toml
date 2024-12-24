@@ -551,6 +551,12 @@ delta = "1.0.93 -> 1.0.94"
 notes = "No behavioral changes"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.anyhow]]
+who = "Adrian Taylor <adetaylor@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.94 -> 1.0.95"
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.anymap]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
