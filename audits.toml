@@ -12178,6 +12178,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.0.5"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.v4l2r]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.0.5 -> 0.0.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.vcell]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -12284,6 +12290,18 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Alexandre Courbot <acourbot@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.0.5 -> 0.0.6"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.virtio-media]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "crypto-safe"]
+delta = "0.0.6 -> 0.0.7"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.virtio-media]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.0.6 -> 0.0.7"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.virtio-queue]]
@@ -12710,6 +12728,12 @@ delta = "0.7.8 -> 0.7.32"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.zerocopy]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.32 -> 0.8.14"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.zerocopy]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.6.1"
@@ -12738,6 +12762,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.7.8 -> 0.7.32"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.zerocopy-derive]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.32 -> 0.8.14"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.zerofrom]]
