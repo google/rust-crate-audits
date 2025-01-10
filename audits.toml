@@ -10504,6 +10504,13 @@ notes = "Support for fonts that rely on hinting (like FreeType's \"tricky\" font
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.skrifa]]
+who = "Dominik Röttsches <drott@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.26.3 -> 0.26.4"
+notes = "Improvements for computing advances for hinted variable fonts, when hvar is missing."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.skrifa]]
 who = "Augie Fackler <augie@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.16.0"
