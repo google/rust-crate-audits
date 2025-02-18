@@ -3927,6 +3927,13 @@ version = "1.0.1"
 notes = "`rg -i unsafe` resulted in zero hits for this package."
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.equivalent]]
+who = "Jonathan Hao <phao@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "1.0.1 -> 1.0.2"
+notes = "No changes to any .rs files or Rust code."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.errno]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
