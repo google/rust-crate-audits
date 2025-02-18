@@ -7480,6 +7480,13 @@ criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
 delta = "0.8.2 -> 0.8.3"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.miniz_oxide]]
+who = "Jonathan Hao <phao@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.8.3 -> 0.8.4"
+notes = "No big changes. Replaces some array with Box and other minor changes."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.mio]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -8971,6 +8978,13 @@ aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_p
 who = "Lukasz Anforowicz <lukasza@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.13.3 -> 0.13.4"
+notes = "No code changes in this delta."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.prost-derive]]
+who = "Jonathan Hao <phao@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.13.4 -> 0.13.5"
 notes = "No code changes in this delta."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
