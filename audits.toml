@@ -9599,6 +9599,13 @@ notes = "IFT impl behind feature flag."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.read-fonts]]
+who = "Dominik Röttsches <drott@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.27.1 -> 0.27.2"
+notes = "CFF charsets support, font_builder related changes, clippy fixes."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.read-fonts]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-1"
 version = "0.15.6"
@@ -11195,6 +11202,13 @@ who = "Dominik Röttsches <drott@chromium.org>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
 delta = "0.27.0 -> 0.28.0"
 notes = "Minor clippy fix."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.skrifa]]
+who = "Dominik Röttsches <drott@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.28.0 -> 0.28.1"
+notes = "Fix for gsub hang, limits to cmap 12 iterator."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
 [[audits.skrifa]]
