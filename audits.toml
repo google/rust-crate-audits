@@ -7598,6 +7598,13 @@ delta = "0.8.3 -> 0.8.4"
 notes = "No big changes. Replaces some array with Box and other minor changes."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.miniz_oxide]]
+who = "Daniel Cheng <dcheng@chromium.org>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-0"]
+delta = "0.8.4 -> 0.8.5"
+notes = "No additions of or changes to unsafe code. Delta consists of a bug fix + cleanups/changes to make it easier for the compiler to elide checks."
+aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
 [[audits.mio]]
 who = "Android Legacy"
 criteria = "safe-to-run"
