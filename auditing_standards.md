@@ -225,7 +225,7 @@ Crates with this criteria contain unsafe Rust code which doesn't uphold the typi
 
  * Is only triggered on platforms that the codebase does not care about.
  * May only become a problem in future versions of Rust, by which time there is confidence that it will have been patched..
- * Is triggered by a pattern of use which the project discourages and can confidently avoid long-term
+ * Is triggered by a pattern of use which the project discourages and can confidently avoid long-term.
 
 
 All audit levels should strive to detail the safety issues found. However, those details are especially important for `ub-risk-3` audits because projects depend on those details to determine whether high-risk crates are acceptable to use.
