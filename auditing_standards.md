@@ -224,7 +224,7 @@ Crates with this criteria contain unsafe Rust code which doesn't uphold the typi
 `ub-risk-3` is the highest risk level at which non-experts could reasonably avoid causing undefined behavior. These crates are unsound, but the risk they pose may be acceptable in some situations. Projects need to make judgement calls about where, when, and by whom these crates may be used. For example, a project may deem a `ub-risk-3` crate acceptable to use if it contains unsoundness that:
 
  * Is only triggered on platforms that the codebase does not care about.
- * May only become a problem in future versions of Rust, by which time there is confidence that it will have been patched..
+ * May only become a problem in future versions of Rust, by which time there is confidence that it will have been patched.
  * Is triggered by a pattern of use which the project discourages and can confidently avoid long-term.
 
 
