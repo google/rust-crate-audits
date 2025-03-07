@@ -203,7 +203,7 @@ Also called: "Mild unsoundness", "Suboptimal soundness"
 
 Requires **Unsafe Rust expertise**
 
-Crates with this criteria contain unsafe Rust code which doesn't uphold the typical standards required for unsafe code. They pose a significant risk of causing undefined behavior, and are suitable only for select applications.
+Crates with this criteria contain unsafe Rust code which doesn't uphold the typical standards required for unsafe code. They pose a nontrivial, but not necessarily unacceptable risk of causing undefined behavior. Projects are encouraged to allow the use of these crates on a case-by-case basis, based on their own specific constraints.
 
 #### Criteria guidelines
 
@@ -218,7 +218,17 @@ Crates with this criteria contain unsafe Rust code which doesn't uphold the typi
     *   Writing implementations of traits not marked `unsafe` by violating documented invariants.
     *   Writing implementations of traits not marked `unsafe` that are not really intended to be implemented by the user.
     *   Explicitly forgetting values that have important drop behavior to cause UB when combined with operations that would not be expected to follow normally.
-*   A fair amount of caution may be required to avoid undefined behavior.
+*   Some caution may be required to avoid undefined behavior.
+
+
+`ub-risk-3` is the highest risk level at which non-experts could reasonably avoid causing undefined behavior. These crates are unsound, but the risk they pose may be acceptable in some situations. Projects need to make judgement calls about where, when, and by whom these crates may be used. For example, a project may deem a `ub-risk-3` crate acceptable to use if it contains unsoundness that:
+
+ * Is only triggered on platforms that the codebase does not care about.
+ * May only become a problem in future versions of Rust, by which time there is confidence that it will have been patched.
+ * Is triggered by a pattern of use which the project discourages and can confidently avoid long-term.
+
+
+All audit levels should strive to detail the safety issues found. However, those details are especially important for `ub-risk-3` audits because projects depend on those details to determine whether high-risk crates are acceptable to use.
 
 ### `ub-risk-4`
 
@@ -226,7 +236,7 @@ Also called: "Extreme unsoundness", "Very risky"
 
 Requires **Unsafe Rust expertise**
 
-Crates with this criteria contain very dangerous unsafe rust code.
+Crates with this criteria contain very dangerous unsafe rust code. They pose a risk of causing undefined behavior with typical use.
 
 #### Criteria guidelines
 
