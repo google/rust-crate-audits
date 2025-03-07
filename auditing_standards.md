@@ -221,7 +221,7 @@ Crates with this criteria contain unsafe Rust code which doesn't uphold the typi
 *   Some caution may be required to avoid undefined behavior.
 
 
-`ub-risk-3` is expected to live at the threshold of acceptance as a dependency for most codebases: there is unsoundness in the crate, but there are also many situations where one need not worry about that unsoundness ever being triggered, and the codebase needs to make a judgement call. For example, one may choose to depend on a `ub-risk-3` dep if the rating is due to:
+`ub-risk-3` is the highest risk level at which non-experts could reasonably avoid causing undefined behavior. These crates are unsound, but the risk they pose may be acceptable in some situations. Projects need to make judgement calls about where, when, and by whom these crates may be used. For example, a project may deem a `ub-risk-3` crate acceptable to use if it contains unsoundness that:
 
  * Unsoundness that is only triggered on platforms that the codebase does not care about.
  * Unsoundness that may become a problem in future versions of Rust, where the codebase is confident of having upstream patches by then.
