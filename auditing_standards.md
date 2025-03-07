@@ -203,7 +203,7 @@ Also called: "Mild unsoundness", "Suboptimal soundness"
 
 Requires **Unsafe Rust expertise**
 
-Crates with this criteria contain unsafe Rust code which doesn't uphold the typical standards required for unsafe code. They MAY pose a risk of causing undefined behavior, and probably should be allowed on a case-by-case basis based on usage.
+Crates with this criteria contain unsafe Rust code which doesn't uphold the typical standards required for unsafe code. They pose a nontrivial, but not necessarily unacceptable risk of causing undefined behavior. Projects are encouraged to allow the use of these crates on a case-by-case basis, based on their own specific constraints.
 
 #### Criteria guidelines
 
