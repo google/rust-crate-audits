@@ -228,7 +228,7 @@ Crates with this criteria contain unsafe Rust code which doesn't uphold the typi
  * Unsoundness that is triggered by a particular pattern of use of an API, which the codebase does not care to do and is confident of being able to avoid long term.
 
 
-This is true for all audit levels, but `ub-risk-3` audits in particular should strive to contain audit comments detailing the safety issues found, to aid in such judgement calls.
+All audit levels should strive to detail the safety issues found. However, those details are especially important for `ub-risk-3` audits because projects depend on those details to determine whether high-risk crates are acceptable to use.
 
 ### `ub-risk-4`
 
