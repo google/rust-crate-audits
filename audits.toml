@@ -9482,6 +9482,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.2.0 -> 3.6.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.protobuf]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.6.0 -> 3.7.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.protobuf-codegen]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -9506,6 +9512,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.2.0 -> 3.6.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.protobuf-codegen]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.6.0 -> 3.7.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.protobuf-parse]]
 who = "ChromeOS Audio"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -9518,6 +9530,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.2.0 -> 3.6.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.protobuf-parse]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.6.0 -> 3.7.2"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.protobuf-support]]
 who = "ChromeOS Audio"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -9528,6 +9546,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Daniel Verkamp <dverkamp@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.2.0 -> 3.6.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.protobuf-support]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.6.0 -> 3.7.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.protoc]]
