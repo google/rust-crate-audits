@@ -1861,6 +1861,12 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.cfg_aliases]]
+who = "Hsin-chen Chuang <chharry@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.1.1 -> 0.2.1"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
 [[audits.chacha20]]
 who = "Joshua Liebow-Feeser <joshlf@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
@@ -7230,6 +7236,12 @@ delta = "0.2.147 -> 0.2.153"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.libc]]
+who = "Hsin-chen Chuang <chharry@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.2.153 -> 0.2.170"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.libc]]
 who = "David Koloski <dkoloski@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
 delta = "0.2.142 -> 0.2.149"
@@ -8156,6 +8168,12 @@ aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust
 who = "Daniel Verkamp <dverkamp@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.27.1 -> 0.28.0"
+aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.nix]]
+who = "Hsin-chen Chuang <chharry@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.28.0 -> 0.29.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.nix]]
