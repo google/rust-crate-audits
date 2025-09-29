@@ -764,11 +764,39 @@ version = "0.37.0+1.3.209"
 notes = "Reviewed on https://fxrev.dev/694269"
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
+[[audits.askama_derive]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "0.13.1"
+notes = "Reviewed in CL 751078334"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.askama_parser]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "0.13.0"
+notes = "Reviewed in "
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.assert_matches]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.5.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.async-executor]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "1.13.1"
+notes = "Reviewed in CL 737846535"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.async-lock]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "3.4.0"
+notes = "Reviewed in CL 740466573"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.async-stream]]
 who = "ChromeOS"
@@ -1062,6 +1090,13 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.5"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.beef]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-1"
+version = "0.5.0"
+notes = "Reviewed in CL 742874865"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.bincode]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1275,6 +1310,28 @@ version = "2.3.3"
 notes = "Reviewed in CL 545304270"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.bitmaps]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-4"
+version = "2.1.0"
+notes = """
+Reviewed in CL 755933866
+This has incorrect usage of target_feature: https://github.com/bodil/bitmaps/issues/31
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.bitmaps]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-4"
+version = "3.2.1"
+notes = """
+Reviewed in CL 755933866
+Issues found:
+ - Incorrect use of target_feature https://github.com/bodil/bitmaps/issues/31
+ - Incorrect layout assumptions around bool https://github.com/bodil/bitmaps/issues/29
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.bitreader]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -1317,6 +1374,13 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.10.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.boxcar]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "0.2.10"
+notes = "Reviewed in CL 736485432"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.brotli]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -2462,6 +2526,16 @@ delta = "0.7.2 -> 0.7.3"
 notes = "Reviewed in CL 701531434"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.clap_lex]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+delta = "0.7.3 -> 0.7.4"
+notes = """
+Reviewed in CL 709087295
+No change since previous review
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.clear_on_drop]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
@@ -2644,12 +2718,29 @@ version = "0.5.1"
 notes = "Reviewed in CL 706930648"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.core-foundation]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "0.10.0"
+notes = """
+Reviewed in CL 711537864
+FFI crate
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.core-foundation-sys]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto", "ub-risk-2"]
 version = "0.8.7"
 notes = "OSX system APIs"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.core-foundation-sys]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.8.7"
+notes = "Reviewed in CL 711535914"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.core_maths]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -2706,6 +2797,13 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.2.8 -> 0.2.9"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.crabbyavif]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.1.0"
+notes = "Reviewed in CL 781088700"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.cranelift-entity]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -2940,6 +3038,13 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.6"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.cstream]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.1.1"
+notes = "Reviewed in https://critique.corp.google.com/CL 805553961"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.ctor]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -3570,6 +3675,13 @@ version = "0.5.0"
 notes = "Reviewed in CL 670551760"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.dary_heap]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "0.3.7"
+notes = "Reviewed in CL 778340537"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.dashmap]]
 who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3817,6 +3929,13 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.dispatch2]]
+who = "<teddykatz@google.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.3.0"
+notes = "Reviewed in CL 752745648"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.displaydoc]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3896,6 +4015,13 @@ version = "1.0.17"
 notes = "Reviewed in CL 637023476"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.dyn-stack]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+delta = "0.9.0 -> 0.11.0"
+notes = "Reviewed in CL 754079845"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.ecdsa]]
 who = "Joshua Liebow-Feeser <joshlf@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
@@ -3907,6 +4033,17 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = "safe-to-run"
 version = "1.0.16"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.educe]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-3"
+version = "0.4.23"
+notes = """
+Reviewed in CL 778349439
+Issues found:
+ - https://github.com/magiclen/educe/issues/45
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.either]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -4021,6 +4158,13 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.enum-ordinalize]]
+who = "<devinj@google.com>"
+criteria = "ub-risk-2"
+version = "3.1.15"
+notes = "Reviewed in CL 778348618"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.enumflags2]]
 who = "Zhengping Jiang <jiangzp@google.com>"
 criteria = "does-not-implement-crypto"
@@ -4128,6 +4272,16 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.9.3 -> 0.8.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.equator-macro]]
+who = "<devinj@google.com>"
+criteria = "ub-risk-4"
+version = "0.4.2"
+notes = """
+Reviewed in CL 752779890
+The unsafe code is a transmute from a user-provided type to a user-provided type, so it is trivially unsound. Would be better if e.g. the proc macro was renamed unsafe_assert, and had a safety comment describing the preconditions. (It is currently named `assert`, and undocumented.)
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.equivalent]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "safe-to-deploy"]
@@ -4204,6 +4358,20 @@ version = "0.12.4"
 notes = "Reviewed in CL 545732008"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.etcetera]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.10.0"
+notes = "Reviewed in CL 750960146"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.etherparse]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-1"
+version = "0.18.0"
+notes = "Reviewed in CL 775556814"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.ethnum]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = "ub-risk-4"
@@ -4228,6 +4396,13 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.22.9"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.euclid]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-1"
+version = "0.22.11"
+notes = "Reviewed in CL 719023061"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.exitcode]]
 who = "Gwendal Grignou <gwendal@chromium.org>"
@@ -4282,7 +4457,7 @@ who = ["Augie Fackler <augie@google.com>", "< manishearth@google.com>"]
 criteria = "ub-risk-4"
 version = "0.2.0"
 notes = """
-Reviewed in 
+Reviewed in
 Issues found:
  - https://github.com/aldanor/fast-float-rust/issues/37 (multiple issues)
 """
@@ -4455,6 +4630,13 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.8.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.filedescriptor]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "0.8.2"
+notes = "Reviewed in CL 715944931"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.filetime]]
 who = "Bastian Kersting <bkersting@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4466,6 +4648,13 @@ who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3", "does-not-implement-crypto"]
 version = "0.2.19"
 notes = "Reviewed in CL 559795004"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.find-msvc-tools]]
+who = "<teddykatz@google.com>"
+criteria = "ub-risk-3"
+version = "0.1.2"
+notes = "Reviewed in CL 810860514"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.fixed_decimal]]
@@ -4832,6 +5021,13 @@ version = "0.5.0"
 notes = "Reviewed in CL 617547813"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.font-types]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "0.8.2"
+notes = "Reviewed in CL 718913459"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.foreign-types]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4885,6 +5081,30 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "3.0.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.fs-set-times]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "0.20.3"
+notes = "Reviewed in CL 778504445"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.fs4]]
+who = "<teddykatz@google.com>"
+criteria = "ub-risk-2"
+version = "0.13.1"
+notes = "Reviewed in CL 771980548"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.fsevent-sys]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "4.1.0"
+notes = """
+Reviewed in CL 726605958
+FFI crate with some simple wrappers
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.ftdi]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4902,6 +5122,13 @@ who = "ChromeOS"
 criteria = "safe-to-run"
 version = "1.1.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.futf]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.1.5"
+notes = "Reviewed in https://critique.corp.google.com/CL 810913099"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.futures]]
 who = "Android Legacy"
@@ -5124,6 +5351,17 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.14.7"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.getifaddrs]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "0.1.5"
+notes = """
+Reviewed in CL 772629745
+Issues found:
+ - Iterator for InterfaceIterator impl unconditionally derefs potentially-null current_unicast pointer
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.getopts]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -5198,6 +5436,16 @@ criteria = ["safe-to-deploy", "ub-risk-2"]
 delta = "0.2.2 -> 0.2.12"
 notes = "Audited at https://fxrev.dev/932979"
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.getrandom]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+version = "0.3.1"
+notes = """
+Reviewed in CL 731774826
+Tons of unsafe for backend specific syscalls. The MaybeUninit invariant of `fill_inner` is upheld nonlocally and is not tracked in comments. Potentially would be nicer to have `fn fill_inner(&mut [MaybeUninit]) -> &mut [u8]`, and have individual backends do their own `assume_init()` invariant asserting comments.
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.ghost]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -5303,6 +5551,13 @@ who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-3"
 version = "0.14.0"
 notes = "Reviewed in CL 581042137"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.gix-features]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+delta = "0.30.0 -> 0.40.0"
+notes = "Reviewed in CL 720029078"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.gix-features]]
@@ -5760,6 +6015,13 @@ Previously reviewed during security review and the audit is grandparented in.
 """
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.highway]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "1.3.0"
+notes = "Reviewed in https://critique.corp.google.com/CL 794944624"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.hkdf]]
 who = "Joshua Liebow-Feeser <joshlf@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
@@ -5809,6 +6071,13 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.hostname]]
+who = "Augie Fackler <augie@google.com>"
+criteria = "ub-risk-2"
+version = "0.4.0"
+notes = "Reviewed in CL 707926879"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.hound]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -5957,7 +6226,7 @@ Reviewed in CL 588384310
 Issues found:
  - https://github.com/hyperium/hyper/pull/3498
  - https://github.com/hyperium/hyper/issues/3556
- - https://github.com/hyperium/hyper/issues/3500 
+ - https://github.com/hyperium/hyper/issues/3500
 (probably not a real issue)
  - https://github.com/hyperium/hyper/issues/3554 (documentation)
 """
@@ -6788,6 +7057,16 @@ version = "1.29.0"
 notes = "Reviewed in CL 554440331"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.insta]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "1.42.0"
+notes = """
+Reviewed in CL 718829060
+Only use of unsafe is bind_async, which does a straightforward projection. Can be removed with https://github.com/mitsuhiko/insta/pull/711
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.instant]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -6836,6 +7115,20 @@ a desired rustc feature is stabilized. There's otherwise no mention
 of `unsafe` flagged by `rg -i unsafe`.
 """
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.io-close]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.3.7"
+notes = "Reviewed in CL 733421084"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.io-extras]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "0.18.4"
+notes = "Reviewed in CL 799517019"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.io-lifetimes]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -6904,6 +7197,13 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.isolang]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "2.4.0"
+notes = "Reviewed in CL 710664600"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.itertools]]
 who = "ChromeOS"
@@ -7031,11 +7331,28 @@ delta = "0.3.0 -> 0.4.0"
 notes = "No unsafe"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.jaq]]
+who = "<teddykatz@google.com>"
+criteria = "ub-risk-3"
+version = "2.2.0"
+notes = "Reviewed in CL 778639304"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.jiff]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-2"
 version = "0.1.0"
 notes = "Reviewed in CL 666672133"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.jiff]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+delta = "0.1.0 -> 0.1.24"
+notes = """
+Reviewed in CL 717066700
+New Android system APIs, otherwise no change to unsafe code since last review
+"""
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.jiter]]
@@ -7096,11 +7413,25 @@ Minor changes since last review
 """
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.json_writer]]
+who = "Augie Fackler <augie@google.com>"
+criteria = "ub-risk-2"
+version = "0.4.0"
+notes = "Reviewed in https://critique.corp.google.com/CL 809112751"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.junit-report]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.jxl]]
+who = "Joshua Liebow-Feeser <joshlf@google.com>"
+criteria = "ub-risk-1"
+version = "0.1.1"
+notes = "Reviewed in "
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.keccak]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -7155,6 +7486,13 @@ delta = "0.15.0 -> 0.17.0"
 notes = "Reviewed in CL 634689649"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.lab]]
+who = "Augie Fackler <augie@google.com>"
+criteria = "ub-risk-2"
+version = "0.11.0"
+notes = "Reviewed in CL 716390760"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.lazy_static]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = "does-not-implement-crypto"
@@ -7199,6 +7537,13 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.3.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.lebe]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-3"
+version = "0.5.2"
+notes = "Reviewed in CL 793627519"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.lexical]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -7275,6 +7620,13 @@ See notes on lexical crate.
 """
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.libafl_bolts]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-4"
+version = "0.14.1"
+notes = "Reviewed in CL 752209217"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.libc]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -7321,6 +7673,13 @@ who = "Ben Saunders <bsaunders@google.com>"
 criteria = "ub-risk-4"
 delta = "0.2.150 -> 0.2.153"
 notes = "Reviewed in CL 622219230"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.libc-print]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "0.1.20"
+notes = "Reviewed in CL 779126414"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.libdbus-sys]]
@@ -7399,6 +7758,20 @@ who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-2"
 version = "0.8.0"
 notes = "Reviewed in CL 562765830"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.liblzma]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "0.4.1"
+notes = "Reviewed in CL 767514298"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.liblzma-sys]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-3"
+version = "0.4.3"
+notes = "Reviewed in CL 767507325"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.libm]]
@@ -7566,6 +7939,20 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.5.6"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.linkme]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-4"
+version = "0.3.32"
+notes = "Reviewed in CL 758190959"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.linkme-impl]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-4"
+version = "0.3.32"
+notes = "Reviewed in CL 758190960 (but see the review for linkme)"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.linux-embedded-hal]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -7729,6 +8116,20 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "2.1.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.logos]]
+who = "<devinj@google.com>"
+criteria = "ub-risk-0"
+version = "0.15.0"
+notes = "Reviewed in CL 742874864"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.logos-codegen]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.15.0"
+notes = "Reviewed in CL 742874863"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.loom]]
 who = "David Koloski <dkoloski@google.com>"
 criteria = "safe-to-run"
@@ -7748,6 +8149,16 @@ who = "Bastian Kersting <bkersting@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.20"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.mac_address]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "1.1.7"
+notes = """
+Reviewed in CL 718900394
+winapi code
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.malloced]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -7796,6 +8207,13 @@ who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.5.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.mathcal]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-3"
+version = "0.6.9"
+notes = "Reviewed in CL 770938969"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.matroska-demuxer]]
 who = "Justin Green <greenjustin@google.com>"
@@ -8084,6 +8502,13 @@ delta = "0.8.5 -> 0.8.9"
 notes = "Audited at https://fxrev.dev/946305"
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
+[[audits.mmx]]
+who = "<teddykatz@google.com>"
+criteria = "ub-risk-3"
+version = "0.1.32"
+notes = "Reviewed in CL 769615692"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.mockall]]
 who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -8183,6 +8608,20 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "safe-to-deploy"]
 delta = "1.0.0 -> 1.1.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.netlink-packet-core]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-0"
+version = "0.7.0"
+notes = "Reviewed in CL 772208218"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.netlink-sys]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.8.0"
+notes = "Reviewed in CL 772197803"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.nibble_vec]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -8617,6 +9056,13 @@ criteria = ["does-not-implement-crypto", "safe-to-deploy"]
 delta = "0.1.0 -> 0.1.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.os_pipe]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "1.2.1"
+notes = "Reviewed in CL 715231802"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.os_str_bytes]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -8681,6 +9127,13 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.2.3 -> 0.3.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.p9]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.3.2"
+notes = "Reviewed in CL 713823916"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.p9_wire_format_derive]]
 who = "Dennis Kempin <denniskempin@google.com>"
 criteria = ["safe-to-deploy", "does-not-implement-crypto"]
@@ -8743,6 +9196,23 @@ version = "51.0.0"
 notes = "Reviewed in CL 642798209"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.parquet]]
+who = "Augie Fackler <augie@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "54.0.0"
+notes = """
+Reviewed in CL 712680846
+Skipped all the `arrow` parts of this crate as we won't use them.
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.partial-io]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "0.5.4"
+notes = "Reviewed in CL 767496248"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.password-hash]]
 who = "Joshua Liebow-Feeser <joshlf@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
@@ -8778,6 +9248,13 @@ who = "Joshua Liebow-Feeser <joshlf@google.com>"
 criteria = ["safe-to-deploy", "ub-risk-2"]
 delta = "0.9.0 -> 0.11.0"
 aggregated-from = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
+
+[[audits.pcap]]
+who = "<devinj@google.com>"
+criteria = "ub-risk-3"
+version = "2.2.0"
+notes = "Reviewed in CL 772184300"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.pdl-compiler]]
 who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
@@ -9021,6 +9498,13 @@ version = "0.1.0"
 notes = "Reviewed in CL 703108664"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.polars-ffi]]
+who = "<teddykatz@google.com>"
+criteria = "ub-risk-2"
+version = "0.48.1"
+notes = "Reviewed in CL 774758919"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.polars-io]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-4"
@@ -9043,6 +9527,13 @@ issues found:
 """
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.polars-parquet]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-3"
+version = "0.44.2"
+notes = "Reviewed in CL 704268862"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.polars-plan]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = "ub-risk-4"
@@ -9060,6 +9551,13 @@ who = "Augie Fackler <augie@google.com>"
 criteria = "ub-risk-3"
 version = "0.38.3"
 notes = "Reviewed in CL 644011025"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.polars-stream]]
+who = "<teddykatz@google.com>"
+criteria = "ub-risk-4"
+version = "0.48.1"
+notes = "Reviewed in CL 771500385"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.polars-time]]
@@ -9094,6 +9592,13 @@ notes = """
 Reviewed in CL 581562576
 Usage of unsafe is fine, but crate can be 100% safe: https://github.com/zesterer/pollster/pull/23
 """
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.portable-atomic-util]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-1"
+version = "0.2.4"
+notes = "Reviewed in CL 772168486"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.postcard]]
@@ -9784,6 +10289,16 @@ version = "0.11.0"
 notes = "Reviewed in CL 658107045"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.pulldown-latex]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "0.7.1"
+notes = """
+Reviewed in CL 764665483
+Ideally can use fmt::Writer instead of io::Writer.
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.pulldown_cmark]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
@@ -9974,6 +10489,17 @@ version = "0.0.241"
 notes = "Reviewed in CL 694853573"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.ra_ap_proc_macro_srv]]
+who = "<devinj@google.com>"
+criteria = "ub-risk-4"
+version = "0.0.241"
+notes = """
+Reviewed in CL 719871627
+Issues found:
+ - https://github.com/rust-lang/rust-analyzer/issues/19342
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.ra_ap_rust-analyzer]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
@@ -10008,6 +10534,16 @@ criteria = "safe-to-run"
 version = "0.5.3"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.radix_fmt]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "1.0.0"
+notes = """
+Reviewed in CL 762469621
+One use of unsafe to build up an ASCII alphanumeric string.
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.radix_trie]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -10039,6 +10575,13 @@ Reviewed in https://crrev.com/c/5171063
 Previously reviewed during security review and the audit is grandparented in.
 """
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
+
+[[audits.rand]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-1"
+version = "0.9.1"
+notes = "Reviewed in CL 755137509"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.rand_chacha]]
 who = "Android Legacy"
@@ -10566,6 +11109,23 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.rlsf]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "0.2.1"
+notes = """
+Reviewed in CL 710142550
+Custom allocator crate doing a bunch of pointer math. Decent safety comments.
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.roman-numerals-rs]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "3.1.0"
+notes = "Reviewed in CL 762479504"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.rpassword]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
@@ -10825,6 +11385,13 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.36.7 -> 0.38.3"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.rustix-linux-procfs]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-1"
+version = "0.1.1"
+notes = "Reviewed in https://critique.corp.google.com/CL 778504452"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.rustversion]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -10976,6 +11543,13 @@ Issues found:
 """
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.safe_arch]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-1"
+version = "0.7.4"
+notes = "Reviewed in CL 796208907"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.safemem]]
 who = "Gwendal Grignou <gwendal@chromium.org>"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -10993,6 +11567,17 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.6"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.sapling-streampager]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-4"
+version = "0.10.3"
+notes = """
+Reviewed in CL 719162422
+Issues found:
+ - BufferWrite::written() must clamp
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.sbat]]
 who = "Nicholas Bishop <nicholasbishop@google.com>"
@@ -11017,6 +11602,16 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.1.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.scopeguard]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "1.2.0"
+notes = """
+Reviewed in CL 728831450
+Implements a drop guard, unsafe code around ptr::read/ManuallyDrop and Sync impl. Rather clearly commented.
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.scratch]]
 who = "Ying Hsu <yinghsu@chromium.org>"
@@ -11043,6 +11638,16 @@ who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
 version = "0.3.0"
 notes = "Reviewed in CL 547754248"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.security-framework-sys]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "2.13.0"
+notes = """
+Reviewed in CL 711542463
+FFI
+"""
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.semver]]
@@ -11618,6 +12223,17 @@ criteria = "safe-to-run"
 version = "0.7.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.serde_yml]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-4"
+version = "0.0.12"
+notes = """
+Reviewed in https://github.com/sebastienrousseau/libyml
+DO NOT USE, ported from libyml using c2rust, and then \"fixed\" by an LLM, with unsound code like https://github.com/sebastienrousseau/libyml/blob/2d23ead2742c196b0e65004a9ed353bc30bea6ad/src/document.rs#L711-L715
+Should be strongly avoided.
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.serial-core]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -11796,6 +12412,13 @@ notes = """
 Reviewed in CL 706757224
 Uses unsafe for interfacing with Windows tty APIs
 """
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.skiplist]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.5.1"
+notes = "Reviewed in CL 769416918"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.skrifa]]
@@ -11984,6 +12607,13 @@ delta = "0.1.1 -> 0.1.2"
 notes = "I don't fully understand the changes in `lib.rs` but they seem to meet the low bar of `safe-to-run`."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.smallstr]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.3.0"
+notes = "Reviewed in CL 740466574"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.smallvec]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -12070,6 +12700,16 @@ who = "Augie Fackler <augie@google.com>"
 criteria = "ub-risk-2"
 version = "0.3.2"
 notes = "Reviewed in CL 660053567"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.stable-deref-trait]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "1.2.0"
+notes = """
+Reviewed in
+Purely a trait, crates using this should be carefully vetted since self-referential stuff can be super tricky around various unsafe rust edges.
+"""
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.stable_deref_trait]]
@@ -12257,6 +12897,17 @@ who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.5.7"
 notes = "Reviewed in CL 546872016"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.sxd-document]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.3.2"
+notes = """
+Reviewed in CL 764633109
+Issues found:
+ - Large quantities of mostly undocumented, difficult-to-audit raw pointer manipulation, but these seem to all bake down to sound use of arena-owned memory.
+"""
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.syn]]
@@ -12499,17 +13150,42 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.4.0 -> 1.4.1"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.terminal_size]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+version = "0.4.2"
+notes = "Reviewed in CL 756344022"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.termios]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.2"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.termios]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-4", "does-not-implement-crypto"]
+version = "0.3.3"
+notes = """
+Reviewed in CL 715944917
+Issues found:
+ - mem::uninitialized (https://github.com/dcuddeback/termios-rs/pull/28)
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.termtree]]
 who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.termwiz]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.22.0"
+notes = "Reviewed in CL 715944910"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.testing_logger]]
 who = "Christoph Schlosser <cschlosser@chromium.org>"
@@ -12556,6 +13232,20 @@ Reviewed in CL 557823618
 Issues found:
  - https://github.com/zama-ai/tfhe-rs/issues/526
 """
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.tfhe-csprng]]
+who = "<teddykatz@google.com>"
+criteria = "ub-risk-2"
+version = "0.5.0"
+notes = "Reviewed in CL 758730716"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.tfhe-ntt]]
+who = "<teddykatz@google.com>"
+criteria = "ub-risk-2"
+version = "0.6.0"
+notes = "Reviewed in CL 761105022"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.thiserror]]
@@ -12624,6 +13314,24 @@ who = "Dennis Kempin <denniskempin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.8.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.tiff]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "0.9.0"
+notes = "Reviewed in CL 745174015"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.time]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+version = "0.3.37"
+notes = """
+Reviewed in CL 735478267
+Uses unsafe to maintain calendrical invariants (is this necessary?)
+The comments are rather deficient: the underlying invariants are not tracked consistently and the math needs to be hand checked at times.
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.time-macros]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -12759,6 +13467,13 @@ Reviewed in CL 684450749
 Issues found:
  - underdocumented safety invariants in cases that need more documentation (PR in https://github.com/huggingface/tokenizers/pull/1651)
 """
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.tokenizers]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-2", "does-not-implement-crypto"]
+delta = "0.20.1 -> 0.20.4"
+notes = "Reviewed in CL 706934375"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.tokenizers-python]]
@@ -12945,6 +13660,16 @@ Issues found:
 """
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.tracing]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+delta = "0.1.40 -> 0.1.41"
+notes = """
+Reviewed in CL 709456617
+Previous UB was fixed. Small amount of unsafe, well-commented.
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.tracing-attributes]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -13060,11 +13785,39 @@ version = "1.6.3"
 notes = "Non-cyptographic hashing function"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.twox-hash]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+version = "2.1.0"
+notes = """
+Reviewed in CL 735469359
+Unsafe found:
+ - Some unchecked indexing based on internal invariants
+ - A bunch of target specific simd and simple asm
+ - Some unsafe traits
+ - Some casting between different integer buffer types, correctly handling alignment
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.typed-arena]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "2.0.2"
 notes = "Reviewed in CL 545304268"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.typeid]]
+who = "<teddykatz@google.com>"
+criteria = ["ub-risk-3", "does-not-implement-crypto"]
+version = "1.0.2"
+notes = "Reviewed in CL 707957977"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.typewit]]
+who = "Augie Fackler <augie@google.com>"
+criteria = "ub-risk-2"
+version = "1.11.0"
+notes = "Reviewed in https://critique.corp.google.com/CL 746362951"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.uart_16550]]
@@ -13575,6 +14328,13 @@ criteria = ["does-not-implement-crypto", "safe-to-deploy"]
 delta = "0.1.0 -> 0.0.4"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
+[[audits.uniffi_macros]]
+who = "<teddykatz@google.com>"
+criteria = "ub-risk-3"
+version = "0.29.1"
+notes = "Reviewed in CL 752709844"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.unindent]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "safe-to-deploy"]
@@ -13605,6 +14365,13 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "2.3.1"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.urlencoding]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "2.1.3"
+notes = "Reviewed in CL 778639303"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.userfaultfd]]
 who = "ChromeOS"
@@ -13846,6 +14613,16 @@ delta = "0.0.6 -> 0.0.7"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
 
 [[audits.virtio-queue]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-2"
+delta = "0.12.0 -> 0.14.0"
+notes = """
+Reviewed in CL 717945204
+No change to unsafe since last review
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.virtio-queue]]
 who = "Augie Fackler <augie@google.com>"
 criteria = "ub-risk-2"
 delta = "0.9.0 -> 0.12.0"
@@ -13959,6 +14736,23 @@ Issues found:
 """
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.vte]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+delta = "0.12.0 -> 0.12.1"
+notes = """
+Reviewed in CL 725665450
+Issues found in previous audit fixed. Not reaudited to check if it qualifies for ub-risk-2 or above, but appears to need more unsafe comments.
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.vtparse]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+version = "0.6.2"
+notes = "Reviewed in CL 716291286"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.wait-timeout]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -14057,6 +14851,34 @@ version = "0.2.92"
 notes = "Reviewed in CL 643989420"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.wasmparser]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "0.214.0"
+notes = "Reviewed in CL 737530206"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.wasmtime-cache]]
+who = "<devinj@google.com>"
+criteria = "ub-risk-2"
+version = "27.0.0"
+notes = "Reviewed in CL 722783271"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.wezterm-color-types]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-2"
+version = "0.3.0"
+notes = "Reviewed in CL 716390757"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.wezterm-dynamic]]
+who = "<teddykatz@google.com>"
+criteria = "ub-risk-2"
+version = "0.2.0"
+notes = "Reviewed in CL 716296241"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.which]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -14074,6 +14896,13 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "4.3.0"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.wide]]
+who = "<teddykatz@google.com>"
+criteria = "ub-risk-2"
+version = "0.7.33"
+notes = "Reviewed in CL 796208909"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.winapi]]
 who = "danakj@chromium.org"
@@ -14203,6 +15032,20 @@ version = "0.29.0"
 notes = "Reviewed in CL 684413090"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.xlsynth-sys]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-2"
+delta = "0.0.181 -> 0.0.184"
+notes = "Reviewed in https://critique.corp.google.com/CL 807825913"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.xxhash-rust]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-3"
+version = "0.8.15"
+notes = "Reviewed in CL 747784964"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.xxhash-rust]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = "ub-risk-4"
@@ -14300,6 +15143,18 @@ delta = "0.7.5 -> 0.8.0"
 notes = "No code changes: only incrementing the version."
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.yrs]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = "ub-risk-4"
+version = "0.23.0"
+notes = """
+Reviewed in CL 740466576
+Issues found:
+ - Unsoundness in AtomicRef::update, ItemPtr, BranchPtr, ...
+ - Review left incomplete
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.zerocopy]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -14341,6 +15196,13 @@ who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
 version = "0.6.1"
 notes = "Reviewed in CL 592374439"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
+[[audits.zerocopy]]
+who = "Taylor Cramer <cramertj@google.com>"
+criteria = "ub-risk-1"
+version = "0.8.14"
+notes = "Reviewed in CL 714029246"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
 [[audits.zerocopy-derive]]
@@ -14486,6 +15348,16 @@ criteria = "does-not-implement-crypto"
 delta = "0.11.0 -> 0.11.1"
 aggregated-from = "https://chromium.googlesource.com/chromium/src/+/main/third_party/rust/chromium_crates_io/supply-chain/audits.toml?format=TEXT"
 
+[[audits.zlib-sys]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = "ub-risk-3"
+version = "0.4.2"
+notes = """
+Reviewed in CL 730913141
+Partial review performed: Mostly SIMD and allocator stuff. Seems correct enough for ub-risk-3.
+"""
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
+
 [[audits.zstd]]
 who = "Matt Turner <msturner@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -14504,3 +15376,10 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "2.0.9+zstd.1.5.5"
 notes = "Includes an implementation of xxhash (a non-cyptographic hashing function) as part of the zstd C sources"
 aggregated-from = "https://chromium.googlesource.com/chromiumos/third_party/rust_crates/+/refs/heads/main/cargo-vet/audits.toml?format=TEXT"
+
+[[audits.zune-jpeg]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "ub-risk-3"
+version = "0.4.19"
+notes = "Reviewed in CL 782822780"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
