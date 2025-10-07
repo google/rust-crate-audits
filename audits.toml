@@ -7433,6 +7433,13 @@ version = "0.1.1"
 notes = "Reviewed in "
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml"
 
+[[audits.jxl]]
+who = "Luca Versari <veluca@google.com>"
+criteria = "safe-to-deploy"
+version = "0.1.1"
+notes = "Based on ub-risk-1 by joshlf@google.com and the lack of filesystem usage outside tests."
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
+
 [[audits.keccak]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = "ub-risk-2"
