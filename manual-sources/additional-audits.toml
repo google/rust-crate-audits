@@ -1,0 +1,5 @@
+[[audits.jxl]]
+who = "Luca Versari <veluca@google.com>"
+criteria = ["safe-to-deploy"]
+version = "0.1.1"
+notes = "Based on ub-risk-1 by joshlf@google.com and the lack of filesystem usage outside tests."

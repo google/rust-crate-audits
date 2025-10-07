@@ -9,3 +9,6 @@ https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crat
 
 # google3:
 https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/google3-audits.toml
+
+# additional audits:
+https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml
