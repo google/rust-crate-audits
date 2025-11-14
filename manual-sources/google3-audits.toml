@@ -229,6 +229,12 @@ criteria = ["ub-risk-2"]
 version = "0.13.0"
 notes = "Reviewed in "
 
+[[audits.async_stream]]
+who = "Luca Versari <veluca@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.3.6"
+notes = "Reviewed in CL 814718864"
+
 [[audits.async-executor]]
 who = "Luca Versari <veluca@google.com>"
 criteria = ["ub-risk-2"]
@@ -345,6 +351,12 @@ notes = """Reviewed in CL 559206679
 Issues found:
  - https://github.com/BurntSushi/byteorder/issues/194
 """
+
+[[audits.bzip2]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-2"]
+version = "0.6.1"
+notes = "Reviewed in CL 828354407"
 
 [[audits.caliptra_cfi]]
 who = "Taylor Cramer <cramertj@google.com>"
@@ -540,7 +552,7 @@ Issues:
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.1.1"
-notes = "Reviewed in https://critique.corp.google.com/CL 805553961"
+notes = "Reviewed in CL 805553961"
 
 [[audits.ctor]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -858,7 +870,7 @@ FFI crate with some simple wrappers
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "0.1.5"
-notes = "Reviewed in https://critique.corp.google.com/CL 810913099"
+notes = "Reviewed in CL 810913099"
 
 [[audits.getifaddrs]]
 who = "Ben Saunders <bsaunders@google.com>"
@@ -1102,7 +1114,7 @@ notes = "Reviewed in CL 649389159"
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2", "does-not-implement-crypto"]
 version = "1.3.0"
-notes = "Reviewed in https://critique.corp.google.com/CL 794944624"
+notes = "Reviewed in CL 794944624"
 
 [[audits.home]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -1252,6 +1264,12 @@ notes = """Reviewed in CL 718829060
 Only use of unsafe is bind_async, which does a straightforward projection. Can be removed with https://github.com/mitsuhiko/insta/pull/711
 """
 
+[[audits.intaglio]]
+who = "<teddykatz@google.com>"
+criteria = ["ub-risk-2"]
+version = "1.11.0"
+notes = "Reviewed in CL 821787257"
+
 [[audits.intrusive-collections]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-3"]
@@ -1368,13 +1386,19 @@ Minor changes since last review
 who = "Augie Fackler <augie@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.4.0"
-notes = "Reviewed in https://critique.corp.google.com/CL 809112751"
+notes = "Reviewed in CL 809112751"
 
 [[audits.jxl]]
 who = "Joshua Liebow-Feeser <joshlf@google.com>"
 criteria = ["ub-risk-1"]
 version = "0.1.1"
 notes = "Reviewed in "
+
+[[audits.kamadak-exif]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "0.6.1"
+notes = "Reviewed in CL 827439468"
 
 [[audits.keccak]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -2134,6 +2158,15 @@ criteria = ["ub-risk-2"]
 version = "1.0.20"
 notes = "Reviewed in CL 585449373"
 
+[[audits.referencing]]
+who = "Manish Goregaokar <manishearth@google.com>"
+criteria = ["ub-risk-4"]
+version = "0.29.1"
+notes = """Reviewed in CL 831131871
+This crate seems to use unsafe code in a very underdocumented way to achieve self-referencing. Self-referencing is very tricky to get right, and while I'm not 100% sure I think this crate does it wrong.
+https://github.com/Stranger6667/jsonschema/issues/851
+"""
+
 [[audits.regex_automata]]
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-1"]
@@ -2153,6 +2186,12 @@ delta = "0.4.8 -> 0.4.9"
 notes = """Reviewed in CL 701879630
 Built on top of previous diff reviews
 """
+
+[[audits.relative-path]]
+who = "Ben Saunders <bsaunders@google.com>"
+criteria = ["ub-risk-1", "does-not-implement-crypto"]
+version = "1.9.3"
+notes = "Reviewed in CL 820550361"
 
 [[audits.rinja_derive]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -2211,7 +2250,7 @@ Issues found:
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-1"]
 version = "0.1.1"
-notes = "Reviewed in https://critique.corp.google.com/CL 778504452"
+notes = "Reviewed in CL 778504452"
 
 [[audits.rustybuzz]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -2295,6 +2334,12 @@ who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-2"]
 version = "0.4.0"
 notes = "Reviewed in CL 696305035"
+
+[[audits.serde_core]]
+who = "Luca Versari <veluca@google.com>"
+criteria = ["ub-risk-2"]
+version = "1.0.228"
+notes = "Reviewed in CL 816638143"
 
 [[audits.serde_jcs]]
 who = "Augie Fackler <augie@google.com>"
@@ -2548,6 +2593,12 @@ criteria = ["ub-risk-2"]
 version = "0.9.0"
 notes = "Reviewed in CL 745174015"
 
+[[audits.tiktoken]]
+who = "<teddykatz@google.com>"
+criteria = ["ub-risk-3"]
+version = "0.12.0"
+notes = "Reviewed in CL 817400202"
+
 [[audits.time]]
 who = "Manish Goregaokar <manishearth@google.com>"
 criteria = ["ub-risk-3"]
@@ -2688,7 +2739,7 @@ notes = "Reviewed in CL 707957977"
 who = "Augie Fackler <augie@google.com>"
 criteria = ["ub-risk-2"]
 version = "1.11.0"
-notes = "Reviewed in https://critique.corp.google.com/CL 746362951"
+notes = "Reviewed in CL 746362951"
 
 [[audits.uds]]
 who = "Manish Goregaokar <manishearth@google.com>"
@@ -2991,7 +3042,7 @@ notes = "Reviewed in CL 684413090"
 who = "Taylor Cramer <cramertj@google.com>"
 criteria = ["ub-risk-2"]
 delta = "0.0.181 -> 0.0.184"
-notes = "Reviewed in https://critique.corp.google.com/CL 807825913"
+notes = "Reviewed in CL 807825913"
 
 [[audits.xxhash-rust]]
 who = "Luca Versari <veluca@google.com>"
