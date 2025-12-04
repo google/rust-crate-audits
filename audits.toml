@@ -7461,6 +7461,20 @@ version = "0.1.1"
 notes = "Based on ub-risk-1 by joshlf@google.com and the lack of filesystem usage outside tests."
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
 
+[[audits.jxl]]
+who = "Łukasz Anforowicz <lukasza@chromium.org>"
+criteria = "safe-to-deploy"
+version = "0.1.3"
+notes = "Based on a review by @anforowicz (https://github.com/libjxl/jxl-rs/pull/518) and the lack of filesystem usage outside tests."
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
+
+[[audits.jxl_simd]]
+who = "Łukasz Anforowicz <lukasza@chromium.org>"
+criteria = "safe-to-deploy"
+version = "0.1.3"
+notes = "Based on a review by @anforowicz (https://github.com/libjxl/jxl-rs/pull/518) and the lack of filesystem usage outside tests."
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
+
 [[audits.kamadak-exif]]
 who = "Ben Saunders <bsaunders@google.com>"
 criteria = ["ub-risk-1", "does-not-implement-crypto"]
