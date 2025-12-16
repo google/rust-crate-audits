@@ -15,3 +15,15 @@ who = "Łukasz Anforowicz <lukasza@chromium.org>"
 criteria = ["safe-to-deploy"]
 version = "0.1.3"
 notes = "Based on a review by @anforowicz (https://github.com/libjxl/jxl-rs/pull/518) and the lack of filesystem usage outside tests."
+
+[[audits.jxl]]
+who = "Łukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy"]
+version = "0.1.5"
+notes = "Delta review from v0.1.3: no safety-relevant changes (except for a simple fix under stacked borrows)."
+
+[[audits.jxl_simd]]
+who = "Łukasz Anforowicz <lukasza@chromium.org>"
+criteria = ["safe-to-deploy"]
+version = "0.1.5"
+notes = "Delta review from v0.1.3: no safety-relevant changes."
