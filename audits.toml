@@ -7475,6 +7475,20 @@ version = "0.1.5"
 notes = "Delta review from v0.1.3: no safety-relevant changes (except for a simple fix under stacked borrows)."
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
 
+[[audits.jxl]]
+who = "Łukasz Anforowicz <lukasza@chromium.org>"
+criteria = "safe-to-deploy"
+version = "0.3.0"
+notes = "Delta review from v0.1.5"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
+
+[[audits.jxl_macros]]
+who = "Luca Versari <veluca@chromium.org>"
+criteria = "safe-to-deploy"
+version = "0.3.0"
+notes = "No unsafe code, no fs access outside of test-only functionality"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
+
 [[audits.jxl_simd]]
 who = "Łukasz Anforowicz <lukasza@chromium.org>"
 criteria = "safe-to-deploy"
@@ -7487,6 +7501,20 @@ who = "Łukasz Anforowicz <lukasza@chromium.org>"
 criteria = "safe-to-deploy"
 version = "0.1.5"
 notes = "Delta review from v0.1.3: no safety-relevant changes."
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
+
+[[audits.jxl_simd]]
+who = "Łukasz Anforowicz <lukasza@chromium.org>"
+criteria = "safe-to-deploy"
+version = "0.3.0"
+notes = "Delta review from v0.1.5"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
+
+[[audits.jxl_transforms]]
+who = "Luca Versari <veluca@chromium.org>"
+criteria = "safe-to-deploy"
+version = "0.3.0"
+notes = "No unsafe code, no fs access"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
 
 [[audits.kamadak-exif]]
