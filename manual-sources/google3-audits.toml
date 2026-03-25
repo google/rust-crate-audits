@@ -3187,7 +3187,7 @@ criteria = ["ub-risk-2"]
 version = "41.0.3"
 notes = "Reviewed in CL 882047885"
 
-[[audits.wasmtime-internal-jit-icache-coherence:]]
+[[audits.wasmtime-internal-jit-icache-coherence]]
 who = "<devinj@google.com>"
 criteria = ["ub-risk-3"]
 version = "41.0.3"
