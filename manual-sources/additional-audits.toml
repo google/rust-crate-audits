@@ -75,3 +75,28 @@ who = "Luca Versari <veluca@chromium.org>"
 criteria = ["safe-to-deploy"]
 version = "0.4.0"
 notes = "No unsafe code, no fs access"
+
+
+[[audits.jxl]]
+who = "Luca Versari <veluca@chromium.org>"
+criteria = ["safe-to-deploy"]
+version = "0.4.1"
+notes = "No unsafe differences from v0.4.0"
+
+[[audits.jxl_simd]]
+who = "Luca Versari <veluca@chromium.org>"
+criteria = ["safe-to-deploy"]
+version = "0.4.1"
+notes = "No unsafe differences from v0.4.0"
+
+[[audits.jxl_macros]]
+who = "Luca Versari <veluca@chromium.org>"
+criteria = ["safe-to-deploy"]
+version = "0.4.1"
+notes = "No unsafe code, no fs access outside of test-only functionality"
+
+[[audits.jxl_transforms]]
+who = "Luca Versari <veluca@chromium.org>"
+criteria = ["safe-to-deploy"]
+version = "0.4.1"
+notes = "No unsafe code, no fs access"
