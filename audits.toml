@@ -7643,6 +7643,13 @@ version = "0.7.2"
 notes = "Delta review from v0.7.1: no unsafe-relevant changes"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
 
+[[audits.jxl]]
+who = "Luca Versari <veluca@chromium.org>"
+criteria = "safe-to-deploy"
+version = "0.7.3"
+notes = "Delta review from v0.7.2: no unsafe-relevant changes"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
+
 [[audits.jxl_macros]]
 who = "Luca Versari <veluca@chromium.org>"
 criteria = "safe-to-deploy"
@@ -7689,6 +7696,13 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 who = "Luca Versari <veluca@chromium.org>"
 criteria = "safe-to-deploy"
 version = "0.7.2"
+notes = "No unsafe code, no fs access"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
+
+[[audits.jxl_macros]]
+who = "Luca Versari <veluca@chromium.org>"
+criteria = "safe-to-deploy"
+version = "0.7.3"
 notes = "No unsafe code, no fs access"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
 
@@ -7755,6 +7769,13 @@ version = "0.7.2"
 notes = "Delta review from v0.7.1: no unsafe-relevant changes"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
 
+[[audits.jxl_simd]]
+who = "Luca Versari <veluca@chromium.org>"
+criteria = "safe-to-deploy"
+version = "0.7.3"
+notes = "Delta review from v0.7.2: no unsafe-relevant changes"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
+
 [[audits.jxl_transforms]]
 who = "Luca Versari <veluca@chromium.org>"
 criteria = "safe-to-deploy"
@@ -7801,6 +7822,13 @@ aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/ma
 who = "Luca Versari <veluca@chromium.org>"
 criteria = "safe-to-deploy"
 version = "0.7.2"
+notes = "No unsafe code, no fs access"
+aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
+
+[[audits.jxl_transforms]]
+who = "Luca Versari <veluca@chromium.org>"
+criteria = "safe-to-deploy"
+version = "0.7.3"
 notes = "No unsafe code, no fs access"
 aggregated-from = "https://raw.githubusercontent.com/google/rust-crate-audits/main/manual-sources/additional-audits.toml"
 
